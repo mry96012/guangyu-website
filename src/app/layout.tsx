@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import BottomNav from "@/components/BottomNav";
 
 export const metadata: Metadata = {
   title: "光宇方向命理研究所｜東西方命理整合分析",
@@ -37,7 +38,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="h-full antialiased">{children}</body>
+      <body className="h-full antialiased">
+    <div className="pb-16 md:pb-0">{children}</div>
+    <BottomNav />
+  </body>
     </html>
   );
 }

@@ -43,7 +43,7 @@ export default function BookingPage() {
       <main>
         {/* Header */}
         <section
-          className="pt-32 pb-14 text-center relative overflow-hidden"
+          className="pt-20 md:pt-32 pb-10 md:pb-14 text-center relative overflow-hidden"
           style={{ background: "linear-gradient(135deg, #0C1D2F 0%, #182F4A 100%)" }}
         >
           <div className="absolute inset-0 pointer-events-none"
@@ -153,7 +153,8 @@ export default function BookingPage() {
                       rows={3} placeholder="任何想補充說明的事項..."
                       className="mt-1.5 input-field resize-none" />
                   </label>
-                  <button type="submit" className="btn-gold w-full justify-center">
+                  <button type="submit" className="btn-gold w-full justify-center text-base"
+                    style={{ height: "52px" }}>
                     送出預約 → 跳轉 LINE
                   </button>
                 </form>
@@ -193,7 +194,7 @@ export default function BookingPage() {
         </section>
       </main>
       <Footer />
-      <style>{`.input-field { width: 100%; padding: 12px 16px; font-size: 0.875rem; font-family: var(--font-sans); color: var(--color-cream); background: rgba(24,47,74,0.4); border: 1px solid rgba(200,166,58,0.3); transition: border-color 0.2s; } .input-field:focus { outline: none; border-color: #C8A63A; } .input-field::placeholder { color: rgba(245,241,234,0.3); }`}</style>
+      <style>{`.input-field { width: 100%; padding: 0 16px; height: 48px; font-size: 0.875rem; font-family: var(--font-sans); color: var(--color-cream); background: rgba(24,47,74,0.4); border: 1px solid rgba(200,166,58,0.3); transition: border-color 0.2s; } .input-field:focus { outline: none; border-color: #C8A63A; } .input-field::placeholder { color: rgba(245,241,234,0.3); } textarea.input-field { height: auto; padding: 12px 16px; }`}</style>
     </>
   );
 }

@@ -1,0 +1,109 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const tabs = [
+  {
+    href: "/",
+    label: "首頁",
+    exact: true,
+    icon: (active: boolean) => (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke={active ? "#C8A63A" : "rgba(245,241,234,0.45)"}
+        strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    ),
+  },
+  {
+    href: "/bazi",
+    label: "八字",
+    exact: false,
+    icon: (active: boolean) => (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke={active ? "#C8A63A" : "rgba(245,241,234,0.45)"}
+        strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 3v18M3 12h18"/>
+        <path d="M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
+      </svg>
+    ),
+  },
+  {
+    href: "/booking",
+    label: "預約",
+    exact: false,
+    icon: (active: boolean) => (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke={active ? "#C8A63A" : "rgba(245,241,234,0.45)"}
+        strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <line x1="8" y1="14" x2="8" y2="14" strokeWidth="2.5"/>
+        <line x1="12" y1="14" x2="12" y2="14" strokeWidth="2.5"/>
+        <line x1="16" y1="14" x2="16" y2="14" strokeWidth="2.5"/>
+      </svg>
+    ),
+  },
+  {
+    href: "/services",
+    label: "服務",
+    exact: false,
+    icon: (active: boolean) => (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke={active ? "#C8A63A" : "rgba(245,241,234,0.45)"}
+        strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/>
+        <rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+    ),
+  },
+];
+
+export default function BottomNav() {
+  const pathname = usePathname();
+
+  return (
+    <nav
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex items-stretch"
+      style={{
+        background: "rgba(8,15,24,0.97)",
+        borderTop: "1px solid rgba(200,166,58,0.18)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        paddingBottom: "env(safe-area-inset-bottom, 0px)",
+      }}
+    >
+      {tabs.map((tab) => {
+        const active = tab.exact ? pathname === tab.href : pathname.startsWith(tab.href);
+        return (
+          <Link
+            key={tab.href}
+            href={tab.href}
+            className="flex-1 flex flex-col items-center justify-center py-3 gap-[3px] transition-opacity"
+            style={{ color: active ? "#C8A63A" : "rgba(245,241,234,0.45)" }}
+          >
+            {tab.icon(active)}
+            <span
+              className="text-[10px] tracking-wider font-sans"
+              style={{ fontWeight: active ? 600 : 400 }}
+            >
+              {tab.label}
+            </span>
+            {active && (
+              <span
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-full"
+                style={{ background: "#C8A63A", marginBottom: "env(safe-area-inset-bottom, 0px)" }}
+              />
+            )}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+}

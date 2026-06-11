@@ -39,14 +39,14 @@ export default function BaziPage() {
       <main>
         {/* Header */}
         <section
-          className="pt-32 pb-14 text-center relative overflow-hidden"
+          className="pt-20 md:pt-32 pb-10 md:pb-14 text-center relative overflow-hidden"
           style={{ background: "linear-gradient(135deg, #0C1D2F 0%, #182F4A 100%)" }}
         >
           <div className="absolute inset-0 pointer-events-none"
             style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(200,166,58,0.07) 0%, transparent 60%)" }} />
-          <div className="relative max-w-xl mx-auto px-6 space-y-4">
+          <div className="relative max-w-xl mx-auto px-6 space-y-3 md:space-y-4">
             <p className="text-gold/60 text-xs tracking-[0.3em] font-sans uppercase">Free BaZi Reading</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold text-cream tracking-wide">八字速測</h1>
+            <h1 className="font-serif text-3xl md:text-5xl font-semibold text-cream tracking-wide">八字速測</h1>
             <div className="gold-divider max-w-xs mx-auto">
               <span className="text-gold/50 text-xs tracking-widest">免費查看年柱與日主</span>
             </div>
@@ -57,30 +57,31 @@ export default function BaziPage() {
         </section>
 
         {/* Form */}
-        <section className="section-navy py-14">
-          <div className="max-w-2xl mx-auto px-6">
-            <form onSubmit={handleSubmit} className="space-y-5 p-8 border border-gold/20"
+        <section className="section-navy py-8 md:py-14">
+          <div className="max-w-2xl mx-auto px-4 md:px-6">
+            <form onSubmit={handleSubmit}
+              className="space-y-4 md:space-y-5 p-5 md:p-8 border border-gold/20"
               style={{ background: "rgba(24,47,74,0.4)" }}>
-              <h2 className="font-serif text-xl text-cream mb-2">輸入出生資料</h2>
+              <h2 className="font-serif text-lg md:text-xl text-cream mb-1">輸入出生資料</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label className="block">
                   <span className="text-cream/60 text-xs font-sans tracking-wider">姓名</span>
                   <input type="text" value={form.name} onChange={e => setForm({...form, name: e.target.value})}
                     placeholder="您的姓名（選填）"
-                    className="mt-1.5 w-full px-4 py-3 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
-                    style={{ borderColor: "rgba(200,166,58,0.3)", background: "rgba(12,29,47,0.5)" }} />
+                    className="mt-2 w-full px-4 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
+                    style={{ borderColor: "rgba(200,166,58,0.3)", background: "rgba(12,29,47,0.5)", height: "48px" }} />
                 </label>
                 <label className="block">
                   <span className="text-cream/60 text-xs font-sans tracking-wider">出生日期 *</span>
                   <input type="date" required value={form.date} onChange={e => setForm({...form, date: e.target.value})}
-                    className="mt-1.5 w-full px-4 py-3 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
-                    style={{ borderColor: "rgba(200,166,58,0.3)", background: "rgba(12,29,47,0.5)", colorScheme: "dark" }} />
+                    className="mt-2 w-full px-4 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
+                    style={{ borderColor: "rgba(200,166,58,0.3)", background: "rgba(12,29,47,0.5)", colorScheme: "dark", height: "48px" }} />
                 </label>
                 <label className="block">
                   <span className="text-cream/60 text-xs font-sans tracking-wider">出生時辰</span>
                   <select value={form.hour} onChange={e => setForm({...form, hour: e.target.value})}
-                    className="mt-1.5 w-full px-4 py-3 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
-                    style={{ borderColor: "rgba(200,166,58,0.3)", background: "#0F2340" }}>
+                    className="mt-2 w-full px-4 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
+                    style={{ borderColor: "rgba(200,166,58,0.3)", background: "#0F2340", height: "48px" }}>
                     <option value="12">不確定</option>
                     {HOUR_NAMES.map((n, i) => (
                       <option key={i} value={i === 0 ? 23 : (i * 2 - 1)}>
@@ -90,12 +91,19 @@ export default function BaziPage() {
                   </select>
                 </label>
                 <div>
-                  <span className="text-cream/60 text-xs font-sans tracking-wider block mb-1.5">性別</span>
+                  <span className="text-cream/60 text-xs font-sans tracking-wider block mb-2">性別</span>
                   <div className="flex gap-3">
                     {["female","male"].map(g => (
-                      <label key={g} className="flex-1 flex items-center justify-center py-2.5 border cursor-pointer transition-all text-sm font-sans"
-                        style={{ borderColor: form.gender === g ? "#C8A63A" : "rgba(200,166,58,0.2)", background: form.gender === g ? "rgba(200,166,58,0.1)" : "transparent", color: form.gender === g ? "#C8A63A" : "rgba(245,241,234,0.5)" }}>
-                        <input type="radio" value={g} checked={form.gender === g} onChange={e => setForm({...form, gender: e.target.value})} className="sr-only" />
+                      <label key={g}
+                        className="flex-1 flex items-center justify-center border cursor-pointer transition-all text-sm font-sans"
+                        style={{
+                          borderColor: form.gender === g ? "#C8A63A" : "rgba(200,166,58,0.2)",
+                          background: form.gender === g ? "rgba(200,166,58,0.1)" : "transparent",
+                          color: form.gender === g ? "#C8A63A" : "rgba(245,241,234,0.5)",
+                          height: "48px",
+                        }}>
+                        <input type="radio" value={g} checked={form.gender === g}
+                          onChange={e => setForm({...form, gender: e.target.value})} className="sr-only" />
                         {g === "female" ? "♀ 女性" : "♂ 男性"}
                       </label>
                     ))}
@@ -106,10 +114,12 @@ export default function BaziPage() {
                 <span className="text-cream/60 text-xs font-sans tracking-wider">聯絡方式（選填，方便後續諮詢）</span>
                 <input type="text" value={form.contact} onChange={e => setForm({...form, contact: e.target.value})}
                   placeholder="LINE ID 或手機號碼"
-                  className="mt-1.5 w-full px-4 py-3 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
-                  style={{ borderColor: "rgba(200,166,58,0.3)", background: "rgba(12,29,47,0.5)" }} />
+                  className="mt-2 w-full px-4 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
+                  style={{ borderColor: "rgba(200,166,58,0.3)", background: "rgba(12,29,47,0.5)", height: "48px" }} />
               </label>
-              <button type="submit" className="btn-gold w-full justify-center">
+              <button type="submit"
+                className="btn-gold w-full justify-center text-base"
+                style={{ height: "52px" }}>
                 查看我的命盤 →
               </button>
             </form>

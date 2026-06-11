@@ -67,6 +67,15 @@ body {
   overflow-x: hidden;
 }
 
+/* ── Mobile ────────────────────────────── */
+@media (max-width: 767px) {
+  /* Ensure touch targets are large enough */
+  button, a, [role="button"] { min-height: 44px; }
+
+  /* Prevent text size adjustment on orientation change */
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-navy-deep); }

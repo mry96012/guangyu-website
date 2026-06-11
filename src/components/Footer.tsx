@@ -27,7 +27,7 @@ export default function Footer() {
         borderTop: "1px solid rgba(200,166,58,0.15)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-6 py-14 pb-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1 space-y-4">

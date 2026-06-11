@@ -24,7 +24,7 @@ export default function ContactPage() {
       <main>
         {/* Header */}
         <section
-          className="pt-32 pb-14 text-center relative overflow-hidden"
+          className="pt-20 md:pt-32 pb-10 md:pb-14 text-center relative overflow-hidden"
           style={{ background: "linear-gradient(135deg, #0C1D2F 0%, #182F4A 100%)" }}
         >
           <div className="absolute inset-0 pointer-events-none"
