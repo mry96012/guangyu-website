@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description:
     "透過八字、紫微斗數、塔羅占卜、生命靈數與占星分析，協助你理解人生課題，做出更適合自己的選擇。看懂自己・理解處境・找到方向。",
   keywords: "命理, 八字, 紫微斗數, 塔羅, 占星, 生命靈數, 命理諮詢, 光宇方向",
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   openGraph: {
     title: "光宇方向命理研究所",
     description: "東西方命理整合 × 現代專業顧問式陪伴",
