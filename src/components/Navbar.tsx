@@ -28,17 +28,29 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
         background: scrolled
-          ? "rgba(12,29,47,0.97)"
-          : "linear-gradient(to bottom, rgba(12,29,47,0.8), transparent)",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(200,166,58,0.2)" : "none",
-        boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
+          ? "rgba(10,22,40,0.97)"
+          : "linear-gradient(to bottom, rgba(10,22,40,0.85), transparent)",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(212,175,55,0.18)" : "none",
+        boxShadow: scrolled ? "0 4px 40px rgba(0,0,0,0.4)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 md:w-12 md:h-12 shrink-0">
+      {/* Main nav row — taller on desktop */}
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between"
+        style={{ height: scrolled ? "72px" : "88px", transition: "height .4s ease" }}>
+
+        {/* ── Logo block ── */}
+        <Link href="/" className="flex items-center gap-4 group" style={{ textDecoration: "none" }}>
+          {/* Logo image — larger than before */}
+          <div
+            className="relative shrink-0 transition-all duration-400"
+            style={{
+              width: scrolled ? "52px" : "68px",
+              height: scrolled ? "52px" : "68px",
+              filter: "drop-shadow(0 0 10px rgba(212,175,55,0.35))",
+              transition: "width .4s ease, height .4s ease, filter .4s ease",
+            }}
+          >
             <Image
               src="/images/logo.png"
               alt="光宇方向命理研究所"
@@ -47,26 +59,43 @@ export default function Navbar() {
               priority
             />
           </div>
-          <div className="hidden sm:block leading-tight">
+
+          {/* Brand text */}
+          <div className="hidden sm:flex flex-col justify-center" style={{ lineHeight: 1 }}>
             <p
-              className="text-sm md:text-base font-serif font-semibold tracking-widest"
-              style={{ color: "#C8A63A" }}
+              className="font-serif font-bold tracking-[.14em] transition-all duration-400"
+              style={{
+                color: "#D4AF37",
+                fontSize: scrolled ? "1.05rem" : "1.35rem",
+                textShadow: "0 0 18px rgba(212,175,55,0.35)",
+                transition: "font-size .4s ease",
+              }}
             >
-              光宇方向
+              光宇方向研究所
             </p>
-            <p className="text-[10px] md:text-xs text-cream-muted tracking-[0.2em] opacity-70">
-              命理研究所
+            <p
+              className="font-sans tracking-[.22em] transition-all duration-400"
+              style={{
+                color: "rgba(212,175,55,0.55)",
+                fontSize: scrolled ? ".52rem" : ".62rem",
+                marginTop: "4px",
+                letterSpacing: ".22em",
+                transition: "font-size .4s ease",
+              }}
+            >
+              GUANGYU DESTINY INSTITUTE
             </p>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* ── Desktop Nav ── */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-sans tracking-wider text-cream/80 hover:text-gold transition-colors duration-200 relative group"
+              className="font-sans tracking-wider text-cream/75 hover:text-gold transition-colors duration-200 relative group"
+              style={{ fontSize: ".82rem" }}
             >
               {l.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
@@ -74,44 +103,40 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA + Hamburger */}
+        {/* ── CTA + Hamburger ── */}
         <div className="flex items-center gap-3">
           <a
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex btn-gold text-xs md:text-sm px-4 py-2 md:px-5 md:py-2.5"
+            className="hidden md:inline-flex btn-gold text-xs px-4 py-2.5"
+            style={{ letterSpacing: ".08em" }}
           >
             加入 LINE 諮詢
           </a>
           <button
+            type="button"
             onClick={() => setOpen(!open)}
             className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none"
             aria-label="選單"
           >
-            <span
-              className="block w-6 h-0.5 bg-gold transition-all duration-300"
-              style={{ transform: open ? "translateY(8px) rotate(45deg)" : "" }}
-            />
-            <span
-              className="block w-6 h-0.5 bg-gold transition-all duration-300"
-              style={{ opacity: open ? 0 : 1 }}
-            />
-            <span
-              className="block w-6 h-0.5 bg-gold transition-all duration-300"
-              style={{ transform: open ? "translateY(-8px) rotate(-45deg)" : "" }}
-            />
+            <span className="block w-6 h-0.5 bg-gold transition-all duration-300"
+              style={{ transform: open ? "translateY(8px) rotate(45deg)" : "" }} />
+            <span className="block w-6 h-0.5 bg-gold transition-all duration-300"
+              style={{ opacity: open ? 0 : 1 }} />
+            <span className="block w-6 h-0.5 bg-gold transition-all duration-300"
+              style={{ transform: open ? "translateY(-8px) rotate(-45deg)" : "" }} />
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ── Mobile Menu ── */}
       <div
         className="md:hidden overflow-hidden transition-all duration-400"
         style={{
           maxHeight: open ? "400px" : "0",
-          background: "rgba(12,29,47,0.98)",
-          backdropFilter: "blur(12px)",
+          background: "rgba(10,22,40,0.98)",
+          backdropFilter: "blur(16px)",
         }}
       >
         <nav className="flex flex-col px-6 pb-6 pt-2 gap-1">
