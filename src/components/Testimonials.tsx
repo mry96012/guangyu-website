@@ -81,6 +81,7 @@ export default function Testimonials() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "20px" }}>
           {reviews.map((r) => (
             <div key={r.name}
+              className="testi-card"
               style={{
                 background: "#ffffff",
                 borderRadius: "12px",
@@ -91,6 +92,9 @@ export default function Testimonials() {
                 flexDirection: "column",
                 gap: "14px",
                 position: "relative",
+                transition: "transform .4s ease, box-shadow .4s ease",
+                transformStyle: "preserve-3d",
+                willChange: "transform",
               }}
             >
               {/* Quote mark */}
@@ -138,6 +142,16 @@ export default function Testimonials() {
           ※ 以上回饋皆為真實客戶整理，僅供服務體驗感受參考。
         </p>
       </div>
+
+      <style>{`
+        .testi-card:hover {
+          transform: perspective(900px) rotateX(-4deg) rotateY(2deg) translateY(-8px) scale(1.01);
+          box-shadow:
+            0 24px 50px rgba(12,29,47,.13),
+            0 0 0 1.5px rgba(212,175,55,.3),
+            0 0 28px rgba(212,175,55,.08) !important;
+        }
+      `}</style>
     </section>
   );
 }

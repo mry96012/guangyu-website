@@ -101,6 +101,28 @@ body {
   0%, 100% { box-shadow: 0 0 0 0 rgba(200,166,58,0.4); }
   50% { box-shadow: 0 0 20px 6px rgba(200,166,58,0.15); }
 }
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(212,175,55,0.4), 0 0 20px rgba(212,175,55,0.2), inset 0 0 8px rgba(212,175,55,0.08);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(212,175,55,0.7), 0 0 40px rgba(212,175,55,0.3), inset 0 0 14px rgba(212,175,55,0.14);
+  }
+}
+@keyframes aurora-drift {
+  0%, 100% { opacity: .55; transform: scale(1) translateX(0); }
+  33% { opacity: .8; transform: scale(1.06) translateX(15px); }
+  66% { opacity: .6; transform: scale(.97) translateX(-10px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  40% { transform: translateY(-10px) rotate(2deg); }
+  70% { transform: translateY(-5px) rotate(-1deg); }
+}
+@keyframes net-dash {
+  from { stroke-dashoffset: 200; }
+  to { stroke-dashoffset: 0; }
+}
 
 /* ── Utilities ─────────────────────────── */
 @layer utilities {

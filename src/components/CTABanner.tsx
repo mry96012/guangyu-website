@@ -8,11 +8,20 @@ export default function CTABanner() {
         background: "linear-gradient(135deg, #182F4A 0%, #0C1D2F 50%, #0F2340 100%)",
       }}
     >
-      {/* Decorative circles */}
+      {/* Aurora volume layers */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true" style={{
+        background: `
+          radial-gradient(ellipse 80% 60% at 20% 130%, rgba(108,82,220,0.22) 0%, transparent 55%),
+          radial-gradient(ellipse 60% 50% at 80% 130%, rgba(0,168,200,0.15) 0%, transparent 50%),
+          radial-gradient(ellipse 40% 40% at 50% 50%, rgba(212,175,55,0.05) 0%, transparent 60%)
+        `,
+        animation: "aurora-drift 12s ease-in-out infinite",
+      }} />
+      {/* Side glows */}
       <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(200,166,58,0.07) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(200,166,58,0.1) 0%, transparent 70%)" }} />
       <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(200,166,58,0.05) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(200,166,58,0.07) 0%, transparent 70%)" }} />
 
       <div className="relative max-w-3xl mx-auto px-6 text-center space-y-6">
         <span className="text-gold/60 text-2xl">✦</span>

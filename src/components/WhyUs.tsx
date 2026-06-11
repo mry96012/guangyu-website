@@ -33,7 +33,15 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section style={{ background: "#EDE8DF", padding: "80px 28px" }}>
+    <section style={{ background: "#EDE8DF", padding: "80px 28px", position: "relative", overflow: "hidden" }}>
+      {/* Subtle aurora overlay — gives depth without killing the cream bg */}
+      <div aria-hidden="true" style={{
+        position: "absolute", inset: 0, pointerEvents: "none",
+        background: `
+          radial-gradient(ellipse 60% 50% at 5% 120%, rgba(108,82,220,0.07) 0%, transparent 55%),
+          radial-gradient(ellipse 50% 40% at 95% 110%, rgba(212,175,55,0.06) 0%, transparent 50%)
+        `,
+      }} />
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "52px" }}>
@@ -74,16 +82,19 @@ function ReasonCard({ r }: { r: typeof reasons[0] }) {
         boxShadow: "0 2px 10px rgba(12,29,47,.07)",
         border: "1px solid rgba(212,175,55,.1)",
         textAlign: "center",
-        transition: "transform .3s ease, box-shadow .3s ease",
+        transition: "transform .4s ease, box-shadow .4s ease",
+        transformStyle: "preserve-3d",
+        willChange: "transform",
       }}
     >
-      {/* Round icon */}
+      {/* Round icon — neon ring */}
       <div style={{
-        width: "56px", height: "56px", borderRadius: "50%", margin: "0 auto 16px",
+        width: "58px", height: "58px", borderRadius: "50%", margin: "0 auto 16px",
         display: "flex", alignItems: "center", justifyContent: "center",
         fontSize: "1.4rem",
-        background: "rgba(212,175,55,.1)", color: "#D4AF37",
-        border: "1px solid rgba(212,175,55,.25)",
+        background: "rgba(212,175,55,.08)", color: "#D4AF37",
+        border: "1.5px solid rgba(212,175,55,.45)",
+        boxShadow: "0 0 12px rgba(212,175,55,.25), inset 0 0 8px rgba(212,175,55,.06)",
       }}>
         {r.icon}
       </div>
@@ -105,6 +116,16 @@ function ReasonCard({ r }: { r: typeof reasons[0] }) {
       <p style={{ fontSize: ".82rem", color: "#6B6B6B", lineHeight: 1.75, fontFamily: "var(--font-sans)" }}>
         {r.desc}
       </p>
+
+      <style>{`
+        .whyus-card:hover {
+          transform: perspective(900px) rotateX(-5deg) rotateY(3deg) translateY(-8px) scale(1.02);
+          box-shadow:
+            0 24px 48px rgba(12,29,47,.14),
+            0 0 0 1.5px rgba(212,175,55,.35),
+            0 0 30px rgba(212,175,55,.1) !important;
+        }
+      `}</style>
     </div>
   );
 }

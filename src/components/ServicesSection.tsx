@@ -204,12 +204,19 @@ export default function ServicesSection() {
       </div>
 
       <style>{`
+        .service-card-v2 {
+          transform-style: preserve-3d;
+          will-change: transform;
+        }
         .service-card-v2:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 12px 32px rgba(12,29,47,.13), 0 0 0 1.5px rgba(212,175,55,.32) !important;
+          transform: perspective(1100px) rotateX(-4deg) rotateY(2deg) translateY(-10px) scale(1.01);
+          box-shadow:
+            0 30px 60px rgba(12,29,47,.22),
+            0 0 0 1.5px rgba(212,175,55,.4),
+            0 0 40px rgba(212,175,55,.1) !important;
         }
         .service-card-v2:hover img {
-          transform: scale(1.04);
+          transform: scale(1.06);
         }
       `}</style>
     </section>
