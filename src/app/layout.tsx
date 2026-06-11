@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "光宇方向命理研究所 | 東西方命理整合・專業顧問式服務",
+  title: "光宇方向命理研究所｜東西方命理整合分析",
   description:
-    "透過八字、紫微斗數、塔羅占卜、生命靈數與占星分析，協助你理解人生課題，做出更適合自己的選擇。看懂自己・理解處境・找到方向。",
-  keywords: "命理, 八字, 紫微斗數, 塔羅, 占星, 生命靈數, 命理諮詢, 光宇方向",
+    "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己、整理目前狀態，並釐清更適合的人生方向。",
+  keywords: "命理諮詢, 八字分析, 紫微斗數, 塔羅占卜, 占星, 生命靈數, 姓名學, 光宇方向命理研究所",
   icons: {
     icon: "/images/logo.png",
     apple: "/images/logo.png",
   },
   openGraph: {
-    title: "光宇方向命理研究所",
-    description: "東西方命理整合 × 現代專業顧問式陪伴",
+    title: "光宇方向命理研究所｜東西方命理整合分析",
+    description: "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己，整理目前狀態，釐清更適合的人生方向。",
     locale: "zh_TW",
     type: "website",
   },

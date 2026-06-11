@@ -82,7 +82,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="hidden md:inline-flex btn-gold text-xs md:text-sm px-4 py-2 md:px-5 md:py-2.5"
           >
-            立即預約
+            加入 LINE 諮詢
           </a>
           <button
             onClick={() => setOpen(!open)}
@@ -132,7 +132,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="btn-gold mt-4 justify-center"
           >
-            立即預約諮詢
+            加入 LINE 諮詢
           </a>
         </nav>
       </div>

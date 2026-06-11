@@ -30,7 +30,7 @@ const categories = [
     icon: "西",
     title: "西方命理占卜",
     subtitle: "WESTERN MYSTICISM",
-    desc: "融合西方神秘學工具，探索內在特質與靈魂藍圖，找到成長方向。",
+    desc: "融合西方神秘學工具，探索內在特質與成長方向，從不同角度認識自己。",
     dark: false,
     items: [
       { name: "塔羅占卜（單題）", price: "NT$350", desc: "釐清當下狀態，提供方向與建議" },
@@ -58,7 +58,7 @@ const categories = [
     icon: "◎",
     title: "整合型報告",
     subtitle: "INTEGRATED REPORT",
-    desc: "東西方命理系統交叉驗證，提供最全面深入的個人命理分析。",
+    desc: "結合東西方命理視角，提供多角度的個人分析觀察與書面整理報告。",
     dark: false,
     items: [
       { name: "雙系統整合分析", price: "NT$2,000", desc: "八字×星盤，全方位了解自己" },
