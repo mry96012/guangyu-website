@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
@@ -107,18 +108,14 @@ export default function Hero() {
               <circle cx="150" cy="150" r="8" strokeWidth="1.5" fill="#B8902A" opacity="0.7"/>
             </svg>
 
-            {/* Hero image placeholder – replace src with AI-generated image */}
-            <div
-              className="absolute inset-16 rounded-full flex items-center justify-center"
-              style={{ background: "rgba(184,144,42,0.04)", border: "1px dashed rgba(184,144,42,0.25)" }}
-            >
-              <div className="text-center opacity-50 space-y-2">
-                <p className="text-3xl">✦</p>
-                <p className="text-xs font-sans" style={{ color: "#B8902A" }}>
-                  Hero Image
-                  <br />(命盤・星盤・羅盤)
-                </p>
-              </div>
+            <div className="absolute inset-16 rounded-full overflow-hidden">
+              <Image
+                src="/images/hero-main.png"
+                alt="命理羅盤"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
 
             {/* Floating badge: rating */}

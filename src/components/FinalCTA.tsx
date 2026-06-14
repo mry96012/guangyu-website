@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
 export default function FinalCTA() {
@@ -55,12 +57,13 @@ export default function FinalCTA() {
             className="flex items-center gap-3 px-5 py-3 rounded-xl"
             style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
           >
-            {/* QR placeholder box – replace with actual QR image */}
-            <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center text-xs text-center"
-              style={{ background: "#fff", color: "#8A9BAC", fontSize: "9px", lineHeight: 1.2 }}
-            >
-              LINE<br />QR Code<br />(替換)
+            <div className="w-14 h-14 rounded-lg overflow-hidden relative shrink-0">
+              <Image
+                src="/qrcode-line.png"
+                alt="LINE QR Code"
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="text-left">
               <p className="text-xs font-semibold font-sans text-white">LINE 官方帳號</p>

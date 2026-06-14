@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
@@ -54,14 +55,14 @@ export default function AboutPage() {
                   每一次諮詢，都是一段深度對話。我們不只是提供報告，更是陪伴你整理現況、釐清課題，找到屬於你自己的方向。
                 </p>
               </div>
-              {/* Image placeholder */}
               <div className="flex items-center justify-center">
-                <div className="w-80 h-80 rounded-2xl flex items-center justify-center"
-                  style={{ background: "rgba(184,144,42,0.06)", border: "1px dashed rgba(184,144,42,0.25)" }}>
-                  <div className="text-center space-y-2 opacity-50">
-                    <p className="text-4xl">✦</p>
-                    <p className="text-xs font-sans" style={{ color: "#B8902A" }}>品牌形象圖<br />(About Image)</p>
-                  </div>
+                <div className="w-80 h-80 rounded-2xl overflow-hidden relative">
+                  <Image
+                    src="/images/about-brand.jpg"
+                    alt="光宇方向品牌形象"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
