@@ -30,10 +30,10 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "rgba(255,253,249,0.97)" : "rgba(251,248,244,0.95)",
-        backdropFilter: "blur(12px)",
-        borderBottom: `1px solid ${scrolled ? "rgba(184,144,42,0.2)" : "rgba(184,144,42,0.1)"}`,
-        boxShadow: scrolled ? "0 2px 24px rgba(26,45,69,0.08)" : "none",
+        background: scrolled ? "rgba(15,30,48,0.98)" : "rgba(26,45,69,0.82)",
+        backdropFilter: "blur(16px)",
+        borderBottom: `1px solid ${scrolled ? "rgba(184,144,42,0.25)" : "rgba(184,144,42,0.15)"}`,
+        boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.2)" : "none",
       }}
     >
       <div
@@ -62,7 +62,7 @@ export default function Navbar() {
             <p
               className="font-serif font-bold tracking-widest"
               style={{
-                color: "#1A2D45",
+                color: "#FFFFFF",
                 fontSize: scrolled ? "0.95rem" : "1.05rem",
                 transition: "font-size 0.3s ease",
               }}
@@ -89,7 +89,7 @@ export default function Navbar() {
               key={l.href + l.label}
               href={l.href}
               className="font-sans text-sm transition-colors duration-200 relative group whitespace-nowrap"
-              style={{ color: "#4A5E72", letterSpacing: "0.04em" }}
+              style={{ color: "rgba(255,255,255,0.8)", letterSpacing: "0.04em" }}
             >
               {l.label}
               <span
@@ -128,18 +128,18 @@ export default function Navbar() {
             <span
               className="block w-6 h-0.5 transition-all duration-300"
               style={{
-                background: "#1A2D45",
+                background: "#FFFFFF",
                 transform: open ? "translateY(8px) rotate(45deg)" : "",
               }}
             />
             <span
               className="block w-6 h-0.5 transition-all duration-300"
-              style={{ background: "#1A2D45", opacity: open ? 0 : 1 }}
+              style={{ background: "#FFFFFF", opacity: open ? 0 : 1 }}
             />
             <span
               className="block w-6 h-0.5 transition-all duration-300"
               style={{
-                background: "#1A2D45",
+                background: "#FFFFFF",
                 transform: open ? "translateY(-8px) rotate(-45deg)" : "",
               }}
             />
@@ -152,8 +152,8 @@ export default function Navbar() {
         className="xl:hidden overflow-hidden transition-all duration-300"
         style={{
           maxHeight: open ? "520px" : "0",
-          background: "rgba(251,248,244,0.98)",
-          borderTop: open ? "1px solid rgba(184,144,42,0.1)" : "none",
+          background: "rgba(15,30,48,0.98)",
+          borderTop: open ? "1px solid rgba(184,144,42,0.2)" : "none",
         }}
       >
         <nav className="flex flex-col px-6 pb-6 pt-3 gap-0.5">
@@ -164,8 +164,8 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="py-3 text-sm font-sans border-b transition-colors duration-200"
               style={{
-                color: "#4A5E72",
-                borderColor: "rgba(184,144,42,0.1)",
+                color: "rgba(255,255,255,0.8)",
+                borderColor: "rgba(184,144,42,0.15)",
                 letterSpacing: "0.04em",
               }}
             >
