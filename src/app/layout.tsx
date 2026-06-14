@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+  verification: {
+    google: "PyZpoDQ09Pokp9tvlzb0NeojgtIlZiDrCriabJTf4q4",
+  },
   openGraph: {
     title: "光宇方向命理研究所｜東西方命理整合分析",
     description: "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己，整理目前狀態，釐清更適合的人生方向。",
