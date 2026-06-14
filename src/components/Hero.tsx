@@ -108,7 +108,7 @@ export default function Hero() {
               <circle cx="150" cy="150" r="8" strokeWidth="1.5" fill="#B8902A" opacity="0.7"/>
             </svg>
 
-            <div className="absolute inset-8 flex items-center justify-center">
+            <div className="absolute inset-0">
               <Image
                 src="/images/hero-main.png"
                 alt="命理羅盤"
