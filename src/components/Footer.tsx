@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 const EMAIL    = "guangyu.pro@gmail.com";
-const PHONE    = "0900-123-456";
+const PHONE    = "0978-586-343";
 const IG_URL   = "https://instagram.com";
 const FB_URL   = "https://facebook.com";
 
