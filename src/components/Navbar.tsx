@@ -51,7 +51,7 @@ export default function Navbar() {
             }}
           >
             <Image
-              src="/images/logo.png"
+              src="/logo.png"
               alt="光宇方向命理研究所"
               fill
               className="object-contain"
