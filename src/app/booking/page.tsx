@@ -2,20 +2,21 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FinalCTA from "@/components/FinalCTA";
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
 const serviceOptions = [
-  "八字命盤分析（NT$1,200起）",
-  "紫微斗數分析（NT$1,600起）",
+  "八字分析（NT$600起）",
+  "紫微斗數（NT$1,600起）",
   "雙系統整合（NT$2,000起）",
-  "姓名學分析（NT$800起）",
-  "塔羅占卜・單題（NT$350起）",
-  "生命靈數分析（NT$800起）",
-  "西洋占星分析（NT$1,600起）",
-  "感情深度分析（NT$1,800起）",
-  "主題式分析（NT$800起）",
-  "整合型報告（NT$2,000起）",
+  "塔羅占卜（NT$350起）",
+  "生命靈數（NT$800起）",
+  "西洋占星（NT$1,600起）",
+  "基礎命理解讀套餐（NT$2,800）",
+  "流年運勢分析套餐（NT$3,800）",
+  "關係合盤諮詢套餐（NT$4,800）",
+  "命理+晶石能量套餐（NT$5,800）",
   "其他（請說明）",
 ];
 
@@ -37,28 +38,40 @@ export default function BookingPage() {
 
   const update = (k: string, v: string) => setForm({ ...form, [k]: v });
 
+  const inputStyle = {
+    width: "100%",
+    padding: "12px 16px",
+    fontSize: "0.875rem",
+    fontFamily: "var(--font-sans)",
+    color: "#1A2D45",
+    background: "#FBF8F4",
+    border: "1px solid rgba(26,45,69,0.12)",
+    borderRadius: "8px",
+    outline: "none",
+    transition: "border-color 0.2s",
+  };
+
   return (
     <>
       <Navbar />
       <main>
         {/* Header */}
-        <section
-          className="pt-32 pb-14 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #0C1D2F 0%, #182F4A 100%)" }}
-        >
+        <section className="pt-32 pb-16 text-center relative overflow-hidden"
+          style={{ background: "linear-gradient(135deg, #FBF8F4 0%, #F4EDE3 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 50% 50% at 50% 0%, rgba(200,166,58,0.07) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 50% 50% at 50% 0%, rgba(184,144,42,0.08) 0%, transparent 60%)" }} />
           <div className="relative max-w-xl mx-auto px-6 space-y-4">
-            <p className="text-gold/60 text-xs tracking-[0.3em] font-sans uppercase">Book a Session</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold text-cream tracking-wide">預約諮詢</h1>
-            <div className="gold-divider max-w-xs mx-auto">
-              <span className="text-gold/50 text-xs tracking-widest">填寫表單・LINE 快速回覆</span>
-            </div>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#B8902A" }}>BOOK A SESSION</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#1A2D45" }}>預約諮詢</h1>
+            <div className="gold-diamond max-w-xs mx-auto"><span /></div>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>
+              填寫表單，透過 LINE 快速確認預約細節
+            </p>
           </div>
         </section>
 
         {/* Steps */}
-        <section className="section-navy py-10 border-b border-gold/10">
+        <section className="py-10 section-light" style={{ borderBottom: "1px solid rgba(184,144,42,0.1)" }}>
           <div className="max-w-3xl mx-auto px-6">
             <div className="grid grid-cols-3 gap-4">
               {[
@@ -68,59 +81,64 @@ export default function BookingPage() {
               ].map((s) => (
                 <div key={s.n} className="text-center space-y-2">
                   <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center font-serif text-sm font-bold"
-                    style={{ background: "rgba(200,166,58,0.1)", border: "1px solid rgba(200,166,58,0.3)", color: "#C8A63A" }}>
+                    style={{ background: "rgba(184,144,42,0.1)", border: "1px solid rgba(184,144,42,0.3)", color: "#B8902A" }}>
                     {s.n}
                   </div>
-                  <p className="font-serif text-sm font-semibold text-cream">{s.t}</p>
-                  <p className="text-cream/40 text-xs font-sans">{s.d}</p>
+                  <p className="font-serif text-sm font-semibold" style={{ color: "#1A2D45" }}>{s.t}</p>
+                  <p className="text-xs font-sans" style={{ color: "#7A8E9E" }}>{s.d}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Form + LINE */}
-        <section className="section-navy py-16">
+        {/* Form + Sidebar */}
+        <section className="py-16 section-light">
           <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Form */}
             <div className="lg:col-span-2">
               {sent ? (
-                <div className="p-10 text-center space-y-4 border border-gold/20"
-                  style={{ background: "rgba(200,166,58,0.06)" }}>
-                  <span className="text-gold text-4xl">✦</span>
-                  <h2 className="font-serif text-2xl text-cream">表單已送出！</h2>
-                  <p className="text-cream/60 font-sans text-sm">
+                <div className="p-10 text-center space-y-4 rounded-2xl"
+                  style={{ background: "#fff", border: "1px solid rgba(184,144,42,0.2)", boxShadow: "0 4px 20px rgba(26,45,69,0.06)" }}>
+                  <span className="text-4xl" style={{ color: "#B8902A" }}>✦</span>
+                  <h2 className="font-serif text-2xl font-semibold" style={{ color: "#1A2D45" }}>表單已送出！</h2>
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>
                     LINE 已開啟，請直接傳送訊息給老師確認預約細節。
                   </p>
-                  <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-gold inline-flex mt-2">
+                  <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-line inline-flex mt-2">
                     開啟 LINE 繼續溝通
                   </a>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <h2 className="font-serif text-xl text-cream mb-6">填寫預約資料</h2>
+                <form onSubmit={handleSubmit} className="space-y-5 p-8 rounded-2xl"
+                  style={{ background: "#fff", border: "1px solid rgba(26,45,69,0.08)", boxShadow: "0 4px 20px rgba(26,45,69,0.05)" }}>
+                  <h2 className="font-serif text-xl font-semibold mb-6" style={{ color: "#1A2D45" }}>填寫預約資料</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <label className="block">
-                      <span className="text-cream/60 text-xs font-sans tracking-wider">姓名 *</span>
+                      <span className="text-xs font-sans tracking-wider" style={{ color: "#7A8E9E" }}>姓名 *</span>
                       <input type="text" required value={form.name} onChange={e => update("name", e.target.value)}
-                        placeholder="您的姓名" className="mt-1.5 input-field" />
+                        placeholder="您的姓名" style={{ ...inputStyle, marginTop: "6px" }} />
                     </label>
                     <label className="block">
-                      <span className="text-cream/60 text-xs font-sans tracking-wider">出生日期 *</span>
+                      <span className="text-xs font-sans tracking-wider" style={{ color: "#7A8E9E" }}>出生日期 *</span>
                       <input type="date" required value={form.birth} onChange={e => update("birth", e.target.value)}
-                        className="mt-1.5 input-field" style={{ colorScheme: "dark" }} />
+                        style={{ ...inputStyle, marginTop: "6px" }} />
                     </label>
                     <label className="block">
-                      <span className="text-cream/60 text-xs font-sans tracking-wider">出生時間（可略）</span>
+                      <span className="text-xs font-sans tracking-wider" style={{ color: "#7A8E9E" }}>出生時間（可略）</span>
                       <input type="time" value={form.birthTime} onChange={e => update("birthTime", e.target.value)}
-                        className="mt-1.5 input-field" style={{ colorScheme: "dark" }} />
+                        style={{ ...inputStyle, marginTop: "6px" }} />
                     </label>
                     <div>
-                      <span className="text-cream/60 text-xs font-sans tracking-wider block mb-1.5">性別</span>
+                      <span className="text-xs font-sans tracking-wider block mb-1.5" style={{ color: "#7A8E9E" }}>性別</span>
                       <div className="flex gap-3">
                         {["female","male"].map(g => (
-                          <label key={g} className="flex-1 flex items-center justify-center py-2.5 border cursor-pointer transition-all text-sm font-sans"
-                            style={{ borderColor: form.gender === g ? "#C8A63A" : "rgba(200,166,58,0.2)", background: form.gender === g ? "rgba(200,166,58,0.1)" : "transparent", color: form.gender === g ? "#C8A63A" : "rgba(245,241,234,0.5)" }}>
+                          <label key={g} className="flex-1 flex items-center justify-center py-2.5 rounded-lg border cursor-pointer transition-all text-sm font-sans"
+                            style={{
+                              borderColor: form.gender === g ? "#B8902A" : "rgba(26,45,69,0.12)",
+                              background: form.gender === g ? "rgba(184,144,42,0.08)" : "#FBF8F4",
+                              color: form.gender === g ? "#B8902A" : "#7A8E9E"
+                            }}>
                             <input type="radio" value={g} checked={form.gender === g} onChange={e => update("gender", e.target.value)} className="sr-only" />
                             {g === "female" ? "♀ 女性" : "♂ 男性"}
                           </label>
@@ -129,29 +147,30 @@ export default function BookingPage() {
                     </div>
                   </div>
                   <label className="block">
-                    <span className="text-cream/60 text-xs font-sans tracking-wider">希望預約的服務 *</span>
+                    <span className="text-xs font-sans tracking-wider" style={{ color: "#7A8E9E" }}>希望預約的服務 *</span>
                     <select required value={form.service} onChange={e => update("service", e.target.value)}
-                      className="mt-1.5 w-full px-4 py-3 text-sm font-sans text-cream border focus:outline-none focus:border-gold transition-colors"
-                      style={{ borderColor: "rgba(200,166,58,0.3)", background: "#0F2340" }}>
+                      style={{ ...inputStyle, marginTop: "6px" }}>
                       <option value="">請選擇服務項目</option>
                       {serviceOptions.map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </label>
                   <label className="block">
-                    <span className="text-cream/60 text-xs font-sans tracking-wider">想釐清的主題</span>
+                    <span className="text-xs font-sans tracking-wider" style={{ color: "#7A8E9E" }}>想釐清的主題</span>
                     <input type="text" value={form.theme} onChange={e => update("theme", e.target.value)}
-                      placeholder="例如：換工作時機、感情狀況、財運方向..." className="mt-1.5 input-field" />
+                      placeholder="例如：換工作時機、感情狀況、財運方向..."
+                      style={{ ...inputStyle, marginTop: "6px" }} />
                   </label>
                   <label className="block">
-                    <span className="text-cream/60 text-xs font-sans tracking-wider">LINE ID 或聯絡方式 *</span>
+                    <span className="text-xs font-sans tracking-wider" style={{ color: "#7A8E9E" }}>LINE ID 或聯絡方式 *</span>
                     <input type="text" required value={form.contact} onChange={e => update("contact", e.target.value)}
-                      placeholder="您的 LINE ID 或手機號碼" className="mt-1.5 input-field" />
+                      placeholder="您的 LINE ID 或手機號碼"
+                      style={{ ...inputStyle, marginTop: "6px" }} />
                   </label>
                   <label className="block">
-                    <span className="text-cream/60 text-xs font-sans tracking-wider">其他備註</span>
+                    <span className="text-xs font-sans tracking-wider" style={{ color: "#7A8E9E" }}>其他備註</span>
                     <textarea value={form.message} onChange={e => update("message", e.target.value)}
                       rows={3} placeholder="任何想補充說明的事項..."
-                      className="mt-1.5 input-field resize-none" />
+                      style={{ ...inputStyle, marginTop: "6px", resize: "none" }} />
                   </label>
                   <button type="submit" className="btn-gold w-full justify-center">
                     送出預約 → 跳轉 LINE
@@ -162,38 +181,38 @@ export default function BookingPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <div className="p-6 border border-gold/20 space-y-4"
-                style={{ background: "rgba(24,47,74,0.4)" }}>
-                <h3 className="font-serif text-base text-gold">直接加入 LINE</h3>
-                <p className="text-cream/60 text-sm font-sans">
+              <div className="p-6 rounded-2xl space-y-4"
+                style={{ background: "#fff", border: "1px solid rgba(184,144,42,0.2)", boxShadow: "0 2px 12px rgba(26,45,69,0.04)" }}>
+                <h3 className="font-serif text-base font-semibold" style={{ color: "#1A2D45" }}>直接加入 LINE</h3>
+                <p className="text-sm font-sans leading-relaxed" style={{ color: "#5A6E82" }}>
                   也可以直接加入我們的 LINE 官方帳號進行預約，老師會盡快回覆。
                 </p>
-                <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
-                  className="btn-gold text-xs w-full justify-center">
+                <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-line text-sm w-full justify-center">
                   加入 LINE @enlite731
                 </a>
               </div>
-              <div className="p-6 border border-gold/10 space-y-3"
-                style={{ background: "rgba(24,47,74,0.2)" }}>
-                <h3 className="font-serif text-sm text-cream">服務說明</h3>
+              <div className="p-6 rounded-2xl space-y-3"
+                style={{ background: "rgba(184,144,42,0.04)", border: "1px solid rgba(184,144,42,0.12)" }}>
+                <h3 className="font-serif text-sm font-semibold" style={{ color: "#1A2D45" }}>服務說明</h3>
                 {[
                   { icon: "◆", text: "預約確認後會提供付款方式" },
                   { icon: "◆", text: "報告完成後透過 LINE 傳送" },
                   { icon: "◆", text: "所有資料嚴格保密" },
                   { icon: "◆", text: "服務時間：週一至週日 10:00–20:00" },
-                ].map((i) => (
-                  <p key={i.text} className="flex items-start gap-2 text-cream/50 text-xs font-sans">
-                    <span className="text-gold mt-0.5">{i.icon}</span>
-                    {i.text}
+                ].map((item) => (
+                  <p key={item.text} className="flex items-start gap-2 text-xs font-sans" style={{ color: "#5A6E82" }}>
+                    <span style={{ color: "#B8902A", marginTop: "2px" }}>{item.icon}</span>
+                    {item.text}
                   </p>
                 ))}
               </div>
             </div>
           </div>
         </section>
+
+        <FinalCTA />
       </main>
       <Footer />
-      <style>{`.input-field { width: 100%; padding: 12px 16px; font-size: 0.875rem; font-family: var(--font-sans); color: var(--color-cream); background: rgba(24,47,74,0.4); border: 1px solid rgba(200,166,58,0.3); transition: border-color 0.2s; } .input-field:focus { outline: none; border-color: #C8A63A; } .input-field::placeholder { color: rgba(245,241,234,0.3); }`}</style>
     </>
   );
 }
