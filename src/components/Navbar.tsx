@@ -58,23 +58,23 @@ export default function Navbar() {
               priority
             />
           </div>
-          <div className="hidden sm:flex flex-col justify-center" style={{ lineHeight: 1 }}>
+          <div className="hidden sm:flex flex-col justify-center overflow-hidden" style={{ lineHeight: 1 }}>
             <p
-              className="font-serif font-bold tracking-widest"
+              className="font-serif font-bold tracking-widest whitespace-nowrap"
               style={{
                 color: "#FFFFFF",
-                fontSize: scrolled ? "0.95rem" : "1.05rem",
+                fontSize: scrolled ? "1.1rem" : "1.25rem",
                 transition: "font-size 0.3s ease",
               }}
             >
               光宇方向命理研究所
             </p>
             <p
-              className="font-sans mt-1"
+              className="font-sans mt-1 whitespace-nowrap overflow-hidden"
               style={{
                 color: "#B8902A",
-                fontSize: "0.58rem",
-                letterSpacing: "0.18em",
+                fontSize: "0.57rem",
+                letterSpacing: "0.07em",
               }}
             >
               理解自己・找到方向・創造更好的選擇
