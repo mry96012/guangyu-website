@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="lg:col-span-1 space-y-5">
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10 shrink-0">
-                <Image src="/images/logo.png" alt="光宇方向" fill className="object-contain" />
+                <Image src="/logo.png" alt="光宇方向" fill className="object-contain" />
               </div>
               <div>
                 <p className="font-serif text-base font-semibold text-white tracking-widest">光宇方向命理研究所</p>
@@ -139,9 +139,12 @@ export default function Footer() {
           <p className="text-white/25 text-xs font-sans">
             © 2025 光宇方向命理研究所 All Rights Reserved.
           </p>
-          <p className="text-white/20 text-xs font-sans tracking-wider">
-            光宇方向命理研究所｜看懂自己・理解處境・找到方向
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy"
+              className="text-white/30 hover:text-white/60 text-xs font-sans transition-colors duration-200">
+              隱私權與個資政策
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
