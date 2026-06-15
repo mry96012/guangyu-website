@@ -34,7 +34,7 @@ export default function Hero() {
 
           {/* Left: Text */}
           <div className="space-y-8">
-            <div>
+            <div style={{ opacity: 0, animation: "fade-up 1s ease-out 0.1s forwards" }}>
               <h1
                 className="font-serif font-bold leading-tight"
                 style={{ fontSize: "clamp(1.9rem, 4.5vw, 3rem)", color: "#1A2D45", letterSpacing: "0.02em" }}
@@ -46,12 +46,18 @@ export default function Hero() {
               <div className="mt-4 h-0.5 w-16" style={{ background: "#B8902A" }} />
             </div>
 
-            <p className="font-sans leading-relaxed" style={{ color: "#4A5E72", fontSize: "1rem", maxWidth: "480px" }}>
+            <p
+              className="font-sans leading-relaxed"
+              style={{ color: "#4A5E72", fontSize: "1rem", maxWidth: "480px", opacity: 0, animation: "fade-up 1s ease-out 0.45s forwards" }}
+            >
               透過八字、紫微斗數、塔羅、生命靈數與占星分析，
               協助你整理現況、理解課題，找到更適合自己的方向。
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div
+              className="flex flex-col sm:flex-row gap-4"
+              style={{ opacity: 0, animation: "fade-up 1s ease-out 0.75s forwards" }}
+            >
               <Link
                 href="/experience"
                 className="btn-gold inline-flex items-center justify-center gap-2 text-sm"
@@ -72,7 +78,10 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-5 pt-2">
+            <div
+              className="flex flex-wrap gap-5 pt-2"
+              style={{ opacity: 0, animation: "fade-up 1s ease-out 1s forwards" }}
+            >
               {trustItems.map((t) => (
                 <div key={t.label} className="flex items-center gap-2">
                   <span className="text-sm">{t.icon}</span>
@@ -83,7 +92,10 @@ export default function Hero() {
           </div>
 
           {/* Right: Visual */}
-          <div className="hidden lg:flex items-center justify-center relative" style={{ minHeight: "520px" }}>
+          <div
+            className="hidden lg:flex items-center justify-center relative"
+            style={{ minHeight: "520px", opacity: 0, animation: "fade-up 1.2s ease-out 0.3s forwards" }}
+          >
             <div className="relative w-[520px] h-[520px]">
               <Image
                 src="/images/hero-main.png"
