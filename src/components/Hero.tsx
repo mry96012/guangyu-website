@@ -34,13 +34,6 @@ export default function Hero() {
 
           {/* Left: Text */}
           <div className="space-y-8">
-            <div className="flex items-center gap-3">
-              <div className="h-px w-8" style={{ background: "#B8902A" }} />
-              <p className="text-xs font-sans tracking-widest font-semibold" style={{ color: "#B8902A" }}>
-                光宇方向命理研究所
-              </p>
-            </div>
-
             <div>
               <h1
                 className="font-serif font-bold leading-tight"
