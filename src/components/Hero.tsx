@@ -90,25 +90,8 @@ export default function Hero() {
           </div>
 
           {/* Right: Visual */}
-          <div className="hidden lg:flex items-center justify-center relative">
-            <div className="absolute w-96 h-96 rounded-full"
-              style={{ border: "1px solid rgba(184,144,42,0.12)" }} />
-            <div className="absolute w-72 h-72 rounded-full"
-              style={{ border: "1px solid rgba(184,144,42,0.08)" }} />
-
-            {/* Compass SVG decoration */}
-            <svg viewBox="0 0 300 300" className="w-80 h-80 opacity-25" fill="none" stroke="#B8902A">
-              <circle cx="150" cy="150" r="130" strokeWidth="0.5" strokeDasharray="4 4"/>
-              <circle cx="150" cy="150" r="90"  strokeWidth="0.5" strokeDasharray="2 6"/>
-              <circle cx="150" cy="150" r="50"  strokeWidth="0.8"/>
-              <polygon points="150,20 158,142 150,280 142,142"  strokeWidth="0.5"/>
-              <polygon points="20,150 142,158 280,150 142,142" strokeWidth="0.5"/>
-              <polygon points="50,50 148,148 250,250 152,152"  strokeWidth="0.5"/>
-              <polygon points="250,50 152,148 50,250 148,152"  strokeWidth="0.5"/>
-              <circle cx="150" cy="150" r="8" strokeWidth="1.5" fill="#B8902A" opacity="0.7"/>
-            </svg>
-
-            <div className="absolute inset-0">
+          <div className="hidden lg:flex items-center justify-center relative" style={{ minHeight: "520px" }}>
+            <div className="relative w-[520px] h-[520px]">
               <Image
                 src="/images/hero-main.png"
                 alt="命理羅盤"
@@ -116,27 +99,6 @@ export default function Hero() {
                 className="object-contain"
                 priority
               />
-            </div>
-
-            {/* Floating badge: rating */}
-            <div
-              className="absolute top-6 left-0 px-4 py-3 rounded-xl shadow-md"
-              style={{ background: "#fff", border: "1px solid rgba(184,144,42,0.15)" }}
-            >
-              <p className="text-xs font-sans" style={{ color: "#6B7E90" }}>Google 評價</p>
-              <div className="flex items-center gap-1 mt-0.5">
-                <span className="text-sm font-bold font-serif" style={{ color: "#1A2D45" }}>5.0</span>
-                <span className="text-yellow-400 text-xs">★★★★★</span>
-              </div>
-            </div>
-
-            {/* Floating badge: clients */}
-            <div
-              className="absolute bottom-6 right-0 px-4 py-3 rounded-xl shadow-md"
-              style={{ background: "#fff", border: "1px solid rgba(184,144,42,0.15)" }}
-            >
-              <p className="text-xs font-sans font-semibold" style={{ color: "#1A2D45" }}>128 位客戶好評</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "#6B7E90" }}>真實分析・溫暖陪伴</p>
             </div>
           </div>
         </div>
