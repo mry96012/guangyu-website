@@ -194,11 +194,37 @@ export default function PrivacyPage() {
                   </li>
                 ))}
               </ul>
+              <p className="font-sans" style={pStyle}>
+                您的命盤資料、出生資訊及諮詢報告，僅於提供服務所需期間內保存，原則上保存至服務結束後 3 年（供後續追蹤諮詢或爭議處理之用），逾期將以不可回復之方式刪除或銷毀電子檔案。若您於保存期間內主動要求刪除，本研究所將於確認身份後，於 15 個工作日內完成刪除作業。
+              </p>
+            </div>
+
+            {/* 個資外洩通知 */}
+            <div style={sectionStyle}>
+              <h2 className="font-serif" style={h2Style}>五、個人資料事故通知機制</h2>
+              <p className="font-sans" style={pStyle}>
+                依個資法第12條規定，若本研究所違反個資法規定，致您的個人資料遭不法蒐集、處理、利用或其他侵害情事，本研究所將於知悉後，以適當方式（如 Email、LINE 或網站公告）通知您下列事項：
+              </p>
+              <ul className="list-none space-y-1 mb-3 pl-4">
+                {[
+                  "事故發生之時間與經過",
+                  "已採取之因應措施",
+                  "提供您諮詢申訴的服務窗口",
+                ].map((item) => (
+                  <li key={item} className="font-sans flex gap-2" style={liStyle}>
+                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="font-sans" style={pStyle}>
+                本研究所亦將檢視事故發生原因，採取必要之補救措施，避免類似情事再次發生。
+              </p>
             </div>
 
             {/* 第三方與 Cookie */}
             <div style={sectionStyle}>
-              <h2 className="font-serif" style={h2Style}>五、第三方服務與 Cookie</h2>
+              <h2 className="font-serif" style={h2Style}>六、第三方服務與 Cookie</h2>
               <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>第三方服務</p>
               <p className="font-sans" style={pStyle}>
                 本研究所可能使用以下第三方服務，這些服務有其各自的隱私政策：
@@ -223,7 +249,7 @@ export default function PrivacyPage() {
 
             {/* 未成年人 */}
             <div style={sectionStyle}>
-              <h2 className="font-serif" style={h2Style}>六、未成年人保護</h2>
+              <h2 className="font-serif" style={h2Style}>七、未成年人保護</h2>
               <p className="font-sans" style={pStyle}>
                 本研究所之服務對象為18歲（含）以上之成年人。未滿18歲者，請在法定代理人同意下使用本服務並提供個人資料。若本研究所發現未成年人未經同意提供個人資料，將予以刪除。
               </p>
@@ -231,7 +257,7 @@ export default function PrivacyPage() {
 
             {/* 政策修訂 */}
             <div style={sectionStyle}>
-              <h2 className="font-serif" style={h2Style}>七、隱私政策修訂</h2>
+              <h2 className="font-serif" style={h2Style}>八、隱私政策修訂</h2>
               <p className="font-sans" style={pStyle}>
                 本研究所保留修訂本政策之權利。政策修訂後將於本頁面公告更新日期，重大變更時將另行通知。繼續使用本服務，視為您同意修訂後之政策內容。
               </p>
@@ -240,7 +266,7 @@ export default function PrivacyPage() {
             {/* 聯絡我們 */}
             <div style={{ ...sectionStyle, background: "#1A2D45" }}>
               <h2 className="font-serif" style={{ ...h2Style, color: "#fff", borderBottomColor: "rgba(184,144,42,0.3)" }}>
-                八、聯絡本研究所
+                九、聯絡本研究所
               </h2>
               <p className="font-sans" style={{ ...pStyle, color: "rgba(255,255,255,0.7)" }}>
                 如對本隱私政策有任何疑問，或欲行使個人資料相關權利，請透過以下方式聯絡我們：

@@ -81,8 +81,20 @@ export default function CasesPage() {
           </div>
         </section>
 
+        {/* Intro */}
+        <section className="pt-4 pb-12 section-light">
+          <div className="max-w-3xl mx-auto px-6 space-y-4 text-center">
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E72" }}>
+              以下案例皆來自真實諮詢個案，內容經客戶同意分享，並已調整足以識別身份的細節（姓名、地點與部分時間資訊），以保護客戶隱私。每個案例呈現的問題、使用工具與分析重點，目的是讓你在預約前更清楚了解光宇方向的諮詢方式與服務深度，而不是預測式的「算命結果」。
+            </p>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E72" }}>
+              我們發現多數客戶來諮詢的時間點，通常落在人生轉換的關鍵階段：工作去留、感情卡關、財務決策或是人際壓力累積到一定程度。命理工具在這裡扮演的角色，不是給出唯一答案，而是協助客戶看清自己的處境、盤點手上的資源與選項，再由客戶自己做決定。
+            </p>
+          </div>
+        </section>
+
         {/* Cases grid */}
-        <section className="py-20 section-light">
+        <section className="py-12 section-light">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {cases.map((c, i) => (

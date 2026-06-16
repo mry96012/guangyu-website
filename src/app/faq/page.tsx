@@ -106,14 +106,20 @@ export default function FAQPage() {
                           <span className="text-lg shrink-0 transition-transform duration-200 ml-3"
                             style={{ color: "#B8902A", transform: isOpen ? "rotate(45deg)" : "none" }}>+</span>
                         </button>
-                        {isOpen && (
-                          <div className="px-6 pb-5 flex gap-3"
-                            style={{ borderTop: "1px solid rgba(184,144,42,0.1)" }}>
-                            <span className="text-xs font-bold font-sans w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-3"
-                              style={{ background: "rgba(26,45,69,0.07)", color: "#4A5E72" }}>A</span>
-                            <p className="font-sans text-sm leading-relaxed pt-3" style={{ color: "#5A6E72" }}>{item.a}</p>
-                          </div>
-                        )}
+                        <div
+                          className="px-6 flex gap-3 overflow-hidden"
+                          style={{
+                            borderTop: isOpen ? "1px solid rgba(184,144,42,0.1)" : "none",
+                            maxHeight: isOpen ? "400px" : "0px",
+                            paddingTop: isOpen ? "12px" : "0px",
+                            paddingBottom: isOpen ? "20px" : "0px",
+                            transition: "max-height 0.25s ease, padding 0.25s ease",
+                          }}
+                        >
+                          <span className="text-xs font-bold font-sans w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                            style={{ background: "rgba(26,45,69,0.07)", color: "#4A5E72" }}>A</span>
+                          <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E72" }}>{item.a}</p>
+                        </div>
                       </div>
                     );
                   })}
