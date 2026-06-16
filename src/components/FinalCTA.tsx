@@ -67,8 +67,8 @@ export default function FinalCTA() {
             </div>
             <div className="text-left">
               <p className="text-xs font-semibold font-sans text-white">LINE 官方帳號</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>@enlite731</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>預約・諮詢・優惠<br />一站式服務</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.65)" }}>@enlite731</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.62)" }}>預約・諮詢・優惠<br />一站式服務</p>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function FinalCTA() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs font-sans transition-colors duration-200"
-              style={{ color: "rgba(255,255,255,0.45)" }}
+              style={{ color: "rgba(255,255,255,0.65)" }}
             >
               <span>{l.icon}</span>
               {l.label}

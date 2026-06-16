@@ -51,7 +51,7 @@ export default function FreeTrial() {
                     {s.n}
                   </div>
                   <p className="text-xs font-semibold font-sans text-white">{s.title}</p>
-                  <p className="text-xs font-sans" style={{ color: "rgba(255,255,255,0.45)" }}>{s.sub}</p>
+                  <p className="text-xs font-sans" style={{ color: "rgba(255,255,255,0.62)" }}>{s.sub}</p>
                 </div>
               ))}
             </div>
@@ -62,7 +62,7 @@ export default function FreeTrial() {
               style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(184,144,42,0.2)" }}
             >
               <p className="font-serif text-base text-white font-semibold">填寫基本資料</p>
-              <p className="text-xs font-sans" style={{ color: "rgba(255,255,255,0.4)" }}>
+              <p className="text-xs font-sans" style={{ color: "rgba(255,255,255,0.62)" }}>
                 資料安全保護，僅用於命盤分析
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -72,13 +72,16 @@ export default function FreeTrial() {
                   { label: "出生日期",     placeholder: "西元年 / 月 / 日", type: "date" },
                   { label: "出生時間",     placeholder: "選擇（盡量準確）", type: "select", opts: ["不確定", "子時 23:00–01:00", "丑時 01:00–03:00", "寅時 03:00–05:00"] },
                   { label: "出生地點",     placeholder: "請輸入城市或縣市" },
-                ].map((f) => (
+                ].map((f) => {
+                  const fieldId = `free-trial-${f.label}`;
+                  return (
                   <div key={f.label} className={f.label === "出生地點" ? "sm:col-span-2" : ""}>
-                    <label className="block text-xs font-sans mb-1.5" style={{ color: "rgba(255,255,255,0.55)" }}>
+                    <label htmlFor={fieldId} className="block text-xs font-sans mb-1.5" style={{ color: "rgba(255,255,255,0.55)" }}>
                       {f.label}
                     </label>
                     {f.type === "select" ? (
                       <select
+                        id={fieldId}
                         disabled
                         className="w-full px-4 py-3 text-sm rounded-lg"
                         style={{
@@ -92,6 +95,7 @@ export default function FreeTrial() {
                       </select>
                     ) : f.type === "date" ? (
                       <input
+                        id={fieldId}
                         type="text"
                         disabled
                         placeholder={f.placeholder}
@@ -104,6 +108,7 @@ export default function FreeTrial() {
                       />
                     ) : (
                       <input
+                        id={fieldId}
                         type="text"
                         disabled
                         placeholder={f.placeholder}
@@ -116,7 +121,8 @@ export default function FreeTrial() {
                       />
                     )}
                   </div>
-                ))}
+                  );
+                })}
               </div>
               <Link
                 href="/experience"
@@ -150,7 +156,7 @@ export default function FreeTrial() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold font-sans text-white">{item.label}</p>
-                    <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{item.sub}</p>
+                    <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.62)" }}>{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -172,9 +178,9 @@ export default function FreeTrial() {
               style={{ background: "rgba(184,144,42,0.07)", border: "1px solid rgba(184,144,42,0.18)" }}
             >
               <p style={{ color: "#E8D08A" }}>注意事項</p>
-              <p style={{ color: "rgba(255,255,255,0.45)" }}>・出生時間越準確，分析越精準</p>
-              <p style={{ color: "rgba(255,255,255,0.45)" }}>・若不清楚出生時間，可填寫略時或選擇「不確定」</p>
-              <p style={{ color: "rgba(255,255,255,0.45)" }}>・摘要為系統自動分析，完整解讀建議預約專業諮詢</p>
+              <p style={{ color: "rgba(255,255,255,0.62)" }}>・出生時間越準確，分析越精準</p>
+              <p style={{ color: "rgba(255,255,255,0.62)" }}>・若不清楚出生時間，可填寫略時或選擇「不確定」</p>
+              <p style={{ color: "rgba(255,255,255,0.62)" }}>・摘要為系統自動分析，完整解讀建議預約專業諮詢</p>
             </div>
           </div>
         </div>

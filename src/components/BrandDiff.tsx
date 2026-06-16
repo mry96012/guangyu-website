@@ -53,14 +53,14 @@ export default function BrandDiff() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold font-sans" style={{ color: "rgba(255,255,255,0.65)" }}>{g.text}</p>
-                    <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>{g.sub}</p>
+                    <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(255,255,255,0.62)" }}>{g.sub}</p>
                   </div>
                 </div>
               ))}
             </div>
             <div
               className="mt-2 py-2 px-4 rounded-xl text-center text-xs font-sans"
-              style={{ background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.35)" }}
+              style={{ background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.62)" }}
             >
               😟 結果導向，容易產生依賴與恐懼
             </div>
