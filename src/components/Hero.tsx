@@ -50,7 +50,7 @@ export default function Hero() {
               className="font-sans leading-relaxed"
               style={{ color: "#4A5E72", fontSize: "1rem", maxWidth: "480px", opacity: 0, animation: "fade-up 1s ease-out 0.45s forwards" }}
             >
-              透過八字、紫微斗數、塔羅、生命靈數與占星分析，
+              透過八字、紫微斗數、塔羅、生命靈數與占星分析，<br />
               協助你整理現況、理解課題，找到更適合自己的方向。
             </p>
 
