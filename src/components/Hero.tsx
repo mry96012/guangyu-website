@@ -72,7 +72,7 @@ export default function Hero() {
                 className="btn-outline inline-flex items-center justify-center gap-2 text-sm"
                 style={{ padding: "14px 28px" }}
               >
-                📅 預約諮詢
+                📅 立即預約諮詢
               </a>
             </div>
 
