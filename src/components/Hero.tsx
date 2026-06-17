@@ -29,7 +29,7 @@ export default function Hero() {
           style={{ background: "radial-gradient(circle, #1A2D45 0%, transparent 70%)" }} />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-32 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-32 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* Left: Text */}
@@ -85,7 +85,7 @@ export default function Hero() {
               {trustItems.map((t) => (
                 <div key={t.label} className="flex items-center gap-2">
                   <span className="text-sm">{t.icon}</span>
-                  <span className="text-xs font-sans" style={{ color: "#6B7E90" }}>{t.label}</span>
+                  <span className="text-sm font-sans" style={{ color: "#6B7E90" }}>{t.label}</span>
                 </div>
               ))}
             </div>
