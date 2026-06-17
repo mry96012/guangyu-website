@@ -7,7 +7,6 @@ import BrandDiff from "@/components/BrandDiff";
 import BrandFeatures from "@/components/BrandFeatures";
 import CaseStudies from "@/components/CaseStudies";
 import Reviews from "@/components/Reviews";
-import FreeTrial from "@/components/FreeTrial";
 import ServiceProcess from "@/components/ServiceProcess";
 import HomeFAQ from "@/components/HomeFAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -34,8 +33,6 @@ export default function HomePage() {
         <CaseStudies />
         {/* 09 客戶評價 */}
         <Reviews />
-        {/* 10 免費命盤體驗 */}
-        <FreeTrial />
         {/* 11 服務流程 */}
         <ServiceProcess />
         {/* 12 FAQ */}
