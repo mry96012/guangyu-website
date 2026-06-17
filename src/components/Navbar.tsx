@@ -79,6 +79,16 @@ export default function Navbar() {
             >
               理解自己・找到方向・創造更好的選擇
             </p>
+            <p
+              className="font-sans mt-0.5 whitespace-nowrap overflow-hidden tracking-widest"
+              style={{
+                color: "rgba(255,255,255,0.3)",
+                fontSize: "0.46rem",
+                letterSpacing: "0.12em",
+              }}
+            >
+              GUANGYU METAPHYSICS INSTITUTE
+            </p>
           </div>
         </Link>
 

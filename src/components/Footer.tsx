@@ -38,6 +38,7 @@ export default function Footer() {
               <div>
                 <p className="font-serif text-base font-semibold text-white tracking-widest">光宇方向命理研究所</p>
                 <p className="text-white/40 text-[10px] tracking-widest mt-0.5">理解自己・找到方向</p>
+                <p className="font-sans text-[9px] tracking-widest mt-0.5" style={{ color: "rgba(255,255,255,0.2)" }}>GUANGYU METAPHYSICS INSTITUTE</p>
               </div>
             </div>
             <p className="text-white/50 text-xs font-sans leading-relaxed">
