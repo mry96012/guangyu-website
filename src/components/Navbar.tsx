@@ -70,21 +70,27 @@ export default function Navbar() {
               光宇方向命理研究所
             </p>
             <p
-              className="font-sans mt-1 whitespace-nowrap overflow-hidden"
+              className="font-sans mt-1"
               style={{
                 color: "#B8902A",
                 fontSize: "0.57rem",
-                letterSpacing: "0.07em",
+                letterSpacing: "0",
+                textAlign: "justify",
+                textAlignLast: "justify",
+                width: "100%",
               }}
             >
               理解自己・找到方向・創造更好的選擇
             </p>
             <p
-              className="font-sans mt-0.5 whitespace-nowrap overflow-hidden tracking-widest"
+              className="font-sans mt-0.5"
               style={{
                 color: "rgba(255,255,255,0.3)",
                 fontSize: "0.46rem",
-                letterSpacing: "0.12em",
+                letterSpacing: "0",
+                textAlign: "justify",
+                textAlignLast: "justify",
+                width: "100%",
               }}
             >
               GUANGYU METAPHYSICS INSTITUTE
