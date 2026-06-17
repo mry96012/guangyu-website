@@ -64,7 +64,6 @@ export default function Hero() {
                 style={{ padding: "14px 28px" }}
               >
                 ✦ 免費命盤體驗
-                <span className="text-xs opacity-80 font-normal ml-1">立即領取個人命盤解析</span>
               </Link>
               <a
                 href={LINE_URL}
@@ -74,18 +73,17 @@ export default function Hero() {
                 style={{ padding: "14px 28px" }}
               >
                 📅 預約諮詢
-                <span className="text-xs opacity-70 font-normal ml-1">與光宇老師一對一諮詢</span>
               </a>
             </div>
 
             <div
-              className="flex flex-wrap gap-5 pt-2"
+              className="flex justify-between pt-2"
               style={{ opacity: 0, animation: "fade-up 1s ease-out 1s forwards" }}
             >
               {trustItems.map((t) => (
-                <div key={t.label} className="flex items-center gap-2">
+                <div key={t.label} className="flex items-center gap-1.5">
                   <span className="text-sm">{t.icon}</span>
-                  <span className="text-sm font-sans" style={{ color: "#6B7E90" }}>{t.label}</span>
+                  <span className="text-sm font-sans whitespace-nowrap" style={{ color: "#6B7E90" }}>{t.label}</span>
                 </div>
               ))}
             </div>
