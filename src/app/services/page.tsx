@@ -98,14 +98,9 @@ export default function ServicesPage() {
         </section>
 
         {/* ── Section 05: 所有服務工具 ── */}
-        <section id="tools" className="py-20 section-light">
+        <section id="tools" className="pt-8 pb-20 section-light">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="section-title">
-              <h2>所有服務項目</h2>
-              <div className="gold-diamond"><span /></div>
-              <p>多元命理工具，從不同角度理解你的人生</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
               {tools.map((s) => (
                 <div
                   key={s.id}
@@ -132,10 +127,18 @@ export default function ServicesPage() {
                       </span>
                     ))}
                   </div>
-                  <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
-                    className="text-sm font-semibold font-sans transition-colors" style={{ color: "#B8902A" }}>
-                    預約此服務 →
-                  </a>
+                  <div className="flex items-center gap-3 pt-1">
+                    <a href={`/services#${s.id}`}
+                      className="flex-1 inline-flex items-center justify-center text-sm font-semibold font-sans rounded-lg py-2.5 transition-all duration-200"
+                      style={{ border: "1px solid rgba(184,144,42,0.25)", color: "#8B7355", background: "rgba(184,144,42,0.05)" }}>
+                      了解詳情
+                    </a>
+                    <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center text-sm font-semibold font-sans rounded-lg py-2.5 text-white transition-all duration-200"
+                      style={{ background: "#06C755" }}>
+                      LINE 預約
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>

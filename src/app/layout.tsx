@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import FloatingCTA from "@/components/FloatingCTA";
 import "./globals.css";
 
 const GTM_ID = "GTM-W3VH8D37";
@@ -60,6 +61,7 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <FloatingCTA />
       </body>
     </html>
   );

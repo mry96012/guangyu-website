@@ -84,15 +84,22 @@ export default function NeedsSorter() {
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {needs.map((n) => (
-            <div
+            <Link
               key={n.id}
-              className="card-lift rounded-2xl p-6 space-y-4 group"
-              style={{ background: "#fff", border: `1px solid rgba(26,45,69,0.08)`, boxShadow: "0 2px 10px rgba(26,45,69,0.04)" }}
+              href="/services"
+              className="card-lift rounded-2xl p-6 space-y-4 group flex flex-col"
+              style={{
+                background: "#fff",
+                border: `1px solid rgba(26,45,69,0.08)`,
+                boxShadow: "0 2px 10px rgba(26,45,69,0.04)",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
             >
               {/* Icon */}
               <div className="flex items-center gap-3">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-transform duration-200 group-hover:scale-110"
                   style={{ background: n.bg, border: `1px solid ${n.border}` }}
                 >
                   {n.emoji}
@@ -104,17 +111,17 @@ export default function NeedsSorter() {
               <div style={{ height: "1px", background: `${n.border}` }} />
 
               {/* Desc */}
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>{n.desc}</p>
+              <p className="font-sans text-sm leading-relaxed flex-1" style={{ color: "#5A6E82" }}>{n.desc}</p>
 
-              {/* CTA */}
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-1 text-sm font-semibold transition-colors duration-200"
-                style={{ color: n.color }}
+              {/* CTA row */}
+              <div
+                className="flex items-center justify-between rounded-lg px-4 py-2.5 transition-all duration-200"
+                style={{ background: n.bg, border: `1px solid ${n.border}` }}
               >
-                查看推薦服務 →
-              </Link>
-            </div>
+                <span className="text-sm font-semibold font-sans" style={{ color: n.color }}>查看推薦服務</span>
+                <span className="text-sm font-semibold" style={{ color: n.color }}>→</span>
+              </div>
+            </Link>
           ))}
         </div>
 

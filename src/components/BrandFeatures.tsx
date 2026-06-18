@@ -65,16 +65,26 @@ export default function BrandFeatures() {
 
         {/* Dark quote band */}
         <div
-          className="mt-14 py-8 px-8 rounded-2xl text-center"
+          className="mt-14 py-10 px-8 rounded-2xl text-center space-y-6"
           style={{ background: "#1A2D45" }}
         >
-          <span className="text-3xl" style={{ color: "#B8902A" }}>"</span>
-          <p className="font-serif text-lg md:text-xl text-white mt-2 leading-relaxed">
-            我們相信，命理的價值不在於預測未來，
-            <br className="hidden md:block" />
-            而是幫助你理解當下，找到更適合自己的方向與選擇
-          </p>
-          <span className="text-3xl" style={{ color: "#B8902A" }}>"</span>
+          <div>
+            <span className="text-3xl" style={{ color: "#B8902A" }}>"</span>
+            <p className="font-serif text-lg md:text-xl text-white mt-2 leading-relaxed">
+              我們相信，命理的價值不在於預測未來，
+              <br className="hidden md:block" />
+              而是幫助你理解當下，找到更適合自己的方向與選擇
+            </p>
+            <span className="text-3xl" style={{ color: "#B8902A" }}>"</span>
+          </div>
+          <a
+            href="https://line.me/R/ti/p/%40enlite731"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold inline-flex items-center gap-2 px-8 py-3.5 text-sm"
+          >
+            📅 立即預約，體驗光宇方向的服務
+          </a>
         </div>
       </div>
     </section>

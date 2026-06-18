@@ -112,14 +112,33 @@ export default function BrandDiff() {
           </div>
         </div>
 
-        {/* Bottom quote */}
-        <div className="mt-14 text-center space-y-2">
-          <p className="font-sans text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-            我們不是要取代你的決定，而是成為你在重要時刻的參考與支持，
-          </p>
-          <p className="font-serif text-xl font-semibold" style={{ color: "#E8D08A" }}>
-            讓你在混亂中，看見更適合自己的方向。
-          </p>
+        {/* Bottom quote + CTA */}
+        <div className="mt-14 text-center space-y-6">
+          <div className="space-y-2">
+            <p className="font-sans text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+              我們不是要取代你的決定，而是成為你在重要時刻的參考與支持，
+            </p>
+            <p className="font-serif text-xl font-semibold" style={{ color: "#E8D08A" }}>
+              讓你在混亂中，看見更適合自己的方向。
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://line.me/R/ti/p/%40enlite731"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-flex items-center gap-2 px-8 py-3.5 text-sm"
+            >
+              📅 立即預約諮詢
+            </a>
+            <a
+              href="/experience"
+              className="inline-flex items-center gap-2 text-sm font-semibold font-sans px-8 py-3.5 rounded-lg transition-all duration-200"
+              style={{ border: "1px solid rgba(184,144,42,0.4)", color: "#E8D08A" }}
+            >
+              ✦ 先體驗免費命盤
+            </a>
+          </div>
         </div>
       </div>
     </section>

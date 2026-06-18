@@ -121,13 +121,28 @@ export default function ServicesGrid() {
               </div>
 
               {/* CTA */}
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-1 text-sm font-semibold transition-colors duration-200"
-                style={{ color: s.color }}
-              >
-                了解更多 →
-              </Link>
+              <div className="flex items-center gap-3 pt-1">
+                <Link
+                  href="/services"
+                  className="flex-1 inline-flex items-center justify-center gap-1 text-sm font-semibold rounded-lg py-2.5 transition-all duration-200"
+                  style={{
+                    border: `1px solid ${s.color}33`,
+                    color: s.color,
+                    background: `${s.bg}`,
+                  }}
+                >
+                  了解詳情
+                </Link>
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-1 text-sm font-semibold rounded-lg py-2.5 text-white transition-all duration-200"
+                  style={{ background: "#06C755" }}
+                >
+                  LINE 預約
+                </a>
+              </div>
             </div>
           ))}
         </div>
