@@ -71,20 +71,44 @@ export default function AboutPage() {
 
         {/* Consultant intro */}
         <section className="py-20 section-alt">
-          <div className="max-w-4xl mx-auto px-6 space-y-6">
-            <div className="text-center mb-10">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-12">
               <h2 className="font-serif text-3xl font-semibold" style={{ color: "#1A2D45" }}>關於老師</h2>
               <div className="gold-diamond mt-3 mb-2"><span /></div>
             </div>
-            <p className="font-sans text-base leading-relaxed" style={{ color: "#4A5E72" }}>
-              光宇老師長期鑽研八字、紫微斗數、塔羅、生命靈數與西洋占星等多套命理體系，並持續以實務個案累積分析經驗。比起套用單一工具給出結論，老師更習慣將不同系統交叉比對，找出彼此呼應的訊息，再用容易理解的語言，把命盤背後的脈絡說清楚。
-            </p>
-            <p className="font-sans text-base leading-relaxed" style={{ color: "#4A5E72" }}>
-              服務對象涵蓋正在面對工作轉換、感情困擾、人際壓力或人生方向不明確的客戶。諮詢採全台線上服務（Google Meet 視訊或電話），也接受台北市區現場預約，讓無論身處哪個城市的客戶，都能在熟悉、放心的環境中完成諮詢。
-            </p>
-            <p className="font-sans text-base leading-relaxed" style={{ color: "#4A5E72" }}>
-              光宇方向命理研究所目前以線上預約與一對一諮詢為主要服務形式，沒有固定的實體門市，目的是把資源集中在報告品質與諮詢時間本身，而不是店面裝潢。每一份報告都是依照客戶的出生資料與提問獨立分析撰寫，不使用罐頭式制式內容。
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Photo */}
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-lg" style={{ aspectRatio: "1402/820" }}>
+                  <Image
+                    src="/about-photo.png"
+                    alt="光宇老師形象照"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              {/* Text */}
+              <div className="space-y-5">
+                <p className="font-sans text-base leading-relaxed" style={{ color: "#4A5E72" }}>
+                  光宇老師長期鑽研八字、紫微斗數、塔羅、生命靈數與西洋占星等多套命理體系，並持續以實務個案累積分析經驗。比起套用單一工具給出結論，老師更習慣將不同系統交叉比對，找出彼此呼應的訊息，再用容易理解的語言，把命盤背後的脈絡說清楚。
+                </p>
+                <p className="font-sans text-base leading-relaxed" style={{ color: "#4A5E72" }}>
+                  服務對象涵蓋正在面對工作轉換、感情困擾、人際壓力或人生方向不明確的客戶。諮詢採全台線上服務（Google Meet 視訊或電話），也接受台北市區現場預約，讓無論身處哪個城市的客戶，都能在熟悉、放心的環境中完成諮詢。
+                </p>
+                <p className="font-sans text-base leading-relaxed" style={{ color: "#4A5E72" }}>
+                  每一份報告都是依照客戶的出生資料與提問獨立分析撰寫，不使用罐頭式制式內容。
+                </p>
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold inline-flex items-center gap-2 px-6 py-3 text-sm"
+                >
+                  📅 預約與老師諮詢
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
