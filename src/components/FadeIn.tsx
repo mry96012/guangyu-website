@@ -19,16 +19,17 @@ export function FadeIn({
 }: FadeInProps) {
   const initial = {
     opacity: 0,
-    y: direction === "up" ? 32 : 0,
-    x: direction === "left" ? -32 : direction === "right" ? 32 : 0,
+    y: direction === "up" ? 70 : 0,
+    x: direction === "left" ? -70 : direction === "right" ? 70 : 0,
+    scale: direction === "none" ? 0.95 : 1,
   };
 
   return (
     <motion.div
       initial={initial}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
       style={style}
     >
@@ -37,7 +38,6 @@ export function FadeIn({
   );
 }
 
-// 給卡片 grid 用的 stagger wrapper
 export function StaggerGrid({
   children,
   className,
@@ -50,10 +50,10 @@ export function StaggerGrid({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-80px" }}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: 0.1 } },
+        visible: { transition: { staggerChildren: 0.12 } },
       }}
     >
       {children}
@@ -61,7 +61,6 @@ export function StaggerGrid({
   );
 }
 
-// 給 StaggerGrid 裡面的每個子卡片用
 export function StaggerItem({
   children,
   className,
@@ -76,8 +75,13 @@ export function StaggerItem({
       className={className}
       style={style}
       variants={{
-        hidden: { opacity: 0, y: 28 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
+        hidden: { opacity: 0, y: 60, scale: 0.96 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+        },
       }}
     >
       {children}
