@@ -1,3 +1,5 @@
+import { FadeIn, StaggerGrid, StaggerItem } from "@/components/FadeIn";
+
 const values = [
   {
     id: "03-1",
@@ -29,56 +31,55 @@ export default function BrandValues() {
   return (
     <section className="py-20 section-light">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Title */}
-        <div className="section-title">
-          <h2>我們的核心價值</h2>
-          <div className="gold-diamond"><span /></div>
-          <p>不只是命理分析，更是陪伴你理解自己、找到方向的專業顧問</p>
-        </div>
+        <FadeIn>
+          <div className="section-title">
+            <h2>我們的核心價值</h2>
+            <div className="gold-diamond"><span /></div>
+            <p>不只是命理分析，更是陪伴你理解自己、找到方向的專業顧問</p>
+          </div>
+        </FadeIn>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {values.map((v) => (
-            <div
-              key={v.id}
-              className="card-lift p-7 rounded-2xl text-center space-y-4"
-              style={{
-                background: "#fff",
-                border: "1px solid rgba(184,144,42,0.15)",
-                boxShadow: "0 2px 12px rgba(26,45,69,0.05)",
-              }}
-            >
+            <StaggerItem key={v.id}>
               <div
-                className="w-14 h-14 rounded-full flex items-center justify-center mx-auto text-2xl"
-                style={{ background: "rgba(184,144,42,0.08)", border: "1px solid rgba(184,144,42,0.2)" }}
+                className="card-lift p-7 rounded-2xl text-center space-y-4 h-full"
+                style={{
+                  background: "#fff",
+                  border: "1px solid rgba(184,144,42,0.15)",
+                  boxShadow: "0 2px 12px rgba(26,45,69,0.05)",
+                }}
               >
-                {v.emoji}
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto text-2xl"
+                  style={{ background: "rgba(184,144,42,0.08)", border: "1px solid rgba(184,144,42,0.2)" }}
+                >
+                  {v.emoji}
+                </div>
+                <p className="font-serif font-semibold text-lg" style={{ color: "#1A2D45" }}>
+                  {v.title}
+                </p>
+                <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>
+                  {v.desc}
+                </p>
               </div>
-              <p
-                className="font-serif font-semibold text-lg"
-                style={{ color: "#1A2D45" }}
-              >
-                {v.title}
-              </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>
-                {v.desc}
-              </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
 
-        {/* Bottom tagline */}
-        <div
-          className="mt-14 py-5 px-8 rounded-2xl text-center"
-          style={{ background: "rgba(26,45,69,0.03)", border: "1px solid rgba(184,144,42,0.12)" }}
-        >
-          <p className="font-sans text-sm" style={{ color: "#4A5E72" }}>
-            我們相信：
-            <span className="font-semibold" style={{ color: "#B8902A" }}>了解自己</span>，是改變的開始；
-            <span className="font-semibold" style={{ color: "#1A2D45" }}>理解課題</span>，是成長的力量；
-            <span className="font-semibold" style={{ color: "#B8902A" }}>找到方向</span>，是人生的光。
-          </p>
-        </div>
+        <FadeIn delay={0.3}>
+          <div
+            className="mt-14 py-5 px-8 rounded-2xl text-center"
+            style={{ background: "rgba(26,45,69,0.03)", border: "1px solid rgba(184,144,42,0.12)" }}
+          >
+            <p className="font-sans text-sm" style={{ color: "#4A5E72" }}>
+              我們相信：
+              <span className="font-semibold" style={{ color: "#B8902A" }}>了解自己</span>，是改變的開始；
+              <span className="font-semibold" style={{ color: "#1A2D45" }}>理解課題</span>，是成長的力量；
+              <span className="font-semibold" style={{ color: "#B8902A" }}>找到方向</span>，是人生的光。
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

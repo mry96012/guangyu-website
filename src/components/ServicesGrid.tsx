@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FadeIn, StaggerGrid, StaggerItem } from "@/components/FadeIn";
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
@@ -79,11 +80,11 @@ export default function ServicesGrid() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {services.map((s) => (
+            <StaggerItem key={s.id}>
             <div
-              key={s.id}
-              className="card-lift rounded-2xl p-6 space-y-4 flex flex-col"
+              className="card-lift rounded-2xl p-6 space-y-4 flex flex-col h-full"
               style={{
                 background: "#fff",
                 border: "1px solid rgba(26,45,69,0.08)",
@@ -144,8 +145,9 @@ export default function ServicesGrid() {
                 </a>
               </div>
             </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* Reminder */}
         <div

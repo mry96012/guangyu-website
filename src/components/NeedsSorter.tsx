@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FadeIn, StaggerGrid, StaggerItem } from "@/components/FadeIn";
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
@@ -82,8 +83,9 @@ export default function NeedsSorter() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {needs.map((n) => (
+            <StaggerItem key={n.id}>
             <Link
               key={n.id}
               href="/services"
@@ -122,8 +124,9 @@ export default function NeedsSorter() {
                 <span className="text-sm font-semibold" style={{ color: n.color }}>→</span>
               </div>
             </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* Bottom tips */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -1,3 +1,5 @@
+import { FadeIn } from "@/components/FadeIn";
+
 const general = [
   { icon: "🔮", text: "告訴你結果", sub: "直接給出結論，著重吉凶與好壞。" },
   { icon: "🎱", text: "預測未來",   sub: "強調未來會發生什麼，容易造成焦慮。" },
@@ -32,8 +34,9 @@ export default function BrandDiff() {
         {/* Comparison */}
         <div className="grid grid-cols-1 lg:grid-cols-11 gap-6 items-start">
           {/* Left: General */}
+          <FadeIn direction="left" className="lg:col-span-5">
           <div
-            className="lg:col-span-5 rounded-2xl p-7 space-y-5"
+            className="rounded-2xl p-7 space-y-5"
             style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
           >
             <p
@@ -65,9 +68,11 @@ export default function BrandDiff() {
               😟 結果導向，容易產生依賴與恐懼
             </div>
           </div>
+          </FadeIn>
 
           {/* VS */}
-          <div className="lg:col-span-1 flex items-center justify-center">
+          <FadeIn className="lg:col-span-1" delay={0.2}>
+          <div className="flex items-center justify-center">
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm"
               style={{ background: "#B8902A", color: "#fff", flexShrink: 0 }}
@@ -75,10 +80,12 @@ export default function BrandDiff() {
               VS
             </div>
           </div>
+          </FadeIn>
 
           {/* Right: Guangyu */}
+          <FadeIn direction="right" delay={0.1} className="lg:col-span-5">
           <div
-            className="lg:col-span-5 rounded-2xl p-7 space-y-5"
+            className="rounded-2xl p-7 space-y-5"
             style={{ background: "rgba(184,144,42,0.08)", border: "1px solid rgba(184,144,42,0.3)" }}
           >
             <p
@@ -110,6 +117,7 @@ export default function BrandDiff() {
               😊 理解導向，帶來力量與清晰的選擇
             </div>
           </div>
+          </FadeIn>
         </div>
 
         {/* Bottom quote + CTA */}

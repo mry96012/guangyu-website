@@ -1,3 +1,5 @@
+import { FadeIn, StaggerGrid, StaggerItem } from "@/components/FadeIn";
+
 const features = [
   {
     id: "07-1",
@@ -37,11 +39,11 @@ export default function BrandFeatures() {
         </div>
 
         {/* Feature cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {features.map((f) => (
+            <StaggerItem key={f.id}>
             <div
-              key={f.id}
-              className="card-lift rounded-2xl p-7 space-y-4 text-center"
+              className="card-lift rounded-2xl p-7 space-y-4 text-center h-full"
               style={{
                 background: "#fff",
                 border: "1px solid rgba(26,45,69,0.08)",
@@ -60,8 +62,9 @@ export default function BrandFeatures() {
               <p className="font-serif text-lg font-semibold" style={{ color: "#1A2D45" }}>{f.title}</p>
               <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>{f.desc}</p>
             </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* Dark quote band */}
         <div
