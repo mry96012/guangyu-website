@@ -56,10 +56,10 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="flex items-center justify-center">
-                <div className="w-80 h-80 rounded-2xl overflow-hidden relative">
+                <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-lg" style={{ aspectRatio: "1402/820" }}>
                   <Image
-                    src="/images/about-brand.jpg"
-                    alt="光宇方向品牌形象"
+                    src="/about-photo.png"
+                    alt="光宇方向命理研究所"
                     fill
                     className="object-cover"
                   />
