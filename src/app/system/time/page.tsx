@@ -1,253 +1,134 @@
 "use client";
 import { useState } from "react";
 import { TIME_RECORDS, STORES, type TimeRecord } from "@/lib/system-data";
+import { Card, ShiftBadge, PrimaryBtn, GhostBtn, Field, inputStyle, TabToggle, C } from "@/components/system/UI";
 
-const SHIFT_COLORS: Record<string, string> = {
-  早班: "#3d9e98", 晚班: "#7c6fd4", 全班: "#e07b39", 休假: "#6b8c92",
+const SHIFT_OPTIONS = ["早班 08:00-18:00","晚班 13:00-23:00","全班 08:00-22:00"];
+const SHIFT_TIMES:Record<string,{start:string;end:string;base:number}> = {
+  "早班 08:00-18:00":{start:"08:00",end:"18:00",base:10},
+  "晚班 13:00-23:00":{start:"13:00",end:"23:00",base:10},
+  "全班 08:00-22:00":{start:"08:00",end:"22:00",base:14},
 };
-
-const SHIFT_OPTIONS = ["早班 08:00-18:00", "晚班 13:00-23:00", "全班 08:00-22:00"];
-const SHIFT_TIMES: Record<string, { start: string; end: string }> = {
-  "早班 08:00-18:00": { start: "08:00", end: "18:00" },
-  "晚班 13:00-23:00": { start: "13:00", end: "23:00" },
-  "全班 08:00-22:00": { start: "08:00", end: "22:00" },
-};
-
-function SectionCard({ title, subtitle, children, action }: { title: string; subtitle: string; children: React.ReactNode; action?: React.ReactNode }) {
-  return (
-    <div className="mx-4 rounded-3xl overflow-hidden" style={{ background: "rgba(255,255,255,0.75)", backdropFilter: "blur(16px)", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
-      <div className="px-5 py-4" style={{ background: "linear-gradient(135deg, #3d4d5c 0%, #2c3a47 100%)" }}>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-1 h-6 rounded-full" style={{ background: "linear-gradient(to bottom, #4ecdc4, #22c55e)" }} />
-            <div>
-              <h2 className="text-base font-bold text-white leading-tight">{title}</h2>
-              <p className="text-xs font-medium" style={{ color: "#4ecdc4" }}>{subtitle}</p>
-            </div>
-          </div>
-          {action}
-        </div>
-      </div>
-      <div className="p-5">{children}</div>
-    </div>
-  );
-}
-
-function RecordRow({ rec }: { rec: TimeRecord }) {
-  return (
-    <div className="flex items-center gap-3 py-3 border-b last:border-0" style={{ borderColor: "rgba(78,205,196,0.15)" }}>
-      <div className="text-center shrink-0">
-        <p className="text-xs font-bold" style={{ color: "#7aada9" }}>
-          {rec.date.slice(5, 7)}/{rec.date.slice(8)}
-        </p>
-        <span className="text-[10px] font-bold px-2 py-0.5 rounded-md text-white" style={{ background: SHIFT_COLORS[rec.shiftType] }}>
-          {rec.shiftType}
-        </span>
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold leading-tight" style={{ color: "#2c3a47" }}>
-          {rec.storeName}
-          <span className="ml-2 text-xs font-normal" style={{ color: "#7aada9" }}>{rec.area}</span>
-        </p>
-        <p className="text-xs" style={{ color: "#7aada9" }}>{rec.startTime} – {rec.endTime}</p>
-      </div>
-      <div className="text-right shrink-0">
-        <p className="text-sm font-bold" style={{ color: "#3d9e98" }}>{rec.hours}H</p>
-        {rec.overtime > 0 && (
-          <p className="text-[11px]" style={{ color: "#e07b39" }}>+{rec.overtime}H</p>
-        )}
-      </div>
-    </div>
-  );
-}
 
 export default function TimePage() {
-  const [tab, setTab] = useState<"month" | "range">("month");
+  const [tab, setTab] = useState<"month"|"range">("month");
   const [showForm, setShowForm] = useState(false);
   const [records, setRecords] = useState(TIME_RECORDS);
+  const [form, setForm] = useState({ date:new Date().toISOString().slice(0,10), shift:SHIFT_OPTIONS[0], area:"萬華區" as "萬華區"|"中正區", storeId:STORES[0].id, overtime:0, note:"" });
 
-  // Form state
-  const [form, setForm] = useState({
-    date: new Date().toISOString().slice(0, 10),
-    shift: SHIFT_OPTIONS[0],
-    area: "萬華區" as "萬華區" | "中正區",
-    storeId: STORES[0].id,
-    overtime: 0,
-    note: "",
-  });
+  const totalHours  = records.reduce((s,r)=>s+r.hours,0);
+  const totalOT     = records.reduce((s,r)=>s+r.overtime,0);
+  const workDays    = new Set(records.map(r=>r.date)).size;
+  const filteredStores = STORES.filter(s=>s.area===form.area);
 
-  const totalHours = records.reduce((s, r) => s + r.hours, 0);
-  const totalOvertime = records.reduce((s, r) => s + r.overtime, 0);
-  const workDays = new Set(records.map(r => r.date)).size;
-
-  const filteredStores = STORES.filter(s => s.area === form.area);
-
-  function handleSubmit() {
-    const shiftLabel = form.shift.split(" ")[0] as "早班" | "晚班" | "全班";
-    const times = SHIFT_TIMES[form.shift];
-    const store = STORES.find(s => s.id === form.storeId) ?? STORES[0];
-    const baseHours = shiftLabel === "全班" ? 14 : 10;
-    const newRec: TimeRecord = {
-      id: `tr${Date.now()}`,
-      date: form.date,
-      shiftType: shiftLabel,
-      storeName: store.name,
-      area: form.area,
-      startTime: times.start,
-      endTime: times.end,
-      hours: baseHours + form.overtime,
-      overtime: form.overtime,
-      note: form.note,
-    };
-    setRecords([newRec, ...records]);
+  function submit() {
+    const shiftLabel = form.shift.split(" ")[0] as "早班"|"晚班"|"全班";
+    const t = SHIFT_TIMES[form.shift];
+    const store = STORES.find(s=>s.id===form.storeId)??STORES[0];
+    setRecords([{ id:`tr${Date.now()}`, date:form.date, shiftType:shiftLabel, storeName:store.name, area:form.area, startTime:t.start, endTime:t.end, hours:t.base+form.overtime, overtime:form.overtime, note:form.note }, ...records]);
     setShowForm(false);
   }
 
   return (
-    <div className="space-y-4 py-4">
-      {/* Stats */}
-      <SectionCard
-        title="工時計算與紀錄系統"
-        subtitle="Time & Attendance"
-        action={
-          <button onClick={() => setShowForm(true)} className="flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold text-white" style={{ background: "linear-gradient(135deg, #4ecdc4, #2ab5ad)" }}>
-            + 新增工時
-          </button>
-        }
-      >
-        {/* Tab Toggle */}
-        <div className="flex gap-2 mb-4 p-1 rounded-2xl" style={{ background: "rgba(78,205,196,0.1)" }}>
-          {(["month", "range"] as const).map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className="flex-1 py-2 rounded-xl text-sm font-semibold transition-all duration-200"
-              style={tab === t
-                ? { background: "white", color: "#3d9e98", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }
-                : { color: "#7aada9" }
-              }
-            >
-              {t === "month" ? "📅 整月" : "📆 區間"}
-            </button>
-          ))}
-        </div>
+    <div className="space-y-4 py-5">
+      <Card title="工時計算與紀錄系統" subtitle="Time & Attendance"
+        action={<button onClick={()=>setShowForm(true)} className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-white" style={{ fontSize:12, background:"linear-gradient(135deg,#4ecdc4,#1fa099)", boxShadow:"0 3px 10px rgba(46,191,181,0.4)" }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          新增工時
+        </button>}>
 
-        {/* Stats Row */}
+        <TabToggle options={[{value:"month",label:"📅 整月"},{value:"range",label:"📆 區間"}]} value={tab} onChange={setTab} />
+
+        {/* Stats */}
         <div className="grid grid-cols-4 gap-2 mb-4">
           {[
-            { label: "工時紀錄", value: records.length, unit: "筆" },
-            { label: "出勤天數", value: workDays, unit: "天" },
-            { label: "總工時", value: totalHours, unit: "小時" },
-            { label: "加班", value: totalOvertime, unit: "小時" },
-          ].map((s) => (
-            <div key={s.label} className="flex flex-col items-center py-3 rounded-2xl" style={{ background: "rgba(78,205,196,0.08)", border: "1px solid rgba(78,205,196,0.15)" }}>
-              <span className="text-base font-bold" style={{ color: "#3d9e98" }}>{s.value}</span>
-              <span className="text-[10px]" style={{ color: "#7aada9" }}>{s.unit}</span>
-              <span className="text-[10px] mt-0.5 font-medium" style={{ color: "#aacbc8" }}>{s.label}</span>
+            { icon:"📝", val:records.length, unit:"筆", label:"工時紀錄" },
+            { icon:"📅", val:workDays,       unit:"天", label:"出勤天數" },
+            { icon:"⏱️", val:totalHours,     unit:"時", label:"總工時" },
+            { icon:"⚡", val:totalOT,        unit:"時", label:"加班" },
+          ].map(s=>(
+            <div key={s.label} className="flex flex-col items-center py-3 rounded-2xl"
+              style={{ background:"rgba(255,255,255,0.6)", border:"1px solid rgba(255,255,255,0.88)", boxShadow:"0 2px 8px rgba(0,50,70,0.06)" }}>
+              <span style={{ fontSize:18 }}>{s.icon}</span>
+              <span className="font-black mt-1" style={{ fontSize:20, color:C.teal }}>{s.val}</span>
+              <span className="font-medium" style={{ fontSize:10, color:C.textSub }}>{s.unit}</span>
+              <span className="font-medium mt-0.5 text-center leading-tight" style={{ fontSize:9, color:C.textMute }}>{s.label}</span>
             </div>
           ))}
         </div>
+        <GhostBtn label="📄 匯出 PDF 報表" />
+      </Card>
 
-        {/* PDF Export */}
-        <button className="w-full py-2.5 rounded-2xl text-sm font-semibold border-2 transition-all duration-200 active:scale-95" style={{ borderColor: "#4ecdc4", color: "#3d9e98" }}>
-          📄 匯出 PDF 報表
-        </button>
-      </SectionCard>
-
-      {/* Records List */}
-      <SectionCard title="工時紀錄" subtitle="Records">
+      {/* Records */}
+      <Card title="工時紀錄" subtitle={`共 ${records.length} 筆`}>
         <div>
-          {records.map(rec => <RecordRow key={rec.id} rec={rec} />)}
+          {records.map((rec,i)=>(
+            <div key={rec.id}>
+              <div className="flex items-center gap-3 py-3.5">
+                <div className="shrink-0 text-center" style={{ minWidth:36 }}>
+                  <p className="font-bold" style={{ fontSize:12, color:C.textMute }}>{rec.date.slice(5,7)}/{rec.date.slice(8)}</p>
+                </div>
+                <ShiftBadge shift={rec.shiftType} />
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold truncate" style={{ fontSize:14, color:C.text }}>{rec.storeName}</p>
+                  <p className="font-medium" style={{ fontSize:11, color:C.textMute }}>{rec.startTime}–{rec.endTime} · {rec.area}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <p className="font-black" style={{ fontSize:16, color:C.teal }}>{rec.hours}H</p>
+                  {rec.overtime>0 && <p className="font-bold" style={{ fontSize:11, color:"#c45e1a" }}>+{rec.overtime}H</p>}
+                </div>
+              </div>
+              {i<records.length-1 && <div style={{ height:1, background:"rgba(46,191,181,0.1)" }} />}
+            </div>
+          ))}
         </div>
-      </SectionCard>
+      </Card>
 
-      {/* Add Form Modal */}
+      {/* Modal */}
       {showForm && (
-        <div className="fixed inset-0 z-50 flex items-end" style={{ background: "rgba(0,0,0,0.4)" }} onClick={(e) => e.target === e.currentTarget && setShowForm(false)}>
-          <div className="w-full rounded-t-3xl p-6 space-y-4" style={{ background: "linear-gradient(160deg, #e0f7f5 0%, #c8e8e6 100%)", maxHeight: "90vh", overflowY: "auto" }}>
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-base font-bold" style={{ color: "#2c3a47" }}>新增工時紀錄</h3>
-              <button onClick={() => setShowForm(false)}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b8c92" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <div className="fixed inset-0 z-50 flex items-end" style={{ background:"rgba(15,30,40,0.5)", backdropFilter:"blur(6px)" }}
+          onClick={e=>e.target===e.currentTarget&&setShowForm(false)}>
+          <div className="w-full rounded-t-[28px] p-6 space-y-4"
+            style={{ background:"linear-gradient(160deg,#ccecea 0%,#a8d8da 100%)", maxHeight:"92vh", overflowY:"auto" }}>
+            <div className="flex items-center justify-between">
+              <p className="font-black" style={{ fontSize:17, color:C.text }}>新增工時紀錄</p>
+              <button onClick={()=>setShowForm(false)} className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background:"rgba(255,255,255,0.55)" }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={C.textSub} strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
               </button>
             </div>
-
-            {/* Date */}
-            <div>
-              <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>出勤日期</label>
-              <input type="date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })}
-                className="w-full px-4 py-3 rounded-2xl text-sm font-medium" style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(78,205,196,0.25)", color: "#2c3a47" }} />
-            </div>
-
-            {/* Shift */}
-            <div>
-              <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>班別</label>
-              <select value={form.shift} onChange={e => setForm({ ...form, shift: e.target.value })}
-                className="w-full px-4 py-3 rounded-2xl text-sm font-medium" style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(78,205,196,0.25)", color: "#2c3a47" }}>
-                {SHIFT_OPTIONS.map(s => <option key={s}>{s}</option>)}
+            <Field label="出勤日期"><input type="date" value={form.date} onChange={e=>setForm({...form,date:e.target.value})} style={inputStyle}/></Field>
+            <Field label="班別">
+              <select value={form.shift} onChange={e=>setForm({...form,shift:e.target.value})} style={inputStyle}>
+                {SHIFT_OPTIONS.map(s=><option key={s}>{s}</option>)}
               </select>
-            </div>
-
-            {/* Area + Store */}
+            </Field>
             <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>區域</label>
-                <select value={form.area} onChange={e => setForm({ ...form, area: e.target.value as "萬華區" | "中正區", storeId: STORES.find(s => s.area === e.target.value)?.id ?? STORES[0].id })}
-                  className="w-full px-3 py-3 rounded-2xl text-sm font-medium" style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(78,205,196,0.25)", color: "#2c3a47" }}>
-                  <option>萬華區</option>
-                  <option>中正區</option>
+              <Field label="區域">
+                <select value={form.area} onChange={e=>setForm({...form,area:e.target.value as "萬華區"|"中正區",storeId:STORES.find(s=>s.area===e.target.value)?.id??STORES[0].id})} style={inputStyle}>
+                  <option>萬華區</option><option>中正區</option>
                 </select>
-              </div>
-              <div>
-                <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>門市</label>
-                <select value={form.storeId} onChange={e => setForm({ ...form, storeId: e.target.value })}
-                  className="w-full px-3 py-3 rounded-2xl text-sm font-medium" style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(78,205,196,0.25)", color: "#2c3a47" }}>
-                  {filteredStores.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+              </Field>
+              <Field label="門市">
+                <select value={form.storeId} onChange={e=>setForm({...form,storeId:e.target.value})} style={inputStyle}>
+                  {filteredStores.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}
                 </select>
-              </div>
+              </Field>
             </div>
-
-            {/* Times (derived from shift) */}
             <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>上班時間</label>
-                <div className="px-4 py-3 rounded-2xl text-sm font-bold" style={{ background: "rgba(255,255,255,0.6)", color: "#3d9e98" }}>
-                  {SHIFT_TIMES[form.shift]?.start}
-                </div>
-              </div>
-              <div>
-                <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>下班時間</label>
-                <div className="px-4 py-3 rounded-2xl text-sm font-bold" style={{ background: "rgba(255,255,255,0.6)", color: "#3d9e98" }}>
-                  {SHIFT_TIMES[form.shift]?.end}
-                </div>
-              </div>
+              <Field label="上班時間"><div className="px-4 py-3 rounded-[14px] font-bold" style={{ background:"rgba(255,255,255,0.7)", color:C.teal, fontSize:14 }}>{SHIFT_TIMES[form.shift]?.start}</div></Field>
+              <Field label="下班時間"><div className="px-4 py-3 rounded-[14px] font-bold" style={{ background:"rgba(255,255,255,0.7)", color:C.teal, fontSize:14 }}>{SHIFT_TIMES[form.shift]?.end}</div></Field>
             </div>
-
-            {/* Overtime */}
-            <div>
-              <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>加班時數</label>
-              <div className="flex items-center gap-3">
-                <button onClick={() => setForm({ ...form, overtime: Math.max(0, form.overtime - 1) })}
-                  className="w-10 h-10 rounded-xl text-lg font-bold" style={{ background: "rgba(255,255,255,0.85)", color: "#3d9e98" }}>−</button>
-                <span className="flex-1 text-center text-lg font-bold" style={{ color: "#2c3a47" }}>{form.overtime} H</span>
-                <button onClick={() => setForm({ ...form, overtime: form.overtime + 1 })}
-                  className="w-10 h-10 rounded-xl text-lg font-bold" style={{ background: "rgba(255,255,255,0.85)", color: "#3d9e98" }}>+</button>
+            <Field label="加班時數">
+              <div className="flex items-center gap-4 py-2">
+                <button onClick={()=>setForm({...form,overtime:Math.max(0,form.overtime-1)})} className="w-10 h-10 rounded-2xl flex items-center justify-center font-bold text-xl" style={{ background:"rgba(255,255,255,0.75)", color:C.teal }}>−</button>
+                <span className="flex-1 text-center font-black" style={{ fontSize:22, color:C.text }}>{form.overtime} H</span>
+                <button onClick={()=>setForm({...form,overtime:form.overtime+1})} className="w-10 h-10 rounded-2xl flex items-center justify-center font-bold text-xl" style={{ background:"rgba(255,255,255,0.75)", color:C.teal }}>+</button>
               </div>
-            </div>
-
-            {/* Note */}
-            <div>
-              <label className="text-xs font-semibold mb-1 block" style={{ color: "#5a8a87" }}>備注（選填）</label>
-              <textarea value={form.note} onChange={e => setForm({ ...form, note: e.target.value })}
-                placeholder="輸入備注..." rows={2}
-                className="w-full px-4 py-3 rounded-2xl text-sm resize-none" style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(78,205,196,0.25)", color: "#2c3a47" }} />
-            </div>
-
-            <button onClick={handleSubmit}
-              className="w-full py-4 rounded-2xl text-sm font-bold text-white transition-all duration-200 active:scale-95"
-              style={{ background: "linear-gradient(135deg, #4ecdc4, #2ab5ad)", boxShadow: "0 4px 16px rgba(78,205,196,0.4)" }}>
-              確認新增
-            </button>
+            </Field>
+            <Field label="備注（選填）">
+              <textarea value={form.note} onChange={e=>setForm({...form,note:e.target.value})} placeholder="輸入備注..." rows={2} style={{ ...inputStyle, resize:"none" }} />
+            </Field>
+            <PrimaryBtn label="確認新增" onClick={submit} />
           </div>
         </div>
       )}
