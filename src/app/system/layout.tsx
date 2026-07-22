@@ -7,7 +7,7 @@ import SideMenu from "@/components/system/SideMenu";
 export default function SystemLayout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="min-h-screen relative overflow-x-hidden" style={{
+    <div className="relative overflow-x-hidden" style={{ minHeight:"100dvh",
       background: "linear-gradient(155deg,#bfe7e5 0%,#9fd4d8 40%,#88c4cc 75%,#7bb8c3 100%)",
       fontFamily: '"Noto Sans TC",system-ui,sans-serif',
     }}>
