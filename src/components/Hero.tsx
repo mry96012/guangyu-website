@@ -4,25 +4,10 @@ import Link from "next/link";
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
 const trustItems = [
-  { icon: "🛡", label: "專業整合分析" },
-  { icon: "👤", label: "個人化專屬解讀" },
-  { icon: "📄", label: "書面報告・清楚完整" },
-  { icon: "🤝", label: "陪伴理解・不預測未來" },
-];
-
-const stars = [
-  { top: "8%",  left: "12%", size: 2, delay: "0s",    dur: "3s" },
-  { top: "15%", left: "75%", size: 3, delay: "0.7s",  dur: "4s" },
-  { top: "22%", left: "38%", size: 1.5, delay: "1.2s", dur: "3.5s" },
-  { top: "5%",  left: "55%", size: 2.5, delay: "0.4s", dur: "2.8s" },
-  { top: "35%", left: "88%", size: 2,   delay: "1.8s", dur: "4.2s" },
-  { top: "45%", left: "5%",  size: 1.5, delay: "0.9s", dur: "3.8s" },
-  { top: "60%", left: "92%", size: 3,   delay: "0.2s", dur: "3.2s" },
-  { top: "70%", left: "20%", size: 1.5, delay: "1.5s", dur: "4.5s" },
-  { top: "80%", left: "60%", size: 2,   delay: "0.6s", dur: "3s" },
-  { top: "12%", left: "92%", size: 1,   delay: "2.1s", dur: "3.7s" },
-  { top: "88%", left: "35%", size: 2.5, delay: "1.1s", dur: "4s" },
-  { top: "50%", left: "48%", size: 1,   delay: "0.3s", dur: "2.5s" },
+  "專業整合分析",
+  "個人化專屬解讀",
+  "書面報告‧完整清楚",
+  "陪伴理解‧不預測未來",
 ];
 
 export default function Hero() {
@@ -30,83 +15,106 @@ export default function Hero() {
     <section
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(160deg, #0C1A2B 0%, #1A2D45 40%, #0F2340 80%, #091524 100%)",
+        background: "#14120F",
         minHeight: "100svh",
         display: "flex",
         alignItems: "center",
       }}
     >
-      {/* Star particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        {stars.map((s, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              top: s.top,
-              left: s.left,
-              width: `${s.size}px`,
-              height: `${s.size}px`,
-              background: "#E8D08A",
-              opacity: 0.6,
-              animation: `twinkle ${s.dur} ease-in-out ${s.delay} infinite`,
-            }}
-          />
-        ))}
-        {/* Nebula glows */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(184,144,42,0.08) 0%, transparent 65%)", transform: "translate(20%, -20%)" }} />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(26,45,69,0.6) 0%, transparent 70%)", transform: "translate(-20%, 20%)" }} />
-        <div className="absolute top-1/2 left-1/2 w-[800px] h-[400px] rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(184,144,42,0.04) 0%, transparent 60%)", transform: "translate(-50%, -50%)" }} />
-      </div>
+      {/* Decorative glows */}
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          top: "-15%",
+          right: "-8%",
+          width: "600px",
+          height: "600px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(201,169,106,0.07) 0%, transparent 65%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          bottom: "-10%",
+          left: "-12%",
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(201,169,106,0.04) 0%, transparent 65%)",
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-32 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-24 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left: Text */}
-          <div className="space-y-8">
-            <div style={{ opacity: 0, animation: "fade-up 1s ease-out 0.1s forwards" }}>
-              <p className="font-sans text-xs tracking-widest font-semibold mb-4"
-                style={{ color: "#B8902A", letterSpacing: "0.2em" }}>
-                GUANG YU FANG XIANG
+          <div
+            className="space-y-8"
+            style={{ opacity: 0, animation: "fade-up 0.9s ease-out 0.1s forwards" }}
+          >
+            <div>
+              <p
+                className="font-sans text-xs font-medium mb-5"
+                style={{ color: "#C9A96A", letterSpacing: "0.22em" }}
+              >
+                GUANG YU METAPHYSICS INSTITUTE
               </p>
               <h1
                 className="font-serif font-bold leading-tight"
-                style={{ fontSize: "clamp(1.9rem, 4.5vw, 3rem)", color: "#F5F1EA", letterSpacing: "0.02em" }}
+                style={{
+                  fontSize: "clamp(2rem, 4.5vw, 3.1rem)",
+                  color: "#EDE8E0",
+                  letterSpacing: "0.02em",
+                }}
               >
                 看懂自己，
                 <br />
                 比急著改變人生更重要
               </h1>
-              <div className="mt-4 h-0.5 w-16" style={{ background: "linear-gradient(to right, #B8902A, #E8D08A, transparent)" }} />
+              <div
+                className="mt-5 h-px w-14"
+                style={{ background: "linear-gradient(to right, #C9A96A, transparent)" }}
+              />
             </div>
 
             <p
               className="font-sans leading-relaxed"
-              style={{ color: "rgba(245,241,234,0.75)", fontSize: "1rem", maxWidth: "480px", opacity: 0, animation: "fade-up 1s ease-out 0.45s forwards" }}
+              style={{
+                color: "rgba(237,232,224,0.62)",
+                fontSize: "0.975rem",
+                maxWidth: "420px",
+              }}
             >
-              透過八字、紫微斗數、塔羅、生命靈數與占星分析，<br />
+              透過八字、紫微斗數、塔羅、生命靈數與占星整合分析，
               協助你整理現況、理解課題，找到更適合自己的方向。
             </p>
 
             {/* Google trust badge */}
             <div
-              className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 w-fit"
+              className="inline-flex items-center gap-3 w-fit"
               style={{
-                opacity: 0,
-                animation: "fade-up 1s ease-out 0.6s forwards",
-                background: "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(184,144,42,0.35)",
-                backdropFilter: "blur(8px)",
+                padding: "8px 16px",
+                background: "rgba(237,232,224,0.04)",
+                border: "1px solid rgba(201,169,106,0.22)",
+                borderRadius: "4px",
               }}
             >
-              <span className="text-sm">⭐</span>
-              <span className="font-sans text-xs font-semibold" style={{ color: "#E8D08A" }}>5.0</span>
-              <span className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>·</span>
-              <span className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>128 則 Google 好評</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+              <span
+                className="font-display font-bold"
+                style={{ color: "#C9A96A", fontSize: "1.1rem", lineHeight: 1 }}
+              >
+                5.0
+              </span>
+              <span style={{ color: "rgba(201,169,106,0.65)", fontSize: "0.7rem", letterSpacing: "2px" }}>
+                ★★★★★
+              </span>
+              <span className="font-sans text-xs" style={{ color: "rgba(237,232,224,0.42)" }}>
+                128 則 Google 評價
+              </span>
+              <svg width="13" height="13" viewBox="0 0 24 24" aria-label="Google">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -114,40 +122,55 @@ export default function Hero() {
               </svg>
             </div>
 
-            <div
-              className="flex flex-col sm:flex-row gap-4"
-              style={{ opacity: 0, animation: "fade-up 1s ease-out 0.75s forwards" }}
-            >
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold inline-flex items-center justify-center gap-2 text-sm"
-                style={{ padding: "14px 28px" }}
+                className="btn-gold inline-flex items-center justify-center gap-2.5 text-sm"
+                style={{ padding: "14px 32px" }}
               >
-                📅 加入 LINE 預約諮詢
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                </svg>
+                加入 LINE 預約諮詢
               </a>
               <Link
                 href="/experience"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold font-sans rounded-lg transition-all duration-200"
+                className="inline-flex items-center justify-center text-sm font-medium font-sans"
                 style={{
-                  padding: "14px 28px",
-                  border: "1px solid rgba(184,144,42,0.4)",
-                  color: "#E8D08A",
+                  padding: "14px 32px",
+                  border: "1px solid rgba(201,169,106,0.3)",
+                  color: "#C9A96A",
+                  borderRadius: "4px",
+                  transition: "border-color 0.25s ease",
+                  textDecoration: "none",
                 }}
               >
-                ✦ 先體驗免費命盤
+                先體驗免費命盤
               </Link>
             </div>
 
-            <div
-              className="flex flex-wrap gap-x-5 gap-y-2 pt-2"
-              style={{ opacity: 0, animation: "fade-up 1s ease-out 1s forwards" }}
-            >
+            {/* Trust items */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
               {trustItems.map((t) => (
-                <div key={t.label} className="flex items-center gap-1.5">
-                  <span className="text-sm">{t.icon}</span>
-                  <span className="text-xs font-sans whitespace-nowrap" style={{ color: "rgba(245,241,234,0.55)" }}>{t.label}</span>
+                <div key={t} className="flex items-center gap-2">
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      display: "inline-block",
+                      width: "4px",
+                      height: "4px",
+                      borderRadius: "50%",
+                      background: "#C9A96A",
+                      opacity: 0.45,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <span className="text-xs font-sans" style={{ color: "rgba(237,232,224,0.4)" }}>
+                    {t}
+                  </span>
                 </div>
               ))}
             </div>
@@ -156,12 +179,14 @@ export default function Hero() {
           {/* Right: Visual */}
           <div
             className="hidden lg:flex items-center justify-center relative"
-            style={{ minHeight: "520px", opacity: 0, animation: "fade-up 1.2s ease-out 0.3s forwards" }}
+            style={{ minHeight: "520px" }}
           >
-            {/* Glow ring behind image */}
-            <div className="absolute w-[420px] h-[420px] rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(184,144,42,0.12) 0%, transparent 65%)" }} />
-            <div className="relative w-[520px] h-[520px]">
+            <div
+              aria-hidden="true"
+              className="absolute w-[360px] h-[360px] rounded-full"
+              style={{ background: "radial-gradient(circle, rgba(201,169,106,0.1) 0%, transparent 65%)" }}
+            />
+            <div className="relative w-[490px] h-[490px]">
               <Image
                 src="/images/hero-main.png"
                 alt="命理羅盤"
@@ -171,6 +196,7 @@ export default function Hero() {
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>

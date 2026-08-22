@@ -6,14 +6,11 @@ import Image from "next/image";
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
 const navLinks = [
-  { href: "/",           label: "首頁" },
-  { href: "/about",      label: "關於光宇" },
-  { href: "/services",   label: "服務項目" },
-  { href: "/services#theme",    label: "主題分析" },
-  { href: "/services#integrated", label: "整合報告" },
-  { href: "/experience", label: "免費體驗" },
-  { href: "/cases",      label: "客戶案例" },
-  { href: "/faq",        label: "FAQ" },
+  { href: "/",         label: "首頁" },
+  { href: "/about",    label: "關於光宇" },
+  { href: "/services", label: "服務項目" },
+  { href: "/cases",    label: "客戶案例" },
+  { href: "/faq",      label: "FAQ" },
 ];
 
 export default function Navbar() {
@@ -30,9 +27,9 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: "rgba(15,30,48,0.97)",
+        background: "rgba(20,18,15,0.97)",
         backdropFilter: "blur(16px)",
-        borderBottom: `1px solid ${scrolled ? "rgba(184,144,42,0.25)" : "rgba(184,144,42,0.15)"}`,
+        borderBottom: `1px solid ${scrolled ? "rgba(201,169,106,0.25)" : "rgba(201,169,106,0.15)"}`,
         boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.2)" : "none",
       }}
     >
@@ -72,7 +69,7 @@ export default function Navbar() {
             <p
               className="font-sans mt-1"
               style={{
-                color: "#B8902A",
+                color: "#C9A96A",
                 fontSize: "0.57rem",
                 letterSpacing: "0",
                 textAlign: "justify",
@@ -106,7 +103,7 @@ export default function Navbar() {
               {l.label}
               <span
                 className="absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
-                style={{ background: "#B8902A" }}
+                style={{ background: "#C9A96A" }}
               />
             </Link>
           ))}
@@ -164,8 +161,8 @@ export default function Navbar() {
         className="xl:hidden overflow-hidden transition-all duration-300"
         style={{
           maxHeight: open ? "520px" : "0",
-          background: "rgba(15,30,48,0.98)",
-          borderTop: open ? "1px solid rgba(184,144,42,0.2)" : "none",
+          background: "rgba(20,18,15,0.98)",
+          borderTop: open ? "1px solid rgba(201,169,106,0.2)" : "none",
         }}
       >
         <nav className="flex flex-col px-6 pb-6 pt-3 gap-0.5">
@@ -177,7 +174,7 @@ export default function Navbar() {
               className="py-3 text-sm font-sans border-b transition-colors duration-200"
               style={{
                 color: "rgba(255,255,255,0.8)",
-                borderColor: "rgba(184,144,42,0.15)",
+                borderColor: "rgba(201,169,106,0.15)",
                 letterSpacing: "0.04em",
               }}
             >
