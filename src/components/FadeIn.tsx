@@ -1,35 +1,50 @@
 "use client";
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode } from "react";
 
-interface FadeInProps {
+type Direction = "up" | "left" | "right" | "none";
+
+function buildVariants(direction: Direction) {
+  return {
+    hidden: {
+      opacity: 0,
+      y: direction === "up" ? 20 : 0,
+      x: direction === "left" ? -24 : direction === "right" ? 24 : 0,
+    },
+    visible: { opacity: 1, y: 0, x: 0 },
+  };
+}
+
+interface AnimateInProps {
   children: ReactNode;
+  direction?: Direction;
   delay?: number;
-  direction?: "up" | "left" | "right" | "none";
+  duration?: number;
   className?: string;
   style?: React.CSSProperties;
 }
 
-export function FadeIn({
+export function AnimateIn({
   children,
-  delay = 0,
   direction = "up",
+  delay = 0,
+  duration = 0.55,
   className,
   style,
-}: FadeInProps) {
-  const initial = {
-    opacity: 0,
-    y: direction === "up" ? 70 : 0,
-    x: direction === "left" ? -70 : direction === "right" ? 70 : 0,
-    scale: direction === "none" ? 0.95 : 1,
-  };
+}: AnimateInProps) {
+  const reduced = useReducedMotion();
+
+  if (reduced) {
+    return <div className={className} style={style}>{children}</div>;
+  }
 
   return (
     <motion.div
-      initial={initial}
-      whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-48px" }}
+      variants={buildVariants(direction)}
+      transition={{ duration, delay, ease: "easeOut" }}
       className={className}
       style={style}
     >
@@ -38,22 +53,30 @@ export function FadeIn({
   );
 }
 
-export function StaggerGrid({
+export function StaggerContainer({
   children,
   className,
+  staggerDelay = 0.08,
 }: {
   children: ReactNode;
   className?: string;
+  staggerDelay?: number;
 }) {
+  const reduced = useReducedMotion();
+
+  if (reduced) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-48px" }}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: 0.12 } },
+        visible: { transition: { staggerChildren: staggerDelay } },
       }}
     >
       {children}
@@ -63,28 +86,33 @@ export function StaggerGrid({
 
 export function StaggerItem({
   children,
+  direction = "up",
   className,
   style,
 }: {
   children: ReactNode;
+  direction?: Direction;
   className?: string;
   style?: React.CSSProperties;
 }) {
+  const reduced = useReducedMotion();
+
+  if (reduced) {
+    return <div className={className} style={style}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
       style={style}
-      variants={{
-        hidden: { opacity: 0, y: 60, scale: 0.96 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-        },
-      }}
+      variants={buildVariants(direction)}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {children}
     </motion.div>
   );
 }
+
+// Legacy aliases
+export { AnimateIn as FadeIn };
+export { StaggerContainer as StaggerGrid };

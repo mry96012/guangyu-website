@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AnimateIn } from "@/components/FadeIn";
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
@@ -17,7 +18,8 @@ export default function FinalCTA() {
         }}
       />
 
-      <div className="relative max-w-3xl mx-auto px-6 text-center space-y-8">
+      <AnimateIn direction="up" className="relative max-w-3xl mx-auto px-6 text-center space-y-8">
+
         {/* Ornament */}
         <div className="flex justify-center">
           <div
@@ -89,7 +91,8 @@ export default function FinalCTA() {
             </div>
           </div>
         </div>
-      </div>
+
+      </AnimateIn>
     </section>
   );
 }

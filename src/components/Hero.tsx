@@ -10,6 +10,10 @@ const trustItems = [
   "陪伴理解‧不預測未來",
 ];
 
+/* Helper: shorthand for CSS entrance animations */
+const anim = (name: string, dur: string, delay: string) =>
+  `${name} ${dur} ease-out ${delay} both` as const;
+
 export default function Hero() {
   return (
     <section
@@ -26,10 +30,8 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute pointer-events-none"
         style={{
-          top: "-15%",
-          right: "-8%",
-          width: "600px",
-          height: "600px",
+          top: "-15%", right: "-8%",
+          width: "600px", height: "600px",
           borderRadius: "50%",
           background: "radial-gradient(circle, rgba(201,169,106,0.07) 0%, transparent 65%)",
         }}
@@ -38,10 +40,8 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute pointer-events-none"
         style={{
-          bottom: "-10%",
-          left: "-12%",
-          width: "500px",
-          height: "500px",
+          bottom: "-10%", left: "-12%",
+          width: "500px", height: "500px",
           borderRadius: "50%",
           background: "radial-gradient(circle, rgba(201,169,106,0.04) 0%, transparent 65%)",
         }}
@@ -50,42 +50,66 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left: Text */}
-          <div
-            className="space-y-8"
-            style={{ opacity: 0, animation: "fade-up 0.9s ease-out 0.1s forwards" }}
-          >
+          {/* Left: Text — each element enters independently */}
+          <div className="space-y-8">
+
+            {/* Brand label */}
             <div>
               <p
                 className="font-sans text-xs font-medium mb-5"
-                style={{ color: "#C9A96A", letterSpacing: "0.22em" }}
+                style={{
+                  color: "#C9A96A",
+                  letterSpacing: "0.22em",
+                  animation: anim("fade-in", "0.6s", "0.05s"),
+                }}
               >
                 GUANG YU METAPHYSICS INSTITUTE
               </p>
+
+              {/* H1 — 逐行浮現 */}
               <h1
                 className="font-serif font-bold leading-tight"
-                style={{
-                  fontSize: "clamp(2rem, 4.5vw, 3.1rem)",
-                  color: "#EDE8E0",
-                  letterSpacing: "0.02em",
-                }}
+                style={{ fontSize: "clamp(2rem, 4.5vw, 3.1rem)", letterSpacing: "0.02em" }}
               >
-                看懂自己，
-                <br />
-                比急著改變人生更重要
+                <span
+                  style={{
+                    display: "block",
+                    color: "#EDE8E0",
+                    animation: anim("fade-up", "0.65s", "0.18s"),
+                  }}
+                >
+                  看懂自己，
+                </span>
+                <span
+                  style={{
+                    display: "block",
+                    color: "#EDE8E0",
+                    animation: anim("fade-up", "0.65s", "0.36s"),
+                  }}
+                >
+                  比急著改變人生更重要
+                </span>
               </h1>
+
+              {/* Gold separator — 由左展開 */}
               <div
                 className="mt-5 h-px w-14"
-                style={{ background: "linear-gradient(to right, #C9A96A, transparent)" }}
+                style={{
+                  background: "linear-gradient(to right, #C9A96A, transparent)",
+                  transformOrigin: "left center",
+                  animation: anim("scale-in-x", "0.5s", "0.56s"),
+                }}
               />
             </div>
 
+            {/* Description */}
             <p
               className="font-sans leading-relaxed"
               style={{
                 color: "rgba(237,232,224,0.62)",
                 fontSize: "0.975rem",
                 maxWidth: "420px",
+                animation: anim("fade-in", "0.6s", "0.64s"),
               }}
             >
               透過八字、紫微斗數、塔羅、生命靈數與占星整合分析，
@@ -100,6 +124,7 @@ export default function Hero() {
                 background: "rgba(237,232,224,0.04)",
                 border: "1px solid rgba(201,169,106,0.22)",
                 borderRadius: "4px",
+                animation: anim("fade-in", "0.5s", "0.78s"),
               }}
             >
               <span
@@ -123,7 +148,10 @@ export default function Hero() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div
+              className="flex flex-col sm:flex-row gap-4"
+              style={{ animation: anim("fade-up", "0.55s", "0.92s") }}
+            >
               <a
                 href={LINE_URL}
                 target="_blank"
@@ -144,7 +172,7 @@ export default function Hero() {
                   border: "1px solid rgba(201,169,106,0.3)",
                   color: "#C9A96A",
                   borderRadius: "4px",
-                  transition: "border-color 0.25s ease",
+                  transition: "border-color 0.2s ease, background 0.2s ease",
                   textDecoration: "none",
                 }}
               >
@@ -153,15 +181,17 @@ export default function Hero() {
             </div>
 
             {/* Trust items */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <div
+              className="flex flex-wrap gap-x-6 gap-y-2"
+              style={{ animation: anim("fade-in", "0.5s", "1.08s") }}
+            >
               {trustItems.map((t) => (
                 <div key={t} className="flex items-center gap-2">
                   <span
                     aria-hidden="true"
                     style={{
                       display: "inline-block",
-                      width: "4px",
-                      height: "4px",
+                      width: "4px", height: "4px",
                       borderRadius: "50%",
                       background: "#C9A96A",
                       opacity: 0.45,
@@ -176,10 +206,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Visual */}
+          {/* Right: Visual — scale-in */}
           <div
             className="hidden lg:flex items-center justify-center relative"
-            style={{ minHeight: "520px" }}
+            style={{
+              minHeight: "520px",
+              animation: anim("scale-in", "0.9s", "0.22s"),
+            }}
           >
             <div
               aria-hidden="true"
