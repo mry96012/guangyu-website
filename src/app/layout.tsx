@@ -1,7 +1,32 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Cormorant_Garamond, Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import FloatingCTA from "@/components/FloatingCTA";
 import "./globals.css";
+
+const notoSansTC = Noto_Sans_TC({
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+  preload: false,
+  adjustFontFallback: false,
+  variable: "--font-sans",
+});
+
+const notoSerifTC = Noto_Serif_TC({
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  preload: false,
+  adjustFontFallback: false,
+  variable: "--font-serif",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-display",
+});
 
 const GTM_ID = "GTM-W3VH8D37";
 
@@ -31,19 +56,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-TW" className="h-full">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="zh-TW"
+      className={`h-full ${notoSansTC.variable} ${notoSerifTC.variable} ${cormorantGaramond.variable}`}
+    >
       <body className="h-full antialiased">
         <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

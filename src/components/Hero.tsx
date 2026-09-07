@@ -10,7 +10,6 @@ const trustItems = [
   "陪伴理解‧不預測未來",
 ];
 
-/* Helper: shorthand for CSS entrance animations */
 const anim = (name: string, dur: string, delay: string) =>
   `${name} ${dur} ease-out ${delay} both` as const;
 
@@ -19,7 +18,7 @@ export default function Hero() {
     <section
       className="relative overflow-hidden"
       style={{
-        background: "#14120F",
+        background: "#FAF6EF",
         minHeight: "100svh",
         display: "flex",
         alignItems: "center",
@@ -33,7 +32,7 @@ export default function Hero() {
           top: "-15%", right: "-8%",
           width: "600px", height: "600px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(201,169,106,0.07) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(166,124,61,0.09) 0%, transparent 65%)",
         }}
       />
       <div
@@ -43,14 +42,14 @@ export default function Hero() {
           bottom: "-10%", left: "-12%",
           width: "500px", height: "500px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(201,169,106,0.04) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(166,124,61,0.05) 0%, transparent 65%)",
         }}
       />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left: Text — each element enters independently */}
+          {/* Left: Text */}
           <div className="space-y-8">
 
             {/* Brand label */}
@@ -58,7 +57,7 @@ export default function Hero() {
               <p
                 className="font-sans text-xs font-medium mb-5"
                 style={{
-                  color: "#C9A96A",
+                  color: "#A67C3D",
                   letterSpacing: "0.22em",
                   animation: anim("fade-in", "0.6s", "0.05s"),
                 }}
@@ -74,7 +73,7 @@ export default function Hero() {
                 <span
                   style={{
                     display: "block",
-                    color: "#EDE8E0",
+                    color: "#2B2622",
                     animation: anim("fade-up", "0.65s", "0.18s"),
                   }}
                 >
@@ -83,7 +82,7 @@ export default function Hero() {
                 <span
                   style={{
                     display: "block",
-                    color: "#EDE8E0",
+                    color: "#2B2622",
                     animation: anim("fade-up", "0.65s", "0.36s"),
                   }}
                 >
@@ -91,11 +90,11 @@ export default function Hero() {
                 </span>
               </h1>
 
-              {/* Gold separator — 由左展開 */}
+              {/* Gold separator */}
               <div
                 className="mt-5 h-px w-14"
                 style={{
-                  background: "linear-gradient(to right, #C9A96A, transparent)",
+                  background: "linear-gradient(to right, #A67C3D, transparent)",
                   transformOrigin: "left center",
                   animation: anim("scale-in-x", "0.5s", "0.56s"),
                 }}
@@ -106,7 +105,7 @@ export default function Hero() {
             <p
               className="font-sans leading-relaxed"
               style={{
-                color: "rgba(237,232,224,0.62)",
+                color: "rgba(43,38,34,0.68)",
                 fontSize: "0.975rem",
                 maxWidth: "420px",
                 animation: anim("fade-in", "0.6s", "0.64s"),
@@ -121,22 +120,22 @@ export default function Hero() {
               className="inline-flex items-center gap-3 w-fit"
               style={{
                 padding: "8px 16px",
-                background: "rgba(237,232,224,0.04)",
-                border: "1px solid rgba(201,169,106,0.22)",
+                background: "rgba(43,38,34,0.04)",
+                border: "1px solid rgba(166,124,61,0.25)",
                 borderRadius: "4px",
                 animation: anim("fade-in", "0.5s", "0.78s"),
               }}
             >
               <span
                 className="font-display font-bold"
-                style={{ color: "#C9A96A", fontSize: "1.1rem", lineHeight: 1 }}
+                style={{ color: "#A67C3D", fontSize: "1.1rem", lineHeight: 1 }}
               >
                 5.0
               </span>
-              <span style={{ color: "rgba(201,169,106,0.65)", fontSize: "0.7rem", letterSpacing: "2px" }}>
+              <span style={{ color: "rgba(166,124,61,0.7)", fontSize: "0.7rem", letterSpacing: "2px" }}>
                 ★★★★★
               </span>
-              <span className="font-sans text-xs" style={{ color: "rgba(237,232,224,0.42)" }}>
+              <span className="font-sans text-xs" style={{ color: "rgba(43,38,34,0.5)" }}>
                 128 則 Google 評價
               </span>
               <svg width="13" height="13" viewBox="0 0 24 24" aria-label="Google">
@@ -169,8 +168,8 @@ export default function Hero() {
                 className="inline-flex items-center justify-center text-sm font-medium font-sans"
                 style={{
                   padding: "14px 32px",
-                  border: "1px solid rgba(201,169,106,0.3)",
-                  color: "#C9A96A",
+                  border: "1px solid rgba(166,124,61,0.35)",
+                  color: "#A67C3D",
                   borderRadius: "4px",
                   transition: "border-color 0.2s ease, background 0.2s ease",
                   textDecoration: "none",
@@ -193,12 +192,12 @@ export default function Hero() {
                       display: "inline-block",
                       width: "4px", height: "4px",
                       borderRadius: "50%",
-                      background: "#C9A96A",
-                      opacity: 0.45,
+                      background: "#A67C3D",
+                      opacity: 0.5,
                       flexShrink: 0,
                     }}
                   />
-                  <span className="text-xs font-sans" style={{ color: "rgba(237,232,224,0.4)" }}>
+                  <span className="text-xs font-sans" style={{ color: "rgba(43,38,34,0.52)" }}>
                     {t}
                   </span>
                 </div>
@@ -217,7 +216,7 @@ export default function Hero() {
             <div
               aria-hidden="true"
               className="absolute w-[360px] h-[360px] rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(201,169,106,0.1) 0%, transparent 65%)" }}
+              style={{ background: "radial-gradient(circle, rgba(166,124,61,0.12) 0%, transparent 65%)" }}
             />
             <div className="relative w-[490px] h-[490px]">
               <Image

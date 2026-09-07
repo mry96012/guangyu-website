@@ -9,7 +9,7 @@ const values = [
   {
     num: "二",
     title: "個人化解讀",
-    desc: "根據你的生命資訊與提問，量身打造專屬解讀，不套版、不制式，讓你真正看見自己。",
+    desc: "根據你的生命資訊與提問，量身打造的專屬解讀，不套版、不制式，讓你真正看見自己。",
   },
   {
     num: "三",
@@ -28,7 +28,6 @@ export default function BrandValues() {
     <section className="py-20 section-light">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Title: pure fade-in */}
         <AnimateIn direction="none">
           <div className="section-title">
             <h2>我們的核心價值</h2>
@@ -37,7 +36,6 @@ export default function BrandValues() {
           </div>
         </AnimateIn>
 
-        {/* Cards: stagger up, 80ms apart */}
         <StaggerContainer
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12"
           staggerDelay={0.08}
@@ -47,20 +45,20 @@ export default function BrandValues() {
               <div
                 className="card-lift p-7 space-y-4 h-full"
                 style={{
-                  background: "#1E1A14",
-                  border: "1px solid rgba(201,169,106,0.13)",
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(166,124,61,0.13)",
                 }}
               >
                 <p
                   className="font-display font-bold"
-                  style={{ color: "#C9A96A", fontSize: "1.4rem", opacity: 0.65 }}
+                  style={{ color: "#A67C3D", fontSize: "1.4rem", opacity: 0.7 }}
                 >
                   {v.num}
                 </p>
-                <p className="font-serif font-semibold text-base" style={{ color: "#EDE8E0" }}>
+                <p className="font-serif font-semibold text-base" style={{ color: "#2B2622" }}>
                   {v.title}
                 </p>
-                <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(237,232,224,0.52)" }}>
+                <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(43,38,34,0.62)" }}>
                   {v.desc}
                 </p>
               </div>
@@ -68,20 +66,19 @@ export default function BrandValues() {
           ))}
         </StaggerContainer>
 
-        {/* Quote: delayed fade */}
         <AnimateIn direction="none" delay={0.15}>
           <div
             className="mt-14 py-5 px-8 text-center"
             style={{
-              background: "rgba(201,169,106,0.05)",
-              border: "1px solid rgba(201,169,106,0.11)",
+              background: "rgba(166,124,61,0.05)",
+              border: "1px solid rgba(166,124,61,0.12)",
             }}
           >
-            <p className="font-sans text-sm" style={{ color: "rgba(237,232,224,0.58)" }}>
+            <p className="font-sans text-sm" style={{ color: "rgba(43,38,34,0.65)" }}>
               我們相信：
-              <span className="font-semibold" style={{ color: "#C9A96A" }}>了解自己</span>，是改變的開始；
-              <span className="font-semibold" style={{ color: "#EDE8E0" }}>理解課題</span>，是成長的力量；
-              <span className="font-semibold" style={{ color: "#C9A96A" }}>找到方向</span>，是人生的光。
+              <span className="font-semibold" style={{ color: "#A67C3D" }}>了解自己</span>，是改變的開始；
+              <span className="font-semibold" style={{ color: "#2B2622" }}>理解課題</span>，是成長的力量；
+              <span className="font-semibold" style={{ color: "#A67C3D" }}>找到方向</span>，是人生的光。
             </p>
           </div>
         </AnimateIn>
