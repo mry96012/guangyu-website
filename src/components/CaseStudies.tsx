@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import { AnimateIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
+import { useEffect, useRef } from "react";
 
 const cases = [
   {
@@ -28,104 +29,120 @@ const cases = [
 
 const detailLabels = ["困境", "工具", "重點", "結果"];
 
-const cardContent = (c: (typeof cases)[number]) => (
-  <>
-    <div className="px-7 pt-7 pb-5" style={{ borderBottom: "1px solid rgba(166,124,61,0.1)" }}>
-      <span
-        className="inline-block text-xs font-semibold font-sans px-3 py-1 mb-3"
-        style={{
-          background: "rgba(166,124,61,0.08)",
-          color: "#A67C3D",
-          border: "1px solid rgba(166,124,61,0.18)",
-        }}
-      >
-        {c.tag}
-      </span>
-      <p className="font-serif text-xl font-semibold" style={{ color: "#2B2622" }}>
-        {c.tagline}
-      </p>
-      <div className="mt-4 pl-4" style={{ borderLeft: "2px solid rgba(166,124,61,0.28)" }}>
-        <p className="text-sm font-sans italic leading-relaxed" style={{ color: "rgba(43,38,34,0.52)" }}>
-          「{c.quote}」
-        </p>
-      </div>
-    </div>
+export default function CaseStudies() {
+  const sectionRef = useRef<HTMLElement>(null);
 
-    <div className="px-7 py-5 space-y-3">
-      {[c.problem, c.tools, c.focus, c.result].map((value, i) => (
-        <div key={detailLabels[i]} className="flex items-start gap-3">
-          <span
-            className="text-xs font-semibold font-sans shrink-0 mt-0.5"
-            style={{ color: "#A67C3D", minWidth: "36px" }}
-          >
-            {detailLabels[i]}
-          </span>
-          <p className="text-sm font-sans leading-relaxed" style={{ color: "rgba(43,38,34,0.68)" }}>
-            {value}
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const items = el.querySelectorAll<HTMLElement>(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target as HTMLElement;
+            const delay = target.dataset.delay ?? "0";
+            setTimeout(() => target.classList.add("visible"), Number(delay));
+            observer.unobserve(target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "-40px" }
+    );
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="py-20 section-alt">
+      {/* Top divider */}
+      <div className="section-divider mb-16 max-w-6xl mx-auto px-6">
+        <span>☵ ☶ ☷ ☰</span>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Title — right-aligned, asymmetric from BrandValues */}
+        <div className="reveal mb-14 text-right" data-delay="0">
+          <p className="font-sans text-xs mb-3" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>CASE STUDIES</p>
+          <h2 className="font-serif text-3xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.05em" }}>
+            真實案例分享
+          </h2>
+          <div className="mt-3 h-px w-16 ml-auto" style={{ background: "linear-gradient(to left, #E1AE14, transparent)" }} />
+          <p className="mt-4 text-sm font-sans" style={{ color: "rgba(245,240,232,0.5)" }}>
+            陪伴你走過迷惘，找到專屬的方向
           </p>
         </div>
-      ))}
 
-      <div
-        className="mt-4 px-4 py-3"
-        style={{
-          background: "rgba(166,124,61,0.05)",
-          border: "1px solid rgba(166,124,61,0.12)",
-        }}
-      >
-        <p className="text-xs font-semibold font-sans mb-1" style={{ color: "#A67C3D" }}>客戶回饋</p>
-        <p className="text-sm font-sans leading-relaxed" style={{ color: "rgba(43,38,34,0.65)" }}>
-          {c.feedback}
-        </p>
-      </div>
-    </div>
-  </>
-);
-
-export default function CaseStudies() {
-  return (
-    <section className="py-20 section-alt">
-      <div className="max-w-6xl mx-auto px-6">
-
-        <AnimateIn direction="none">
-          <div className="section-title">
-            <h2>真實案例分享</h2>
-            <div className="gold-diamond"><span /></div>
-            <p>陪伴你走過迷惘，找到專屬的方向</p>
-          </div>
-        </AnimateIn>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+        {/* Cases — full-width stacked cards, alternating indent */}
+        <div className="space-y-6">
           {cases.map((c, i) => (
-            <AnimateIn
+            <div
               key={c.id}
-              direction={i % 2 === 0 ? "left" : "right"}
-              delay={i * 0.08}
+              className={`reveal${i === 1 ? " lg:ml-16" : ""}`}
+              data-delay={String(120 + i * 140)}
             >
               <div
-                className="overflow-hidden h-full"
+                className="card-lift overflow-hidden"
                 style={{
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(166,124,61,0.12)",
+                  background: "#121212",
+                  border: "1px solid rgba(225,174,20,0.12)",
+                  borderTop: "2px solid rgba(225,174,20,0.4)",
                 }}
               >
-                {cardContent(c)}
+                {/* Header */}
+                <div className="px-8 pt-8 pb-6 lg:flex lg:gap-10 lg:items-start" style={{ borderBottom: "1px solid rgba(225,174,20,0.08)" }}>
+                  <div className="lg:flex-1">
+                    <span
+                      className="inline-block text-xs font-semibold font-sans px-3 py-1 mb-4"
+                      style={{ background: "rgba(225,174,20,0.08)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.2)" }}
+                    >
+                      {c.tag}
+                    </span>
+                    <p className="font-serif text-2xl font-semibold mb-4" style={{ color: "#F5F0E8", letterSpacing: "0.03em" }}>
+                      {c.tagline}
+                    </p>
+                  </div>
+                  <div className="lg:w-80 pl-4" style={{ borderLeft: "1px solid rgba(225,174,20,0.2)" }}>
+                    <p className="text-sm font-sans italic leading-relaxed" style={{ color: "rgba(245,240,232,0.45)" }}>
+                      「{c.quote}」
+                    </p>
+                  </div>
+                </div>
+
+                {/* Details */}
+                <div className="px-8 py-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[c.problem, c.tools, c.focus, c.result].map((value, j) => (
+                    <div key={detailLabels[j]} className="flex items-start gap-3">
+                      <span className="text-xs font-semibold font-sans shrink-0 mt-0.5" style={{ color: "#E1AE14", minWidth: "36px", letterSpacing: "0.04em" }}>
+                        {detailLabels[j]}
+                      </span>
+                      <p className="text-sm font-sans leading-relaxed" style={{ color: "rgba(245,240,232,0.6)", letterSpacing: "0.01em" }}>
+                        {value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Feedback quote — full-width bottom strip */}
+                <div className="px-8 py-4" style={{ background: "rgba(225,174,20,0.04)", borderTop: "1px solid rgba(225,174,20,0.08)" }}>
+                  <p className="text-sm font-sans italic" style={{ color: "rgba(245,240,232,0.5)" }}>
+                    {c.feedback}
+                  </p>
+                </div>
               </div>
-            </AnimateIn>
+            </div>
           ))}
         </div>
 
-        <AnimateIn direction="none" delay={0.1}>
-          <div className="mt-10 flex items-center justify-center gap-5">
-            <p className="font-serif text-base" style={{ color: "rgba(43,38,34,0.45)" }}>
-              每個故事，都是改變的開始
-            </p>
-            <Link href="/cases" className="btn-outline text-sm px-6 py-3 inline-flex items-center gap-2">
-              查看更多案例
-            </Link>
-          </div>
-        </AnimateIn>
-
+        {/* Bottom CTA — left-aligned */}
+        <div className="reveal mt-10 flex items-center gap-5" data-delay="440">
+          <Link href="/cases" className="btn-outline text-sm px-7 py-3 inline-flex items-center gap-2">
+            查看更多案例
+          </Link>
+          <p className="font-serif text-sm" style={{ color: "rgba(245,240,232,0.35)" }}>
+            每個故事，都是改變的開始
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -1,59 +1,87 @@
+"use client";
 import Image from "next/image";
-import { AnimateIn } from "@/components/FadeIn";
+import { useEffect, useRef } from "react";
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
+/* Five-element star SVG */
+function FiveElementsStar() {
+  const points = Array.from({ length: 5 }, (_, i) => {
+    const outer = ((i * 72 - 90) * Math.PI) / 180;
+    const inner = (((i * 72 + 36) - 90) * Math.PI) / 180;
+    const ox = 50 + 42 * Math.cos(outer);
+    const oy = 50 + 42 * Math.sin(outer);
+    const ix = 50 + 18 * Math.cos(inner);
+    const iy = 50 + 18 * Math.sin(inner);
+    return `${ox},${oy} ${ix},${iy}`;
+  }).join(" ");
+
+  return (
+    <svg width="52" height="52" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <polygon points={points} stroke="#E1AE14" strokeWidth="1.2" strokeOpacity="0.7" fill="none" />
+      <circle cx="50" cy="50" r="48" stroke="#E1AE14" strokeWidth="0.6" strokeOpacity="0.3" />
+      <circle cx="50" cy="50" r="20" stroke="#E1AE14" strokeWidth="0.5" strokeOpacity="0.2" />
+      <circle cx="50" cy="50" r="3" fill="#E1AE14" fillOpacity="0.5" />
+    </svg>
+  );
+}
+
 export default function FinalCTA() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const items = el.querySelectorAll<HTMLElement>(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target as HTMLElement;
+            const delay = target.dataset.delay ?? "0";
+            setTimeout(() => target.classList.add("visible"), Number(delay));
+            observer.unobserve(target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
-      className="py-20 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #2B2622 0%, #3D3028 100%)" }}
+      ref={sectionRef}
+      className="py-24 relative overflow-hidden"
+      style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}
     >
-      {/* Decorative glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(166,124,61,0.08) 0%, transparent 70%)",
-        }}
+      {/* Ambient glow */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 65% 55% at 50% 50%, rgba(225,174,20,0.06) 0%, transparent 70%)" }}
       />
 
-      <AnimateIn direction="up" className="relative max-w-3xl mx-auto px-6 text-center space-y-8">
+      {/* Section divider top */}
+      <div className="section-divider mb-16 max-w-3xl mx-auto px-6">
+        <span>☰ ☲ ☴ ☶</span>
+      </div>
 
-        {/* Ornament */}
-        <div className="flex justify-center">
-          <div
-            className="w-14 h-14 flex items-center justify-center"
-            style={{
-              background: "rgba(166,124,61,0.1)",
-              border: "1px solid rgba(166,124,61,0.28)",
-              borderRadius: "2px",
-            }}
-          >
-            <span
-              className="font-display font-bold"
-              style={{ color: "#A67C3D", fontSize: "1.4rem", opacity: 0.85 }}
-            >
-              ✦
-            </span>
-          </div>
+      <div className="relative max-w-3xl mx-auto px-6 text-center space-y-8">
+
+        <div className="reveal flex justify-center" data-delay="0">
+          <FiveElementsStar />
         </div>
 
-        {/* Text */}
-        <div className="space-y-4">
-          <h2
-            className="font-serif text-3xl md:text-4xl font-semibold leading-snug"
-            style={{ color: "#FAF6EF" }}
-          >
+        <div className="reveal space-y-4" data-delay="120">
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold leading-snug" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>
             準備好了解自己，找到方向了嗎？
           </h2>
-          <p className="font-sans text-base leading-relaxed" style={{ color: "rgba(250,246,239,0.52)" }}>
+          <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.48)", letterSpacing: "0.02em" }}>
             加入 LINE 官方帳號，立即預約諮詢
           </p>
         </div>
 
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-4" data-delay="240">
           <a
             href={LINE_URL}
             target="_blank"
@@ -66,33 +94,21 @@ export default function FinalCTA() {
             加入 LINE 好友
           </a>
 
-          {/* QR Code */}
           <div
             className="flex items-center gap-3 px-5 py-3"
-            style={{
-              background: "rgba(250,246,239,0.05)",
-              border: "1px solid rgba(250,246,239,0.1)",
-            }}
+            style={{ background: "rgba(245,240,232,0.04)", border: "1px solid rgba(225,174,20,0.15)" }}
           >
             <div className="w-14 h-14 overflow-hidden relative shrink-0">
-              <Image
-                src="/qrcode-line.png"
-                alt="LINE QR Code"
-                fill
-                className="object-cover"
-              />
+              <Image src="/qrcode-line.png" alt="LINE QR Code" fill className="object-cover" />
             </div>
             <div className="text-left">
-              <p className="text-xs font-semibold font-sans" style={{ color: "#FAF6EF" }}>LINE 官方帳號</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(250,246,239,0.48)" }}>@enlite731</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(250,246,239,0.38)" }}>
-                預約・諮詢・優惠
-              </p>
+              <p className="text-xs font-semibold font-sans" style={{ color: "#F5F0E8" }}>LINE 官方帳號</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(245,240,232,0.42)" }}>@enlite731</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "#E1AE14", opacity: 0.6 }}>預約・諮詢・優惠</p>
             </div>
           </div>
         </div>
-
-      </AnimateIn>
+      </div>
     </section>
   );
 }
