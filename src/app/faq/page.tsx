@@ -10,7 +10,7 @@ const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 const faqGroups = [
   {
     group: "服務相關",
-    icon: "📋",
+    char: "服",
     items: [
       { q: "報告多久收到？", a: "依服務內容不同，約 1–4 個工作天。急件服務請事先告知，我們會盡力配合。" },
       { q: "需要準備哪些資料？", a: "提供出生年月日時間（越準確越好）與出生地即可。若想要更精準的分析，也可以提供想釐清的主題或問題。" },
@@ -20,7 +20,7 @@ const faqGroups = [
   },
   {
     group: "出生資料",
-    icon: "📅",
+    char: "資",
     items: [
       { q: "不知道出生時間怎麼辦？", a: "可填寫略時，或選擇「不確定」。沒有出生時間仍可進行大部分的命盤分析，只是無法計算時柱，準確度會稍微降低。建議可以詢問家人或查看出生證明。" },
       { q: "出生地點重要嗎？", a: "在西洋占星分析中，出生地點（城市）是必要資訊，因為它影響上升星座的計算。在八字和紫微分析中，出生地點的影響較小，但若能提供仍有助於更精準的分析。" },
@@ -29,7 +29,7 @@ const faqGroups = [
   },
   {
     group: "諮詢方式",
-    icon: "💬",
+    char: "詢",
     items: [
       { q: "線上諮詢與現場諮詢有差別嗎？", a: "內容與品質完全相同，線上以 Google Meet 進行，方便彈性，全台客戶都可諮詢。現場諮詢需提前預約地點，通常在台北市區，適合偏好面對面交流的客戶。" },
       { q: "諮詢是用說的還是書面報告？", a: "兩者都有。大多數服務包含書面報告（PDF 電子檔）加上文字說明。部分服務也提供視訊或語音諮詢，詳情依服務項目而定。" },
@@ -38,7 +38,7 @@ const faqGroups = [
   },
   {
     group: "付款與預約",
-    icon: "💳",
+    char: "約",
     items: [
       { q: "如何付款？", a: "目前接受銀行轉帳、LINE Pay 等方式。預約確認後老師會提供付款帳號，完成付款後即可開始服務流程。" },
       { q: "如何修改或取消預約？", a: "若需更改預約時間或取消，請提前 24 小時通知。緊急情況可彈性處理，但請務必事先告知，以利安排。" },
@@ -49,7 +49,6 @@ const faqGroups = [
 
 export default function FAQPage() {
   const [open, setOpen] = useState<string | null>(null);
-
   const toggle = (key: string) => setOpen(open === key ? null : key);
 
   return (
@@ -58,14 +57,14 @@ export default function FAQPage() {
       <main>
         {/* Header */}
         <section className="pt-32 pb-16 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #FBF8F4 0%, #F4EDE3 100%)" }}>
+          style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(184,144,42,0.08) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,174,20,0.07) 0%, transparent 60%)" }} />
           <div className="relative max-w-2xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#B8902A" }}>FAQ</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#1A2D45" }}>常見問題</h1>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>FAQ</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#F5F0E8" }}>常見問題</h1>
             <div className="gold-diamond max-w-xs mx-auto"><span /></div>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
               讓你在預約前就對服務有清楚的了解
             </p>
           </div>
@@ -78,9 +77,12 @@ export default function FAQPage() {
               <div key={group.group}>
                 {/* Group header */}
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-xl">{group.icon}</span>
-                  <h2 className="font-serif text-xl font-semibold" style={{ color: "#1A2D45" }}>{group.group}</h2>
-                  <div className="flex-1 h-px" style={{ background: "rgba(184,144,42,0.2)" }} />
+                  <div className="w-7 h-7 flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(225,174,20,0.08)", border: "1px solid rgba(225,174,20,0.22)" }}>
+                    <span className="font-serif text-xs font-semibold" style={{ color: "#E1AE14" }}>{group.char}</span>
+                  </div>
+                  <h2 className="font-serif text-xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>{group.group}</h2>
+                  <div className="flex-1 h-px" style={{ background: "rgba(225,174,20,0.15)" }} />
                 </div>
 
                 {/* Accordion items */}
@@ -89,36 +91,35 @@ export default function FAQPage() {
                     const key = `${group.group}-${i}`;
                     const isOpen = open === key;
                     return (
-                      <div key={key} className="rounded-xl overflow-hidden"
+                      <div key={key} className="overflow-hidden"
                         style={{
-                          background: "#fff",
-                          border: isOpen ? "1px solid rgba(184,144,42,0.35)" : "1px solid rgba(26,45,69,0.08)",
-                          boxShadow: isOpen ? "0 4px 16px rgba(184,144,42,0.08)" : "0 1px 4px rgba(26,45,69,0.04)",
+                          background: isOpen ? "#1A1A1A" : "#121212",
+                          border: isOpen ? "1px solid rgba(225,174,20,0.3)" : "1px solid rgba(225,174,20,0.1)",
                           transition: "all 0.2s ease",
                         }}>
                         <button type="button" onClick={() => toggle(key)}
                           className="w-full flex items-center justify-between px-6 py-5 text-left">
                           <div className="flex items-center gap-3">
-                            <span className="text-xs font-bold font-sans w-6 h-6 rounded-full flex items-center justify-center shrink-0"
-                              style={{ background: "rgba(184,144,42,0.12)", color: "#B8902A" }}>Q</span>
-                            <span className="font-sans text-sm font-semibold" style={{ color: "#1A2D45" }}>{item.q}</span>
+                            <span className="text-xs font-bold font-sans w-6 h-6 flex items-center justify-center shrink-0"
+                              style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.2)" }}>Q</span>
+                            <span className="font-sans text-sm font-semibold" style={{ color: "#F5F0E8" }}>{item.q}</span>
                           </div>
                           <span className="text-lg shrink-0 transition-transform duration-200 ml-3"
-                            style={{ color: "#B8902A", transform: isOpen ? "rotate(45deg)" : "none" }}>+</span>
+                            style={{ color: "#E1AE14", transform: isOpen ? "rotate(45deg)" : "none" }}>+</span>
                         </button>
                         <div
                           className="px-6 flex gap-3 overflow-hidden"
                           style={{
-                            borderTop: isOpen ? "1px solid rgba(184,144,42,0.1)" : "none",
+                            borderTop: isOpen ? "1px solid rgba(225,174,20,0.1)" : "none",
                             maxHeight: isOpen ? "400px" : "0px",
                             paddingTop: isOpen ? "12px" : "0px",
                             paddingBottom: isOpen ? "20px" : "0px",
                             transition: "max-height 0.25s ease, padding 0.25s ease",
                           }}
                         >
-                          <span className="text-xs font-bold font-sans w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                            style={{ background: "rgba(26,45,69,0.07)", color: "#4A5E72" }}>A</span>
-                          <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E72" }}>{item.a}</p>
+                          <span className="text-xs font-bold font-sans w-6 h-6 flex items-center justify-center shrink-0 mt-0.5"
+                            style={{ background: "rgba(245,240,232,0.06)", color: "rgba(245,240,232,0.5)" }}>A</span>
+                          <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.6)" }}>{item.a}</p>
                         </div>
                       </div>
                     );
@@ -132,8 +133,8 @@ export default function FAQPage() {
         {/* Still have questions */}
         <section className="py-16 section-alt">
           <div className="max-w-2xl mx-auto px-6 text-center space-y-6">
-            <h2 className="font-serif text-2xl font-semibold" style={{ color: "#1A2D45" }}>還有其他問題？</h2>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E72" }}>
+            <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>還有其他問題？</h2>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
               歡迎直接加入 LINE 詢問，老師會盡快為你解答。
             </p>
             <div className="flex justify-center gap-4 flex-wrap">

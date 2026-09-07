@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 
 const themes = [
-  { emoji: "💑", label: "感情", desc: "感情模式、關係困擾、吸引力法則與未來發展。", hint: "適合：感情停滯、重複同樣模式、想釐清緣分走向" },
-  { emoji: "💼", label: "事業", desc: "職涯定位、發展方向、決策時機與天賦優勢。", hint: "適合：轉職迷惘、創業評估、不知道自己適合什麼" },
-  { emoji: "💰", label: "財運", desc: "財務規劃、投資時機、金錢流動與財富能量。", hint: "適合：財運起伏、想掌握財務節奏、投資決策" },
-  { emoji: "🤝", label: "人際", desc: "人際模式、職場關係、貴人能量與小人防範。", hint: "適合：人際摩擦、職場困境、想改善溝通方式" },
-  { emoji: "🏠", label: "家庭", desc: "親子關係、家族課題、婚姻狀況與家庭和諧。", hint: "適合：親子衝突、婚姻困惑、家庭角色課題" },
-  { emoji: "🧭", label: "人生方向", desc: "人生目標、價值觀、轉職選擇與未來方向。", hint: "適合：感覺迷失、找不到意義、想重新定位自己" },
+  { label: "感情", desc: "感情模式、關係困擾、吸引力法則與未來發展。", hint: "適合：感情停滯、重複同樣模式、想釐清緣分走向" },
+  { label: "事業", desc: "職涯定位、發展方向、決策時機與天賦優勢。", hint: "適合：轉職迷惘、創業評估、不知道自己適合什麼" },
+  { label: "財運", desc: "財務規劃、投資時機、金錢流動與財富能量。", hint: "適合：財運起伏、想掌握財務節奏、投資決策" },
+  { label: "人際", desc: "人際模式、職場關係、貴人能量與小人防範。", hint: "適合：人際摩擦、職場困境、想改善溝通方式" },
+  { label: "家庭", desc: "親子關係、家族課題、婚姻狀況與家庭和諧。", hint: "適合：親子衝突、婚姻困惑、家庭角色課題" },
+  { label: "人生方向", desc: "人生目標、價值觀、轉職選擇與未來方向。", hint: "適合：感覺迷失、找不到意義、想重新定位自己" },
 ];
 
 const packages = [
@@ -60,12 +60,12 @@ const packages = [
 ];
 
 const tools = [
-  { id: "s1", emoji: "☯️", title: "八字分析",     price: "NT$600 起",   desc: "解析命盤結構、五行能量、喜用神，幫助你了解性格特質、人生方向與重要課題。",     tags: ["命盤結構", "五行分析", "流年運勢"] },
-  { id: "s2", emoji: "🏯", title: "紫微斗數分析", price: "NT$1,600 起", desc: "透過命宮與十二宮位解析，深入看見你的天賦、性格、人際關係與人生格局。",        tags: ["命盤解析", "十二宮位", "流年重點"] },
-  { id: "s3", emoji: "⚛️", title: "雙系統整合",   price: "NT$2,000 起", desc: "八字 × 紫微斗數綜合分析，雙重視角互補驗證，提供更全面、立體的人生解析。",      tags: ["八字分析", "紫微分析", "交叉驗證"] },
-  { id: "s4", emoji: "🎴", title: "塔羅占卜",     price: "NT$350 起",   desc: "釐清當下問題與選擇方向，提供逐步指引與實際建議，協助你看見更多可能性。",        tags: ["問題釐清", "選擇指引", "能量狀態"] },
-  { id: "s5", emoji: "🔢", title: "生命靈數分析", price: "NT$800 起",   desc: "從數字中看見你的天賦、性格特質與人生課題，找到屬於你的成長方向與節奏。",        tags: ["性格特質", "天賦優勢", "人生課題"] },
-  { id: "s6", emoji: "🪐", title: "西洋占星分析", price: "NT$1,600 起", desc: "解析本命星盤，了解你的性格、情感、天賦與潛能，掌握人生議題與成長方向。",        tags: ["星盤解析", "行星相位", "天賦潛能"] },
+  { id: "s1", label: "八",  title: "八字分析",     price: "NT$600 起",   desc: "解析命盤結構、五行能量、喜用神，幫助你了解性格特質、人生方向與重要課題。",     tags: ["命盤結構", "五行分析", "流年運勢"] },
+  { id: "s2", label: "紫",  title: "紫微斗數分析", price: "NT$1,600 起", desc: "透過命宮與十二宮位解析，深入看見你的天賦、性格、人際關係與人生格局。",        tags: ["命盤解析", "十二宮位", "流年重點"] },
+  { id: "s3", label: "合",  title: "雙系統整合",   price: "NT$2,000 起", desc: "八字 × 紫微斗數綜合分析，雙重視角互補驗證，提供更全面、立體的人生解析。",      tags: ["八字分析", "紫微分析", "交叉驗證"] },
+  { id: "s4", label: "塔",  title: "塔羅占卜",     price: "NT$350 起",   desc: "釐清當下問題與選擇方向，提供逐步指引與實際建議，協助你看見更多可能性。",        tags: ["問題釐清", "選擇指引", "能量狀態"] },
+  { id: "s5", label: "靈",  title: "生命靈數分析", price: "NT$800 起",   desc: "從數字中看見你的天賦、性格特質與人生課題，找到屬於你的成長方向與節奏。",        tags: ["性格特質", "天賦優勢", "人生課題"] },
+  { id: "s6", label: "星",  title: "西洋占星分析", price: "NT$1,600 起", desc: "解析本命星盤，了解你的性格、情感、天賦與潛能，掌握人生議題與成長方向。",        tags: ["星盤解析", "行星相位", "天賦潛能"] },
 ];
 
 export default function ServicesPage() {
@@ -74,35 +74,33 @@ export default function ServicesPage() {
       <Navbar />
       <main>
         {/* Page Header */}
-        <section
-          className="pt-32 pb-16 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #FBF8F4 0%, #F4EDE3 100%)" }}
-        >
+        <section className="pt-32 pb-16 text-center relative overflow-hidden"
+          style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(184,144,42,0.08) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,174,20,0.07) 0%, transparent 60%)" }} />
           <div className="relative max-w-2xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#B8902A" }}>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>
               SERVICES & PRICING
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#1A2D45" }}>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#F5F0E8" }}>
               服務項目
             </h1>
             <div className="gold-diamond max-w-xs mx-auto"><span /></div>
-            <p className="font-sans text-sm leading-relaxed max-w-md mx-auto" style={{ color: "#5A6E82" }}>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
               從你最在意的問題出發，找到最適合的諮詢方式
             </p>
           </div>
         </section>
 
-        {/* ── STEP 1: 選擇主題 ── */}
+        {/* STEP 1: 選擇主題 */}
         <section className="py-20 section-light">
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-                style={{ background: "#1A2D45", color: "#E8D08A" }}>1</div>
-              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#1A2D45" }}>我想了解的主題是…</h2>
+              <div className="w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0"
+                style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.25)" }}>1</div>
+              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>我想了解的主題是…</h2>
             </div>
-            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "#6B7E90" }}>
+            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "rgba(245,240,232,0.42)" }}>
               選擇你最想深入的議題，老師會針對此主題進行重點解析
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -112,19 +110,18 @@ export default function ServicesPage() {
                   href={LINE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group rounded-2xl p-6 space-y-3 transition-all duration-200 cursor-pointer"
-                  style={{ background: "#fff", border: "1px solid rgba(26,45,69,0.08)", boxShadow: "0 2px 12px rgba(26,45,69,0.04)" }}
+                  className="group p-6 space-y-3 transition-all duration-200 cursor-pointer card-lift"
+                  style={{ background: "#1A1A1A", border: "1px solid rgba(225,174,20,0.1)" }}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">{t.emoji}</span>
-                    <p className="font-serif text-lg font-semibold" style={{ color: "#1A2D45" }}>{t.label}分析</p>
+                    <p className="font-serif text-lg font-semibold" style={{ color: "#F5F0E8" }}>{t.label}分析</p>
                   </div>
-                  <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>{t.desc}</p>
-                  <p className="font-sans text-xs leading-relaxed p-3 rounded-xl"
-                    style={{ background: "rgba(184,144,42,0.06)", color: "#8A6A1A", border: "1px solid rgba(184,144,42,0.15)" }}>
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)" }}>{t.desc}</p>
+                  <p className="font-sans text-xs leading-relaxed p-3"
+                    style={{ background: "rgba(225,174,20,0.04)", color: "rgba(225,174,20,0.7)", border: "1px solid rgba(225,174,20,0.12)" }}>
                     {t.hint}
                   </p>
-                  <div className="flex items-center gap-1 text-sm font-semibold font-sans" style={{ color: "#B8902A" }}>
+                  <div className="flex items-center gap-1 text-sm font-semibold font-sans" style={{ color: "#E1AE14" }}>
                     <span>預約此主題</span>
                     <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
                   </div>
@@ -134,53 +131,54 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── STEP 2: 選擇方案 ── */}
+        {/* STEP 2: 選擇方案 */}
         <section className="py-20 section-alt">
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-                style={{ background: "#1A2D45", color: "#E8D08A" }}>2</div>
-              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#1A2D45" }}>選擇適合的諮詢方案</h2>
+              <div className="w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0"
+                style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.25)" }}>2</div>
+              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>選擇適合的諮詢方案</h2>
             </div>
-            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "#6B7E90" }}>
+            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "rgba(245,240,232,0.42)" }}>
               不確定選哪個？加入 LINE 告知你的主題，老師會直接給建議
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {packages.map((p) => (
                 <div
                   key={p.id}
-                  className="card-lift rounded-2xl p-6 space-y-4 flex flex-col relative"
+                  className="card-lift p-6 space-y-4 flex flex-col relative"
                   style={{
-                    background: p.highlight ? "#1A2D45" : "#fff",
-                    border: p.highlight ? "2px solid #B8902A" : "1px solid rgba(26,45,69,0.1)",
-                    boxShadow: p.highlight ? "0 8px 32px rgba(184,144,42,0.2)" : "0 2px 12px rgba(26,45,69,0.05)",
+                    background: p.highlight ? "#1A1600" : "#1A1A1A",
+                    border: p.highlight ? "2px solid rgba(225,174,20,0.5)" : "1px solid rgba(225,174,20,0.12)",
+                    boxShadow: p.highlight ? "0 8px 32px rgba(225,174,20,0.12)" : "none",
                   }}
                 >
                   {p.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold font-sans"
-                      style={{ background: "#B8902A", color: "#fff" }}>
-                      ⭐ 推薦
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-bold font-sans"
+                      style={{ background: "#E1AE14", color: "#121212" }}>
+                      推薦
                     </div>
                   )}
-                  <p className="text-xs font-sans rounded-full px-3 py-1.5 text-center"
+                  <p className="text-xs font-sans px-3 py-1.5 text-center"
                     style={{
-                      background: p.highlight ? "rgba(184,144,42,0.2)" : "rgba(184,144,42,0.08)",
-                      color: p.highlight ? "#E8D08A" : "#8B7355",
+                      background: p.highlight ? "rgba(225,174,20,0.12)" : "rgba(225,174,20,0.06)",
+                      color: p.highlight ? "#E1AE14" : "rgba(225,174,20,0.6)",
+                      border: "1px solid rgba(225,174,20,0.15)",
                     }}>
                     {p.badge}
                   </p>
                   <p className="font-serif text-xl font-semibold text-center"
-                    style={{ color: p.highlight ? "#fff" : "#1A2D45" }}>
+                    style={{ color: "#F5F0E8" }}>
                     {p.title}
                   </p>
                   <div className="text-center">
-                    <p className="font-serif text-3xl font-bold" style={{ color: "#B8902A" }}>{p.price}</p>
-                    <p className="text-xs font-sans mt-1" style={{ color: p.highlight ? "rgba(255,255,255,0.5)" : "#8A9BAC" }}>
-                      ⏱ {p.duration}
+                    <p className="font-serif text-3xl font-bold" style={{ color: "#E1AE14" }}>{p.price}</p>
+                    <p className="text-xs font-sans mt-1" style={{ color: "rgba(245,240,232,0.35)" }}>
+                      {p.duration}
                     </p>
                   </div>
                   <p className="font-sans text-sm leading-relaxed flex-1 text-center"
-                    style={{ color: p.highlight ? "rgba(255,255,255,0.65)" : "#5A6E82" }}>
+                    style={{ color: "rgba(245,240,232,0.55)" }}>
                     {p.desc}
                   </p>
                   <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
@@ -194,16 +192,16 @@ export default function ServicesPage() {
 
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { icon: "🎁", label: "首次諮詢加贈", value: "專屬命盤摘要書（電子檔）" },
-                { icon: "⚙️", label: "方案可客製化", value: "依需求調整諮詢內容與時間" },
-                { icon: "🔄", label: "回訪優惠",     value: "回診諮詢享 9 折優惠" },
+                { label: "首次諮詢加贈", value: "專屬命盤摘要書（電子檔）" },
+                { label: "方案可客製化", value: "依需求調整諮詢內容與時間" },
+                { label: "回訪優惠",     value: "回診諮詢享 9 折優惠" },
               ].map((e) => (
-                <div key={e.label} className="flex items-center gap-4 p-4 rounded-xl"
-                  style={{ background: "#fff", border: "1px solid rgba(184,144,42,0.15)" }}>
-                  <span className="text-2xl">{e.icon}</span>
+                <div key={e.label} className="flex items-start gap-4 p-4"
+                  style={{ background: "#121212", border: "1px solid rgba(225,174,20,0.12)" }}>
+                  <div className="w-2 h-2 mt-1.5 shrink-0" style={{ background: "#E1AE14", opacity: 0.6 }} />
                   <div>
-                    <p className="text-sm font-semibold font-sans" style={{ color: "#1A2D45" }}>{e.label}</p>
-                    <p className="text-xs font-sans mt-0.5" style={{ color: "#5A6E82" }}>{e.value}</p>
+                    <p className="text-sm font-semibold font-sans" style={{ color: "#F5F0E8" }}>{e.label}</p>
+                    <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(245,240,232,0.45)" }}>{e.value}</p>
                   </div>
                 </div>
               ))}
@@ -211,44 +209,44 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── 命理工具詳情 ── */}
+        {/* 命理工具詳情 */}
         <section id="tools" className="py-20 section-light">
           <div className="max-w-6xl mx-auto px-6">
             <div className="section-title">
-              <h2>命理工具說明</h2>
-              <div className="gold-diamond"><span /></div>
-              <p>光宇整合 5 大命理系統，多角度交叉分析，讓解讀更精準立體</p>
+              <p className="font-sans text-xs mb-3" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>DIVINATION TOOLS</p>
+              <h2 className="font-serif text-3xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.05em" }}>命理工具說明</h2>
+              <div className="gold-diamond mt-3"><span /></div>
+              <p className="mt-2 text-sm font-sans" style={{ color: "rgba(245,240,232,0.5)" }}>光宇整合 5 大命理系統，多角度交叉分析，讓解讀更精準立體</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {tools.map((s) => (
                 <div
                   key={s.id}
                   id={s.id}
-                  className="card-lift rounded-2xl p-6 space-y-4 flex flex-col"
-                  style={{ background: "#fff", border: "1px solid rgba(26,45,69,0.08)", boxShadow: "0 2px 12px rgba(26,45,69,0.04)" }}
+                  className="card-lift p-6 space-y-4 flex flex-col"
+                  style={{ background: "#1A1A1A", border: "1px solid rgba(225,174,20,0.1)" }}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl shrink-0"
-                      style={{ background: "rgba(184,144,42,0.07)", border: "1px solid rgba(184,144,42,0.15)" }}>
-                      {s.emoji}
+                    <div className="w-12 h-12 flex items-center justify-center shrink-0"
+                      style={{ background: "rgba(225,174,20,0.07)", border: "1px solid rgba(225,174,20,0.18)" }}>
+                      <span className="font-serif text-lg font-semibold" style={{ color: "#E1AE14" }}>{s.label}</span>
                     </div>
                     <div>
-                      <p className="font-serif text-lg font-semibold" style={{ color: "#1A2D45" }}>{s.title}</p>
-                      <p className="font-semibold text-base mt-0.5" style={{ color: "#B8902A" }}>{s.price}</p>
+                      <p className="font-serif text-lg font-semibold" style={{ color: "#F5F0E8" }}>{s.title}</p>
+                      <p className="font-semibold text-base mt-0.5" style={{ color: "#E1AE14" }}>{s.price}</p>
                     </div>
                   </div>
-                  <p className="font-sans text-sm leading-relaxed flex-1" style={{ color: "#5A6E82" }}>{s.desc}</p>
+                  <p className="font-sans text-sm leading-relaxed flex-1" style={{ color: "rgba(245,240,232,0.55)" }}>{s.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {s.tags.map((tag) => (
-                      <span key={tag} className="text-xs font-sans px-2.5 py-1 rounded-full"
-                        style={{ background: "rgba(184,144,42,0.08)", color: "#8B7355", border: "1px solid rgba(184,144,42,0.15)" }}>
+                      <span key={tag} className="text-xs font-sans px-2.5 py-1"
+                        style={{ background: "rgba(225,174,20,0.06)", color: "rgba(225,174,20,0.7)", border: "1px solid rgba(225,174,20,0.15)" }}>
                         {tag}
                       </span>
                     ))}
                   </div>
                   <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center text-sm font-semibold font-sans rounded-lg py-2.5 text-white transition-all duration-200"
-                    style={{ background: "#06C755" }}>
+                    className="btn-line inline-flex items-center justify-center text-sm py-2.5">
                     LINE 預約此工具
                   </a>
                 </div>
@@ -257,28 +255,28 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── Process + FAQ inline ── */}
+        {/* Process + FAQ inline */}
         <section className="py-16 section-alt">
           <div className="max-w-4xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div>
-                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#1A2D45" }}>諮詢流程</p>
+                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>諮詢流程</p>
                 <div className="space-y-4">
                   {["預約諮詢","填寫資料","專業諮詢","報告製作","報告交付"].map((s, i) => (
                     <div key={s} className="flex items-center gap-4">
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
-                        style={{ background: "#1A2D45", color: "#E8D08A" }}>
+                      <div className="w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0"
+                        style={{ background: "rgba(225,174,20,0.08)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.22)" }}>
                         {String(i + 1).padStart(2, "0")}
                       </div>
-                      <p className="font-sans text-sm font-semibold" style={{ color: "#1A2D45" }}>{s}</p>
-                      {i < 4 && <div className="flex-1 h-px" style={{ background: "rgba(184,144,42,0.2)" }} />}
+                      <p className="font-sans text-sm font-semibold" style={{ color: "#F5F0E8" }}>{s}</p>
+                      {i < 4 && <div className="flex-1 h-px" style={{ background: "rgba(225,174,20,0.12)" }} />}
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#1A2D45" }}>常見問題 FAQ</p>
+                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>常見問題 FAQ</p>
                 <div className="space-y-4">
                   {[
                     { q: "報告多久收到？", a: "依服務內容不同，約 1–4 個工作天。" },
@@ -286,12 +284,12 @@ export default function ServicesPage() {
                     { q: "可以退款嗎？",   a: "依服務內容不同，原則上不提供退款。詳情請洽詢。" },
                   ].map((faq) => (
                     <div key={faq.q} className="space-y-1">
-                      <p className="text-sm font-semibold font-sans" style={{ color: "#1A2D45" }}>Q：{faq.q}</p>
-                      <p className="text-sm font-sans leading-relaxed" style={{ color: "#5A6E72" }}>A：{faq.a}</p>
+                      <p className="text-sm font-semibold font-sans" style={{ color: "#F5F0E8" }}>Q：{faq.q}</p>
+                      <p className="text-sm font-sans leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>A：{faq.a}</p>
                     </div>
                   ))}
                 </div>
-                <Link href="/faq" className="mt-4 inline-block text-sm font-semibold" style={{ color: "#B8902A" }}>
+                <Link href="/faq" className="mt-4 inline-block text-sm font-semibold link-hover" style={{ color: "#E1AE14" }}>
                   查看更多 FAQ →
                 </Link>
               </div>

@@ -13,8 +13,6 @@ const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 const cases = [
   {
     tag: "事業轉換期",
-    tagColor: "#1A2D45",
-    emoji: "👔",
     tagline: "找到熱情所在，勇敢踏出下一步",
     situation: "在同一家公司工作了 6 年，每天都覺得提不起勁，卻又害怕「萬一失敗怎麼辦」。想創業但不知道現在是不是好時機，也不確定自己有沒有那個能力。",
     insight: "透過八字分析，發現自己的天賦優勢在於獨立決策與執行力，而非服從型的組織環境。流年分析顯示當年下半年有貴人運加持，是少見的適合轉換的時間窗口。",
@@ -25,8 +23,6 @@ const cases = [
   },
   {
     tag: "感情反覆內耗",
-    tagColor: "#C0453A",
-    emoji: "💗",
     tagline: "看見關係模式，學會愛與被愛",
     situation: "三段感情都是類似的結局：對方起初很熱情，後來卻逐漸冷淡。自己每次都付出很多，卻總是那個先受傷的人。開始懷疑是不是自己有什麼問題。",
     insight: "生命靈數與塔羅分析揭示了她的「照顧者人格」——習慣把對方的需求放在自己之前，在關係中容易失去自我。這種模式會吸引來需要被照顧的對象，但卻不會吸引平等互動的伴侶。",
@@ -37,8 +33,6 @@ const cases = [
   },
   {
     tag: "財運與投資決策",
-    tagColor: "#B8902A",
-    emoji: "💰",
     tagline: "了解財務週期，做出更明智的決策",
     situation: "手上有一筆資金想投資，但不確定現在是不是好時機。朋友圈有人說大漲，也有人說要謹慎。自己沒有判斷依據，焦慮了快兩個月。",
     insight: "八字流年分析顯示當年為「伏吟年」，財星受制，不適合大規模投資或冒進決策。建議以保守守成為主，將資金分散、降低單次風險。",
@@ -49,8 +43,6 @@ const cases = [
   },
   {
     tag: "職場人際困境",
-    tagColor: "#4A9E6E",
-    emoji: "🤝",
     tagline: "看清人際模式，建立更好的關係",
     situation: "進入新公司半年，和幾位同事關係一直處不好。自己覺得已經很努力配合，但還是常常被誤解，甚至被排擠。開始懷疑是不是自己的問題，或是這個環境根本不適合自己。",
     insight: "紫微斗數分析發現她的「命宮化忌入交友宮」，代表人際課題是此生的重要功課，容易在互動中因溝通方式造成誤解。西洋占星補充說明她傾向直接表達，在較保守的組織文化中容易顯得強勢。",
@@ -61,6 +53,8 @@ const cases = [
   },
 ];
 
+const stepsLabels = ["當時的困境", "諮詢後的洞察", "之後的改變"];
+
 export default function CasesPage() {
   return (
     <>
@@ -68,14 +62,14 @@ export default function CasesPage() {
       <main>
         {/* Header */}
         <section className="pt-32 pb-16 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #FBF8F4 0%, #F4EDE3 100%)" }}>
+          style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(184,144,42,0.08) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,174,20,0.07) 0%, transparent 60%)" }} />
           <div className="relative max-w-2xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#B8902A" }}>CASE STUDIES</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#1A2D45" }}>客戶案例</h1>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>CASE STUDIES</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#F5F0E8" }}>客戶案例</h1>
             <div className="gold-diamond max-w-xs mx-auto"><span /></div>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "#5A6E82" }}>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
               每個人都有屬於自己的困境與轉機。這些故事，也許有你的影子。
             </p>
           </div>
@@ -84,9 +78,9 @@ export default function CasesPage() {
         {/* Disclaimer */}
         <section className="py-8 section-light">
           <div className="max-w-3xl mx-auto px-6">
-            <div className="rounded-xl px-5 py-4 text-xs font-sans leading-relaxed"
-              style={{ background: "rgba(184,144,42,0.05)", border: "1px solid rgba(184,144,42,0.15)", color: "#7A8E9E" }}>
-              ℹ️ 以下案例來自真實諮詢個案，內容經客戶同意分享，並已調整足以識別身份的細節（姓名、地點與部分時間資訊）以保護隱私。目的是讓你在預約前更清楚了解光宇方向的諮詢方式，而非預測式的「算命結果」。
+            <div className="px-5 py-4 text-xs font-sans leading-relaxed"
+              style={{ background: "rgba(225,174,20,0.04)", border: "1px solid rgba(225,174,20,0.15)", color: "rgba(245,240,232,0.45)" }}>
+              以下案例來自真實諮詢個案，內容經客戶同意分享，並已調整足以識別身份的細節（姓名、地點與部分時間資訊）以保護隱私。目的是讓你在預約前更清楚了解光宇方向的諮詢方式，而非預測式的「算命結果」。
             </div>
           </div>
         </section>
@@ -95,57 +89,59 @@ export default function CasesPage() {
         <section className="pb-20 section-light">
           <div className="max-w-6xl mx-auto px-6 space-y-12">
             {cases.map((c, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden"
-                style={{ background: "#fff", border: `1px solid ${c.tagColor}20`, boxShadow: "0 4px 24px rgba(26,45,69,0.07)" }}>
+              <div key={i} className="overflow-hidden"
+                style={{
+                  background: "#121212",
+                  border: "1px solid rgba(225,174,20,0.12)",
+                  borderTop: "2px solid rgba(225,174,20,0.4)",
+                }}>
 
                 {/* Case Header */}
                 <div className="px-7 pt-7 pb-6"
-                  style={{ background: `linear-gradient(135deg, ${c.tagColor}08 0%, transparent 60%)` }}>
+                  style={{ borderBottom: "1px solid rgba(225,174,20,0.08)" }}>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">{c.emoji}</span>
-                    <span className="text-xs font-bold font-sans px-3 py-1.5 rounded-full"
-                      style={{ background: c.tagColor, color: "#fff" }}>
+                    <span className="text-xs font-bold font-sans px-3 py-1.5"
+                      style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.25)" }}>
                       {c.tag}
                     </span>
-                    <span className="text-xs font-sans px-3 py-1.5 rounded-full"
-                      style={{ background: "rgba(184,144,42,0.1)", color: "#8A6A1A", border: "1px solid rgba(184,144,42,0.2)" }}>
+                    <span className="text-xs font-sans px-3 py-1.5"
+                      style={{ background: "rgba(245,240,232,0.04)", color: "rgba(245,240,232,0.5)", border: "1px solid rgba(245,240,232,0.08)" }}>
                       {c.tools}
                     </span>
                   </div>
-                  <h2 className="font-serif text-2xl font-semibold" style={{ color: c.tagColor }}>{c.tagline}</h2>
+                  <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.03em" }}>{c.tagline}</h2>
                 </div>
 
                 {/* Story flow: 困境 → 洞察 → 改變 */}
                 <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x"
-                  style={{ borderColor: "rgba(26,45,69,0.07)" }}>
-                  {[
-                    { step: "01", label: "當時的困境", icon: "😔", content: c.situation, bg: "rgba(26,45,69,0.02)" },
-                    { step: "02", label: "諮詢後的洞察", icon: "💡", content: c.insight, bg: "rgba(184,144,42,0.03)" },
-                    { step: "03", label: "之後的改變", icon: "🌱", content: c.change, bg: "rgba(74,158,110,0.03)" },
-                  ].map((s) => (
-                    <div key={s.step} className="px-6 py-6 space-y-3" style={{ background: s.bg }}>
+                  style={{ borderColor: "rgba(225,174,20,0.08)" }}>
+                  {[c.situation, c.insight, c.change].map((content, j) => (
+                    <div key={j} className="px-6 py-6 space-y-3"
+                      style={{ background: j === 1 ? "rgba(225,174,20,0.02)" : "transparent" }}>
                       <div className="flex items-center gap-2">
-                        <span className="font-sans text-xs font-bold tracking-widest" style={{ color: "#B8902A" }}>{s.step}</span>
-                        <span className="text-base">{s.icon}</span>
-                        <span className="font-sans text-xs font-semibold" style={{ color: "#5A6E82" }}>{s.label}</span>
+                        <span className="font-sans text-xs font-bold tracking-widest" style={{ color: "#E1AE14" }}>
+                          0{j + 1}
+                        </span>
+                        <span className="font-sans text-xs font-semibold" style={{ color: "rgba(245,240,232,0.42)" }}>
+                          {stepsLabels[j]}
+                        </span>
                       </div>
-                      <p className="font-sans text-sm leading-relaxed" style={{ color: "#4A5E72" }}>{s.content}</p>
+                      <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.6)" }}>{content}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Bottom: outcome + feedback */}
                 <div className="px-7 py-5 flex flex-col md:flex-row items-start md:items-center gap-4"
-                  style={{ background: "rgba(26,45,69,0.02)", borderTop: "1px solid rgba(26,45,69,0.07)" }}>
+                  style={{ background: "rgba(225,174,20,0.03)", borderTop: "1px solid rgba(225,174,20,0.08)" }}>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-sm">✅</span>
-                    <span className="text-xs font-semibold font-sans" style={{ color: "#4A9E6E" }}>{c.outcome}</span>
+                    <span className="text-xs font-semibold font-sans" style={{ color: "#06C755" }}>✓ {c.outcome}</span>
                   </div>
-                  <div className="hidden md:block w-px self-stretch" style={{ background: "rgba(26,45,69,0.1)" }} />
-                  <div className="flex-1 rounded-xl px-4 py-3"
-                    style={{ background: "rgba(184,144,42,0.05)", border: "1px solid rgba(184,144,42,0.12)" }}>
-                    <p className="text-xs font-sans italic leading-relaxed" style={{ color: "#6B5C30" }}>
-                      💬 {c.feedback}
+                  <div className="hidden md:block w-px self-stretch" style={{ background: "rgba(225,174,20,0.15)" }} />
+                  <div className="flex-1 px-4 py-3"
+                    style={{ background: "rgba(245,240,232,0.03)", border: "1px solid rgba(225,174,20,0.1)" }}>
+                    <p className="text-xs font-sans italic leading-relaxed" style={{ color: "rgba(245,240,232,0.48)" }}>
+                      {c.feedback}
                     </p>
                   </div>
                 </div>
@@ -157,15 +153,15 @@ export default function CasesPage() {
         {/* CTA */}
         <section className="py-16 section-alt">
           <div className="max-w-2xl mx-auto px-6 text-center space-y-6">
-            <h2 className="font-serif text-3xl font-semibold" style={{ color: "#1A2D45" }}>
+            <h2 className="font-serif text-3xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>
               你的故事，也可以從這裡開始
             </h2>
-            <p className="font-sans text-base leading-relaxed" style={{ color: "#5A6E72" }}>
+            <p className="font-sans text-base leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
               每個人都有屬於自己的命盤與課題。<br />光宇方向陪你看懂自己，找到屬於你的方向。
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-4 inline-flex">
-                📅 加入 LINE 預約諮詢
+                加入 LINE 預約諮詢
               </a>
               <a href="/experience" className="btn-outline px-8 py-4 inline-flex">
                 ✦ 先體驗免費命盤
