@@ -141,7 +141,7 @@ export default function BaziPreview() {
                   style={{ background: "rgba(200,166,58,0.06)" }}>
                   <div className="flex items-center justify-between mb-3">
                     <p className="text-gold text-xs font-sans tracking-widest">年柱（免費查看）</p>
-                    <span className="text-green-400 text-xs font-sans">✓ 已解鎖</span>
+                    <span className="text-green-400 text-xs font-sans">✓ 已查看</span>
                   </div>
                   <div className="flex gap-6 items-center">
                     <div className="text-center">
@@ -189,7 +189,7 @@ export default function BaziPreview() {
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-4"
                     style={{ background: "rgba(12,29,47,0.7)" }}>
                     <span className="text-gold text-2xl mb-2">🔒</span>
-                    <p className="text-cream/80 text-sm font-serif text-center">解鎖完整命盤分析</p>
+                    <p className="text-cream/80 text-sm font-serif text-center">取得完整命盤分析</p>
                     <p className="text-cream/50 text-xs font-sans text-center mt-1 mb-4">
                       月柱、日柱、時柱、五行分析、命格解讀
                     </p>

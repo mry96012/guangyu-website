@@ -126,7 +126,7 @@ export default function BaziPage() {
                 style={{ background: "#fff", border: "1px solid rgba(184,144,42,0.25)", boxShadow: "0 4px 20px rgba(184,144,42,0.08)" }}>
                 <div className="flex items-center justify-between mb-4">
                   <p className="text-xs font-sans tracking-widest uppercase" style={{ color: "#B8902A" }}>年柱（免費查看）</p>
-                  <span className="text-xs font-sans px-2 py-0.5 rounded-full" style={{ background: "rgba(46,125,50,0.1)", color: "#2E7D32" }}>✓ 已解鎖</span>
+                  <span className="text-xs font-sans px-2 py-0.5 rounded-full" style={{ background: "rgba(46,125,50,0.1)", color: "#2E7D32" }}>✓ 已查看</span>
                 </div>
                 <div className="grid grid-cols-3 gap-4 items-center">
                   <div className="text-center">
@@ -179,7 +179,7 @@ export default function BaziPage() {
                   style={{ background: "rgba(251,248,244,0.92)" }}>
                   <div className="max-w-sm space-y-4">
                     <span className="text-3xl">🔒</span>
-                    <h3 className="font-serif text-xl font-semibold" style={{ color: "#1A2D45" }}>解鎖完整命盤分析</h3>
+                    <h3 className="font-serif text-xl font-semibold" style={{ color: "#1A2D45" }}>取得完整命盤分析</h3>
                     <div className="grid grid-cols-2 gap-2 text-xs font-sans" style={{ color: "#7A8E9E" }}>
                       {["月柱解析","日柱解析","時柱解析","五行分布","命格描述","流年趨勢"].map(item => (
                         <p key={item} className="flex items-center gap-1.5">
