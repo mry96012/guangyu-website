@@ -87,10 +87,10 @@ export default function PrivacyPage() {
             <div style={sectionStyle}>
               <h2 className="font-serif" style={h2Style}>二、個人資料蒐集告知事項（個資法第8條）</h2>
 
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>（一）蒐集機構名稱</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>（一）蒐集機構名稱</p>
               <p className="font-sans" style={pStyle}>光宇方向命理研究所</p>
 
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>（二）蒐集目的</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>（二）蒐集目的</p>
               <p className="font-sans" style={pStyle}>本研究所依下列目的蒐集、處理及利用您的個人資料：</p>
               <ul className="list-none space-y-1 mb-3 pl-4">
                 {[
@@ -106,7 +106,7 @@ export default function PrivacyPage() {
                 ))}
               </ul>
 
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>（三）個人資料類別</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>（三）個人資料類別</p>
               <ul className="list-none space-y-1 mb-3 pl-4">
                 {[
                   "C001｜辨識個人者：姓名、電話、電子郵件、LINE 帳號",
@@ -121,7 +121,7 @@ export default function PrivacyPage() {
                 ))}
               </ul>
 
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>（四）利用期間、地區、對象及方式</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>（四）利用期間、地區、對象及方式</p>
               <ul className="list-none space-y-1 mb-3 pl-4">
                 {[
                   "期間：於蒐集目的存續期間內，或依相關法令規定之保存年限",
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
                 ))}
               </ul>
 
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>（五）當事人權利</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>（五）當事人權利</p>
               <p className="font-sans" style={pStyle}>依個資法第3條，您得就您的個人資料行使下列權利：</p>
               <ul className="list-none space-y-1 mb-3 pl-4">
                 {[
@@ -156,7 +156,7 @@ export default function PrivacyPage() {
                 如需行使上述權利，請以 Email 或 LINE 聯繫本研究所，我們將於15個工作日內回覆並處理。本研究所得依個資法第10條但書規定，於符合法定條件時拒絕或限制前述請求。
               </p>
 
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>（六）不提供個人資料之影響</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>（六）不提供個人資料之影響</p>
               <p className="font-sans" style={pStyle}>
                 提供個人資料係您自願行為。若您選擇不提供必要資料（如姓名、聯絡方式、出生資料），本研究所將無法提供完整之命理諮詢服務，但不影響您瀏覽本網站其他內容。
               </p>
@@ -231,7 +231,7 @@ export default function PrivacyPage() {
             {/* 第三方與 Cookie */}
             <div style={sectionStyle}>
               <h2 className="font-serif" style={h2Style}>六、第三方服務與 Cookie</h2>
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>第三方服務</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>第三方服務</p>
               <p className="font-sans" style={pStyle}>
                 本研究所可能使用以下第三方服務，這些服務有其各自的隱私政策：
               </p>
@@ -247,7 +247,7 @@ export default function PrivacyPage() {
                   </li>
                 ))}
               </ul>
-              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#1A2D45" }}>Cookie 使用</p>
+              <p className="font-sans font-semibold" style={{ ...pStyle, color: "#F5F0E8" }}>Cookie 使用</p>
               <p className="font-sans" style={pStyle}>
                 本網站使用 Cookie 及類似技術以改善使用體驗，包含記錄使用偏好及流量統計分析。您可透過瀏覽器設定管理或拒絕 Cookie，但部分功能可能因此受到影響。本網站不使用 Cookie 追蹤個人身份。
               </p>

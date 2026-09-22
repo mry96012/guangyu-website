@@ -23,8 +23,8 @@ export default function FloatingCTA() {
     >
       {/* Tooltip label */}
       <div
-        className="hidden sm:block text-xs font-sans font-semibold px-3 py-1.5 rounded-full"
-        style={{ background: "#1A2D45", color: "#E8D08A", letterSpacing: "0.06em" }}
+        className="hidden sm:block text-xs font-sans font-semibold px-3 py-1.5"
+        style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.2)", letterSpacing: "0.06em" }}
       >
         免費預約諮詢
       </div>
@@ -35,7 +35,7 @@ export default function FloatingCTA() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="加入 LINE 預約諮詢"
-        className="relative flex items-center gap-2.5 rounded-full font-bold text-white text-sm font-sans"
+        className="relative flex items-center gap-2.5 font-bold text-white text-sm font-sans"
         style={{
           background: "#06C755",
           padding: "14px 22px",
@@ -44,7 +44,7 @@ export default function FloatingCTA() {
       >
         {/* Pulse ring */}
         <span
-          className="absolute inset-0 rounded-full animate-ping"
+          className="absolute inset-0 animate-ping"
           style={{ background: "rgba(6,199,85,0.3)", animationDuration: "2s" }}
         />
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white" className="relative shrink-0">
