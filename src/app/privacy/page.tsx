@@ -1,6 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "隱私權政策 | 光宇方向命理研究所",
+  description: "光宇方向命理研究所個人資料保護政策，說明個資蒐集、處理與利用方式，依據中華民國個人資料保護法。",
+};
 
 const CONTACT_EMAIL = "guangyu.pro@gmail.com";
 const CONTACT_PHONE = "0978-586-343";
@@ -9,31 +15,30 @@ const EFFECTIVE_DATE = "2025年1月1日";
 const LAST_UPDATED = "2026年6月15日";
 
 const sectionStyle = {
-  background: "#fff",
-  border: "1px solid rgba(26,45,69,0.08)",
-  borderRadius: "16px",
+  background: "#1A1A1A",
+  border: "1px solid rgba(225,174,20,0.1)",
   padding: "32px",
   marginBottom: "24px",
 };
 
 const h2Style = {
-  color: "#1A2D45",
+  color: "#F5F0E8",
   fontSize: "1.1rem",
   fontWeight: 700,
   marginBottom: "16px",
   paddingBottom: "10px",
-  borderBottom: "2px solid rgba(184,144,42,0.2)",
+  borderBottom: "1px solid rgba(225,174,20,0.2)",
 };
 
 const pStyle = {
-  color: "#4A5E72",
+  color: "rgba(245,240,232,0.6)",
   fontSize: "0.9rem",
   lineHeight: "1.85",
   marginBottom: "12px",
 };
 
 const liStyle = {
-  color: "#4A5E72",
+  color: "rgba(245,240,232,0.6)",
   fontSize: "0.9rem",
   lineHeight: "1.85",
   marginBottom: "6px",
@@ -44,19 +49,20 @@ export default function PrivacyPage() {
   return (
     <>
       <Navbar />
-      <main style={{ background: "linear-gradient(135deg, #FBF8F4 0%, #F4EDE3 100%)", minHeight: "100vh" }}>
+      <main style={{ background: "#121212", minHeight: "100vh" }}>
 
         {/* Header */}
-        <section className="pt-32 pb-12 text-center relative overflow-hidden">
+        <section className="pt-32 pb-12 text-center relative overflow-hidden"
+          style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(184,144,42,0.07) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,174,20,0.06) 0%, transparent 60%)" }} />
           <div className="relative max-w-3xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#B8902A" }}>LEGAL</p>
-            <h1 className="font-serif text-3xl md:text-4xl font-semibold" style={{ color: "#1A2D45" }}>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>LEGAL</p>
+            <h1 className="font-serif text-3xl md:text-4xl font-semibold" style={{ color: "#F5F0E8" }}>
               隱私權與個人資料保護政策
             </h1>
-            <div className="h-px w-12 mx-auto" style={{ background: "#B8902A" }} />
-            <p className="font-sans text-sm" style={{ color: "#6B7E90" }}>
+            <div className="h-px w-12 mx-auto" style={{ background: "rgba(225,174,20,0.4)" }} />
+            <p className="font-sans text-sm" style={{ color: "rgba(245,240,232,0.42)" }}>
               生效日期：{EFFECTIVE_DATE}　｜　最後更新：{LAST_UPDATED}
             </p>
           </div>
@@ -94,7 +100,7 @@ export default function PrivacyPage() {
                   "157｜調查、統計與研究分析（服務改善與品質提升）",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -109,7 +115,7 @@ export default function PrivacyPage() {
                   "C093｜財務交易：付款紀錄、服務費用資訊",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -124,7 +130,7 @@ export default function PrivacyPage() {
                   "方式：以電子或書面方式為合法、適當之蒐集、處理及利用",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -141,7 +147,7 @@ export default function PrivacyPage() {
                   "刪除",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -168,7 +174,7 @@ export default function PrivacyPage() {
                   "您使用本網站八字計算工具時輸入之出生資料（僅於您的裝置本地計算，不上傳儲存）",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -189,7 +195,7 @@ export default function PrivacyPage() {
                   "諮詢報告及個案資料採匿名化或加密保存",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -212,7 +218,7 @@ export default function PrivacyPage() {
                   "提供您諮詢申訴的服務窗口",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -236,7 +242,7 @@ export default function PrivacyPage() {
                   "Vercel：本網站之託管服務商",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
-                    <span style={{ color: "#B8902A", flexShrink: 0 }}>▸</span>
+                    <span style={{ color: "#E1AE14", flexShrink: 0 }}>▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -264,11 +270,11 @@ export default function PrivacyPage() {
             </div>
 
             {/* 聯絡我們 */}
-            <div style={{ ...sectionStyle, background: "#1A2D45" }}>
-              <h2 className="font-serif" style={{ ...h2Style, color: "#fff", borderBottomColor: "rgba(184,144,42,0.3)" }}>
+            <div style={{ ...sectionStyle, background: "#0D0D0D", border: "1px solid rgba(225,174,20,0.2)" }}>
+              <h2 className="font-serif" style={{ ...h2Style, color: "#F5F0E8", borderBottomColor: "rgba(225,174,20,0.25)" }}>
                 九、聯絡本研究所
               </h2>
-              <p className="font-sans" style={{ ...pStyle, color: "rgba(255,255,255,0.7)" }}>
+              <p className="font-sans" style={{ ...pStyle, color: "rgba(245,240,232,0.6)" }}>
                 如對本隱私政策有任何疑問，或欲行使個人資料相關權利，請透過以下方式聯絡我們：
               </p>
               <ul className="list-none space-y-3 pl-4">
@@ -278,25 +284,25 @@ export default function PrivacyPage() {
                   { label: "LINE", value: "@enlite731", href: LINE_URL },
                 ].map((c) => (
                   <li key={c.label} className="font-sans flex gap-3 items-center">
-                    <span className="text-xs font-semibold font-sans" style={{ color: "#B8902A", minWidth: "40px" }}>{c.label}</span>
+                    <span className="text-xs font-semibold font-sans" style={{ color: "#E1AE14", minWidth: "40px" }}>{c.label}</span>
                     <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined}
                       rel="noopener noreferrer"
                       className="text-sm font-sans transition-colors duration-200"
-                      style={{ color: "rgba(255,255,255,0.75)" }}>
+                      style={{ color: "rgba(245,240,232,0.65)" }}>
                       {c.value}
                     </a>
                   </li>
                 ))}
               </ul>
-              <p className="font-sans mt-5" style={{ ...pStyle, color: "rgba(255,255,255,0.5)", marginBottom: 0 }}>
+              <p className="font-sans mt-5" style={{ ...pStyle, color: "rgba(245,240,232,0.38)", marginBottom: 0 }}>
                 本研究所將於收到請求後 15 個工作日內回覆。
               </p>
             </div>
 
             <div className="text-center mt-8">
               <Link href="/"
-                className="inline-flex items-center gap-2 text-sm font-sans transition-colors duration-200"
-                style={{ color: "#B8902A" }}>
+                className="link-hover inline-flex items-center gap-2 text-sm font-sans transition-colors duration-200"
+                style={{ color: "#E1AE14" }}>
                 ← 返回首頁
               </Link>
             </div>
