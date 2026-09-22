@@ -11,7 +11,6 @@ const quickLinks = [
   { href: "/about",      label: "關於光宇" },
   { href: "/services",   label: "服務項目" },
   { href: "/cases",      label: "客戶案例" },
-  { href: "/experience", label: "免費體驗" },
   { href: "/faq",        label: "FAQ" },
 ];
 

@@ -163,9 +163,6 @@ export default function CasesPage() {
               <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-4 inline-flex">
                 加入 LINE 預約諮詢
               </a>
-              <a href="/experience" className="btn-outline px-8 py-4 inline-flex">
-                ✦ 先體驗免費命盤
-              </a>
             </div>
           </div>
         </section>

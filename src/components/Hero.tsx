@@ -284,13 +284,6 @@ export default function Hero() {
                 </svg>
                 加入 LINE 預約諮詢
               </a>
-              <Link
-                href="/experience"
-                className="btn-outline inline-flex items-center justify-center text-sm"
-                style={{ padding: "14px 28px" }}
-              >
-                先體驗免費命盤
-              </Link>
             </div>
 
             {/* Trust items */}
