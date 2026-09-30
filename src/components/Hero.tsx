@@ -34,13 +34,13 @@ function CompassSVG() {
       aria-hidden="true"
     >
       {/* Outer circle */}
-      <circle cx="200" cy="200" r="185" stroke="#E1AE14" strokeWidth="0.8" strokeOpacity="0.35" />
+      <circle cx="200" cy="200" r="185" stroke="#C89B5A" strokeWidth="0.8" strokeOpacity="0.35" />
       {/* Mid circle */}
-      <circle cx="200" cy="200" r="140" stroke="#E1AE14" strokeWidth="0.5" strokeOpacity="0.2" />
+      <circle cx="200" cy="200" r="140" stroke="#C89B5A" strokeWidth="0.5" strokeOpacity="0.2" />
       {/* Inner circle */}
-      <circle cx="200" cy="200" r="80" stroke="#E1AE14" strokeWidth="0.5" strokeOpacity="0.18" />
+      <circle cx="200" cy="200" r="80" stroke="#C89B5A" strokeWidth="0.5" strokeOpacity="0.18" />
       {/* Innermost */}
-      <circle cx="200" cy="200" r="28" stroke="#E1AE14" strokeWidth="0.7" strokeOpacity="0.3" />
+      <circle cx="200" cy="200" r="28" stroke="#C89B5A" strokeWidth="0.7" strokeOpacity="0.3" />
 
       {/* 8 main radial lines */}
       {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => {
@@ -51,7 +51,7 @@ function CompassSVG() {
         const y2 = 200 + 183 * Math.sin(rad);
         return (
           <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2}
-            stroke="#E1AE14" strokeWidth={deg % 90 === 0 ? "0.9" : "0.5"}
+            stroke="#C89B5A" strokeWidth={deg % 90 === 0 ? "0.9" : "0.5"}
             strokeOpacity={deg % 90 === 0 ? "0.35" : "0.2"} />
         );
       })}
@@ -65,7 +65,7 @@ function CompassSVG() {
         const y2 = 200 + 185 * Math.sin(rad);
         return (
           <line key={`tick-${deg}`} x1={x1} y1={y1} x2={x2} y2={y2}
-            stroke="#E1AE14" strokeWidth="0.8" strokeOpacity="0.28" />
+            stroke="#C89B5A" strokeWidth="0.8" strokeOpacity="0.28" />
         );
       })}
 
@@ -78,7 +78,7 @@ function CompassSVG() {
         const y2 = 200 + 185 * Math.sin(rad);
         return (
           <line key={`fine-${deg}`} x1={x1} y1={y1} x2={x2} y2={y2}
-            stroke="#E1AE14" strokeWidth="0.4" strokeOpacity="0.18" />
+            stroke="#C89B5A" strokeWidth="0.4" strokeOpacity="0.18" />
         );
       })}
 
@@ -95,14 +95,14 @@ function CompassSVG() {
         return (
           <text key={`gua-${deg}`} x={x} y={y}
             textAnchor="middle" dominantBaseline="central"
-            fill="#E1AE14" fillOpacity="0.28"
+            fill="#C89B5A" fillOpacity="0.28"
             fontSize="10" fontFamily="serif"
           >{text}</text>
         );
       })}
 
       {/* Center dot */}
-      <circle cx="200" cy="200" r="3" fill="#E1AE14" fillOpacity="0.45" />
+      <circle cx="200" cy="200" r="3" fill="#C89B5A" fillOpacity="0.45" />
     </svg>
   );
 }
@@ -154,7 +154,7 @@ function StarParticles() {
             width: `${s.size}px`,
             height: `${s.size}px`,
             borderRadius: "50%",
-            background: "#E1AE14",
+            background: "#C89B5A",
             animation: `float-up ${s.d}s ease-in-out ${s.delay}s infinite`,
             opacity: 0.6,
           }}
@@ -168,7 +168,7 @@ export default function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ background: "#121212", minHeight: "100svh", display: "flex", alignItems: "center" }}
+      style={{ background: "#2B2622", minHeight: "100svh", display: "flex", alignItems: "center" }}
     >
       {/* Star particles */}
       <StarParticles />
@@ -196,7 +196,7 @@ export default function Hero() {
           top: "20%", right: "10%",
           width: "400px", height: "400px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(225,174,20,0.06) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(166,124,61,0.06) 0%, transparent 65%)",
         }}
       />
 
@@ -211,7 +211,7 @@ export default function Hero() {
             <p
               className="font-sans text-xs font-medium"
               style={{
-                color: "#E1AE14",
+                color: "#C89B5A",
                 letterSpacing: "0.28em",
                 animation: anim("fade-in", "0.6s", "0.05s"),
               }}
@@ -225,16 +225,16 @@ export default function Hero() {
                 className="font-serif font-bold leading-tight"
                 style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}
               >
-                <span style={{ display: "block", color: "#F5F0E8", animation: anim("fade-up", "0.65s", "0.18s") }}>
+                <span style={{ display: "block", color: "#FAF6EF", animation: anim("fade-up", "0.65s", "0.18s") }}>
                   看懂自己，
                 </span>
-                <span style={{ display: "block", color: "#F5F0E8", animation: anim("fade-up", "0.65s", "0.36s") }}>
+                <span style={{ display: "block", color: "#FAF6EF", animation: anim("fade-up", "0.65s", "0.36s") }}>
                   比急著改變
                 </span>
                 <span
                   style={{
                     display: "block",
-                    color: "#E1AE14",
+                    color: "#C89B5A",
                     animation: anim("fade-up", "0.65s", "0.52s"),
                     fontSize: "clamp(1.7rem, 3.8vw, 2.7rem)",
                   }}
@@ -248,7 +248,7 @@ export default function Hero() {
                 className="mt-5 h-px"
                 style={{
                   width: "80px",
-                  background: "linear-gradient(to right, #E1AE14, transparent)",
+                  background: "linear-gradient(to right, #C89B5A, transparent)",
                   transformOrigin: "left center",
                   animation: anim("scale-in-x", "0.5s", "0.7s"),
                 }}
@@ -290,7 +290,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-x-5 gap-y-2" style={{ animation: anim("fade-in", "0.5s", "1.15s") }}>
               {trustItems.map((t) => (
                 <div key={t} className="flex items-center gap-1.5">
-                  <span aria-hidden="true" style={{ display: "inline-block", width: "3px", height: "3px", borderRadius: "50%", background: "#E1AE14", opacity: 0.55, flexShrink: 0 }} />
+                  <span aria-hidden="true" style={{ display: "inline-block", width: "3px", height: "3px", borderRadius: "50%", background: "#C89B5A", opacity: 0.55, flexShrink: 0 }} />
                   <span className="text-xs font-sans" style={{ color: "rgba(245,240,232,0.4)", letterSpacing: "0.02em" }}>{t}</span>
                 </div>
               ))}
@@ -308,7 +308,7 @@ export default function Hero() {
               className="absolute rounded-full"
               style={{
                 width: "340px", height: "340px",
-                background: "radial-gradient(circle, rgba(225,174,20,0.08) 0%, transparent 65%)",
+                background: "radial-gradient(circle, rgba(166,124,61,0.08) 0%, transparent 65%)",
                 top: "50%", left: "50%",
                 transform: "translate(-50%, -50%)",
               }}
@@ -321,7 +321,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom gold rule */}
-      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(225,174,20,0.25), transparent)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(166,124,61,0.25), transparent)" }} />
     </section>
   );
 }

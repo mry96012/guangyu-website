@@ -33,10 +33,10 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "rgba(12,12,12,0.97)" : "rgba(18,18,18,0.9)",
+        background: scrolled ? "rgba(250,246,239,0.97)" : "rgba(250,246,239,0.9)",
         backdropFilter: "blur(20px)",
-        borderBottom: `1px solid ${scrolled ? "rgba(225,174,20,0.25)" : "rgba(225,174,20,0.1)"}`,
-        boxShadow: scrolled ? "0 2px 32px rgba(0,0,0,0.4)" : "none",
+        borderBottom: `1px solid ${scrolled ? "rgba(166,124,61,0.25)" : "rgba(166,124,61,0.1)"}`,
+        boxShadow: scrolled ? "0 2px 16px rgba(43,38,34,0.1)" : "none",
       }}
     >
       <div
@@ -59,17 +59,17 @@ export default function Navbar() {
             <p
               className="font-serif font-bold tracking-widest whitespace-nowrap"
               style={{
-                color: "#F5F0E8",
+                color: "#2B2622",
                 fontSize: scrolled ? "1.05rem" : "1.2rem",
                 transition: "font-size 0.3s ease",
               }}
             >
               光宇方向命理研究所
             </p>
-            <p className="font-sans mt-1" style={{ color: "#E1AE14", fontSize: "0.55rem", letterSpacing: "0.12em" }}>
+            <p className="font-sans mt-1" style={{ color: "#A67C3D", fontSize: "0.55rem", letterSpacing: "0.12em" }}>
               理解自己・找到方向・創造更好的選擇
             </p>
-            <p className="font-sans mt-0.5 tracking-widest whitespace-nowrap" style={{ color: "rgba(245,240,232,0.22)", fontSize: "0.5rem" }}>
+            <p className="font-sans mt-0.5 tracking-widest whitespace-nowrap" style={{ color: "rgba(43,38,34,0.28)", fontSize: "0.5rem" }}>
               GUANGYU METAPHYSICS INSTITUTE
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function Navbar() {
               key={l.href + l.label}
               href={l.href}
               className="link-hover font-sans text-sm transition-colors duration-200 whitespace-nowrap"
-              style={{ color: "rgba(245,240,232,0.72)", letterSpacing: "0.05em" }}
+              style={{ color: "rgba(43,38,34,0.65)", letterSpacing: "0.05em" }}
             >
               {l.label}
             </Link>
@@ -117,7 +117,7 @@ export default function Navbar() {
                 key={i}
                 className="block w-5 h-0.5 transition-all duration-300"
                 style={{
-                  background: "#F5F0E8",
+                  background: "#2B2622",
                   transform: transform ?? "",
                   opacity: i === 1 ? (open ? 0 : 1) : 1,
                 }}
@@ -132,8 +132,8 @@ export default function Navbar() {
         className="xl:hidden overflow-hidden transition-all duration-300"
         style={{
           maxHeight: open ? "480px" : "0",
-          background: "rgba(14,14,14,0.98)",
-          borderTop: open ? "1px solid rgba(225,174,20,0.18)" : "none",
+          background: "rgba(250,246,239,0.99)",
+          borderTop: open ? "1px solid rgba(166,124,61,0.18)" : "none",
         }}
       >
         <nav className="flex flex-col px-6 pb-6 pt-3 gap-0.5">
@@ -143,7 +143,7 @@ export default function Navbar() {
               href={l.href}
               onClick={() => setOpen(false)}
               className="py-3 text-sm font-sans border-b"
-              style={{ color: "rgba(245,240,232,0.75)", borderColor: "rgba(225,174,20,0.12)", letterSpacing: "0.04em" }}
+              style={{ color: "rgba(43,38,34,0.72)", borderColor: "#E5DCCE", letterSpacing: "0.04em" }}
             >
               {l.label}
             </Link>

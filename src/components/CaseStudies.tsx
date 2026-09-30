@@ -63,12 +63,12 @@ export default function CaseStudies() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Title — right-aligned, asymmetric from BrandValues */}
         <div className="reveal mb-14 text-right" data-delay="0">
-          <p className="font-sans text-xs mb-3" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>CASE STUDIES</p>
-          <h2 className="font-serif text-3xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.05em" }}>
+          <p className="font-sans text-xs mb-3" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>CASE STUDIES</p>
+          <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.05em" }}>
             真實案例分享
           </h2>
-          <div className="mt-3 h-px w-16 ml-auto" style={{ background: "linear-gradient(to left, #E1AE14, transparent)" }} />
-          <p className="mt-4 text-sm font-sans" style={{ color: "rgba(245,240,232,0.5)" }}>
+          <div className="mt-3 h-px w-16 ml-auto" style={{ background: "linear-gradient(to left, #A67C3D, transparent)" }} />
+          <p className="mt-4 text-sm font-sans" style={{ color: "#6E655A" }}>
             陪伴你走過迷惘，找到專屬的方向
           </p>
         </div>
@@ -84,26 +84,26 @@ export default function CaseStudies() {
               <div
                 className="card-lift overflow-hidden"
                 style={{
-                  background: "#121212",
-                  border: "1px solid rgba(225,174,20,0.12)",
-                  borderTop: "2px solid rgba(225,174,20,0.4)",
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(166,124,61,0.12)",
+                  borderTop: "2px solid rgba(166,124,61,0.4)",
                 }}
               >
                 {/* Header */}
-                <div className="px-8 pt-8 pb-6 lg:flex lg:gap-10 lg:items-start" style={{ borderBottom: "1px solid rgba(225,174,20,0.08)" }}>
+                <div className="px-8 pt-8 pb-6 lg:flex lg:gap-10 lg:items-start" style={{ borderBottom: "1px solid rgba(166,124,61,0.08)" }}>
                   <div className="lg:flex-1">
                     <span
                       className="inline-block text-xs font-semibold font-sans px-3 py-1 mb-4"
-                      style={{ background: "rgba(225,174,20,0.08)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.2)" }}
+                      style={{ background: "rgba(166,124,61,0.08)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.2)" }}
                     >
                       {c.tag}
                     </span>
-                    <p className="font-serif text-2xl font-semibold mb-4" style={{ color: "#F5F0E8", letterSpacing: "0.03em" }}>
+                    <p className="font-serif text-2xl font-semibold mb-4" style={{ color: "#2B2622", letterSpacing: "0.03em" }}>
                       {c.tagline}
                     </p>
                   </div>
-                  <div className="lg:w-80 pl-4" style={{ borderLeft: "1px solid rgba(225,174,20,0.2)" }}>
-                    <p className="text-sm font-sans italic leading-relaxed" style={{ color: "rgba(245,240,232,0.45)" }}>
+                  <div className="lg:w-80 pl-4" style={{ borderLeft: "1px solid rgba(166,124,61,0.2)" }}>
+                    <p className="text-sm font-sans italic leading-relaxed" style={{ color: "#6E655A" }}>
                       「{c.quote}」
                     </p>
                   </div>
@@ -113,10 +113,10 @@ export default function CaseStudies() {
                 <div className="px-8 py-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[c.problem, c.tools, c.focus, c.result].map((value, j) => (
                     <div key={detailLabels[j]} className="flex items-start gap-3">
-                      <span className="text-xs font-semibold font-sans shrink-0 mt-0.5" style={{ color: "#E1AE14", minWidth: "36px", letterSpacing: "0.04em" }}>
+                      <span className="text-xs font-semibold font-sans shrink-0 mt-0.5" style={{ color: "#A67C3D", minWidth: "36px", letterSpacing: "0.04em" }}>
                         {detailLabels[j]}
                       </span>
-                      <p className="text-sm font-sans leading-relaxed" style={{ color: "rgba(245,240,232,0.6)", letterSpacing: "0.01em" }}>
+                      <p className="text-sm font-sans leading-relaxed" style={{ color: "#6E655A", letterSpacing: "0.01em" }}>
                         {value}
                       </p>
                     </div>
@@ -124,8 +124,8 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Feedback quote — full-width bottom strip */}
-                <div className="px-8 py-4" style={{ background: "rgba(225,174,20,0.04)", borderTop: "1px solid rgba(225,174,20,0.08)" }}>
-                  <p className="text-sm font-sans italic" style={{ color: "rgba(245,240,232,0.5)" }}>
+                <div className="px-8 py-4" style={{ background: "rgba(166,124,61,0.04)", borderTop: "1px solid rgba(166,124,61,0.08)" }}>
+                  <p className="text-sm font-sans italic" style={{ color: "#6E655A" }}>
                     {c.feedback}
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export default function CaseStudies() {
           <Link href="/cases" className="btn-outline text-sm px-7 py-3 inline-flex items-center gap-2">
             查看更多案例
           </Link>
-          <p className="font-serif text-sm" style={{ color: "rgba(245,240,232,0.35)" }}>
+          <p className="font-serif text-sm" style={{ color: "rgba(43,38,34,0.45)" }}>
             每個故事，都是改變的開始
           </p>
         </div>

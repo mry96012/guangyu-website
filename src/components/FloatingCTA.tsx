@@ -24,7 +24,7 @@ export default function FloatingCTA() {
       {/* Tooltip label */}
       <div
         className="hidden sm:block text-xs font-sans font-semibold px-3 py-1.5"
-        style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.2)", letterSpacing: "0.06em" }}
+        style={{ background: "rgba(166,124,61,0.1)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.2)", letterSpacing: "0.06em" }}
       >
         免費預約諮詢
       </div>

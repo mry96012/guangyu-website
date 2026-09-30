@@ -62,14 +62,14 @@ export default function CasesPage() {
       <main>
         {/* Header */}
         <section className="pt-32 pb-16 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}>
+          style={{ background: "linear-gradient(160deg, #FAF6EF 0%, #F0E8D8 50%, #FAF6EF 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,174,20,0.07) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(166,124,61,0.07) 0%, transparent 60%)" }} />
           <div className="relative max-w-2xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>CASE STUDIES</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#F5F0E8" }}>客戶案例</h1>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>CASE STUDIES</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#2B2622" }}>客戶案例</h1>
             <div className="gold-diamond max-w-xs mx-auto"><span /></div>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>
               每個人都有屬於自己的困境與轉機。這些故事，也許有你的影子。
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function CasesPage() {
         <section className="py-8 section-light">
           <div className="max-w-3xl mx-auto px-6">
             <div className="px-5 py-4 text-xs font-sans leading-relaxed"
-              style={{ background: "rgba(225,174,20,0.04)", border: "1px solid rgba(225,174,20,0.15)", color: "rgba(245,240,232,0.45)" }}>
+              style={{ background: "rgba(166,124,61,0.04)", border: "1px solid rgba(166,124,61,0.15)", color: "#6E655A" }}>
               以下案例來自真實諮詢個案，內容經客戶同意分享，並已調整足以識別身份的細節（姓名、地點與部分時間資訊）以保護隱私。目的是讓你在預約前更清楚了解光宇方向的諮詢方式，而非預測式的「算命結果」。
             </div>
           </div>
@@ -91,55 +91,55 @@ export default function CasesPage() {
             {cases.map((c, i) => (
               <div key={i} className="overflow-hidden"
                 style={{
-                  background: "#121212",
-                  border: "1px solid rgba(225,174,20,0.12)",
-                  borderTop: "2px solid rgba(225,174,20,0.4)",
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(166,124,61,0.12)",
+                  borderTop: "2px solid rgba(166,124,61,0.4)",
                 }}>
 
                 {/* Case Header */}
                 <div className="px-7 pt-7 pb-6"
-                  style={{ borderBottom: "1px solid rgba(225,174,20,0.08)" }}>
+                  style={{ borderBottom: "1px solid rgba(166,124,61,0.08)" }}>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-xs font-bold font-sans px-3 py-1.5"
-                      style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.25)" }}>
+                      style={{ background: "rgba(166,124,61,0.1)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.25)" }}>
                       {c.tag}
                     </span>
                     <span className="text-xs font-sans px-3 py-1.5"
-                      style={{ background: "rgba(245,240,232,0.04)", color: "rgba(245,240,232,0.5)", border: "1px solid rgba(245,240,232,0.08)" }}>
+                      style={{ background: "rgba(43,38,34,0.05)", color: "#6E655A", border: "1px solid rgba(245,240,232,0.08)" }}>
                       {c.tools}
                     </span>
                   </div>
-                  <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.03em" }}>{c.tagline}</h2>
+                  <h2 className="font-serif text-2xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.03em" }}>{c.tagline}</h2>
                 </div>
 
                 {/* Story flow: 困境 → 洞察 → 改變 */}
                 <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x"
-                  style={{ borderColor: "rgba(225,174,20,0.08)" }}>
+                  style={{ borderColor: "rgba(166,124,61,0.08)" }}>
                   {[c.situation, c.insight, c.change].map((content, j) => (
                     <div key={j} className="px-6 py-6 space-y-3"
-                      style={{ background: j === 1 ? "rgba(225,174,20,0.02)" : "transparent" }}>
+                      style={{ background: j === 1 ? "rgba(166,124,61,0.02)" : "transparent" }}>
                       <div className="flex items-center gap-2">
-                        <span className="font-sans text-xs font-bold tracking-widest" style={{ color: "#E1AE14" }}>
+                        <span className="font-sans text-xs font-bold tracking-widest" style={{ color: "#A67C3D" }}>
                           0{j + 1}
                         </span>
-                        <span className="font-sans text-xs font-semibold" style={{ color: "rgba(245,240,232,0.42)" }}>
+                        <span className="font-sans text-xs font-semibold" style={{ color: "#6E655A" }}>
                           {stepsLabels[j]}
                         </span>
                       </div>
-                      <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.6)" }}>{content}</p>
+                      <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>{content}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Bottom: outcome + feedback */}
                 <div className="px-7 py-5 flex flex-col md:flex-row items-start md:items-center gap-4"
-                  style={{ background: "rgba(225,174,20,0.03)", borderTop: "1px solid rgba(225,174,20,0.08)" }}>
+                  style={{ background: "rgba(166,124,61,0.03)", borderTop: "1px solid rgba(166,124,61,0.08)" }}>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="text-xs font-semibold font-sans" style={{ color: "#06C755" }}>✓ {c.outcome}</span>
                   </div>
-                  <div className="hidden md:block w-px self-stretch" style={{ background: "rgba(225,174,20,0.15)" }} />
+                  <div className="hidden md:block w-px self-stretch" style={{ background: "rgba(166,124,61,0.15)" }} />
                   <div className="flex-1 px-4 py-3"
-                    style={{ background: "rgba(245,240,232,0.03)", border: "1px solid rgba(225,174,20,0.1)" }}>
+                    style={{ background: "rgba(43,38,34,0.04)", border: "1px solid rgba(166,124,61,0.1)" }}>
                     <p className="text-xs font-sans italic leading-relaxed" style={{ color: "rgba(245,240,232,0.48)" }}>
                       {c.feedback}
                     </p>
@@ -153,10 +153,10 @@ export default function CasesPage() {
         {/* CTA */}
         <section className="py-16 section-alt">
           <div className="max-w-2xl mx-auto px-6 text-center space-y-6">
-            <h2 className="font-serif text-3xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>
+            <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
               你的故事，也可以從這裡開始
             </h2>
-            <p className="font-sans text-base leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
+            <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
               每個人都有屬於自己的命盤與課題。<br />光宇方向陪你看懂自己，找到屬於你的方向。
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -24,7 +24,7 @@ const serviceLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#0D0D0D", borderTop: "1px solid rgba(225,174,20,0.14)" }}>
+    <footer style={{ background: "#221D1A", borderTop: "1px solid rgba(166,124,61,0.14)" }}>
       <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
@@ -35,8 +35,8 @@ export default function Footer() {
                 <Image src="/logo.png" alt="光宇方向" fill className="object-contain" />
               </div>
               <div>
-                <p className="font-serif text-base font-semibold tracking-widest" style={{ color: "#F5F0E8" }}>光宇方向命理研究所</p>
-                <p className="text-xs tracking-widest mt-0.5 font-sans" style={{ color: "rgba(225,174,20,0.5)" }}>理解自己・找到方向</p>
+                <p className="font-serif text-base font-semibold tracking-widest" style={{ color: "#FAF6EF" }}>光宇方向命理研究所</p>
+                <p className="text-xs tracking-widest mt-0.5 font-sans" style={{ color: "rgba(166,124,61,0.5)" }}>理解自己・找到方向</p>
                 <p className="font-sans text-[9px] tracking-widest mt-0.5" style={{ color: "rgba(245,240,232,0.2)" }}>GUANGYU METAPHYSICS INSTITUTE</p>
               </div>
             </div>
@@ -55,19 +55,19 @@ export default function Footer() {
               </a>
               <a href={IG_URL} target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center transition-all duration-200"
-                style={{ background: "rgba(225,174,20,0.08)", border: "1px solid rgba(225,174,20,0.22)" }}
+                style={{ background: "rgba(166,124,61,0.08)", border: "1px solid rgba(166,124,61,0.22)" }}
                 aria-label="Instagram">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E1AE14" strokeWidth="2" strokeOpacity="0.7" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C89B5A" strokeWidth="2" strokeOpacity="0.7" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <circle cx="12" cy="12" r="4"/>
-                  <circle cx="17.5" cy="6.5" r="0.5" fill="#E1AE14" stroke="none"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="#C89B5A" stroke="none"/>
                 </svg>
               </a>
               <a href={FB_URL} target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center transition-all duration-200"
-                style={{ background: "rgba(225,174,20,0.08)", border: "1px solid rgba(225,174,20,0.22)" }}
+                style={{ background: "rgba(166,124,61,0.08)", border: "1px solid rgba(166,124,61,0.22)" }}
                 aria-label="Facebook">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E1AE14" strokeWidth="2" strokeOpacity="0.7" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C89B5A" strokeWidth="2" strokeOpacity="0.7" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                 </svg>
               </a>
@@ -113,7 +113,7 @@ export default function Footer() {
                 { label: "時間",   value: "週一至週日 10:00–21:00" },
               ].map((c) => (
                 <li key={c.label} className="flex items-start gap-2">
-                  <span className="text-xs font-sans font-semibold mt-0.5 shrink-0" style={{ color: "#E1AE14", minWidth: "36px", opacity: 0.8 }}>{c.label}</span>
+                  <span className="text-xs font-sans font-semibold mt-0.5 shrink-0" style={{ color: "#C89B5A", minWidth: "36px", opacity: 0.8 }}>{c.label}</span>
                   {c.href ? (
                     <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
                       className="link-hover text-xs font-sans transition-colors duration-200 break-all" style={{ color: "rgba(245,240,232,0.48)" }}>
@@ -130,7 +130,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3"
-          style={{ borderTop: "1px solid rgba(225,174,20,0.08)" }}>
+          style={{ borderTop: "1px solid rgba(166,124,61,0.08)" }}>
           <p className="text-xs font-sans" style={{ color: "rgba(245,240,232,0.22)" }}>
             © 2025 光宇方向命理研究所 All Rights Reserved.
           </p>

@@ -18,10 +18,10 @@ function FiveElementsStar() {
 
   return (
     <svg width="52" height="52" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      <polygon points={points} stroke="#E1AE14" strokeWidth="1.2" strokeOpacity="0.7" fill="none" />
-      <circle cx="50" cy="50" r="48" stroke="#E1AE14" strokeWidth="0.6" strokeOpacity="0.3" />
-      <circle cx="50" cy="50" r="20" stroke="#E1AE14" strokeWidth="0.5" strokeOpacity="0.2" />
-      <circle cx="50" cy="50" r="3" fill="#E1AE14" fillOpacity="0.5" />
+      <polygon points={points} stroke="#A67C3D" strokeWidth="1.2" strokeOpacity="0.7" fill="none" />
+      <circle cx="50" cy="50" r="48" stroke="#A67C3D" strokeWidth="0.6" strokeOpacity="0.3" />
+      <circle cx="50" cy="50" r="20" stroke="#A67C3D" strokeWidth="0.5" strokeOpacity="0.2" />
+      <circle cx="50" cy="50" r="3" fill="#A67C3D" fillOpacity="0.5" />
     </svg>
   );
 }
@@ -54,11 +54,11 @@ export default function FinalCTA() {
     <section
       ref={sectionRef}
       className="py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}
+      style={{ background: "linear-gradient(160deg, #FAF6EF 0%, #F0E8D8 50%, #FAF6EF 100%)" }}
     >
       {/* Ambient glow */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 65% 55% at 50% 50%, rgba(225,174,20,0.06) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 65% 55% at 50% 50%, rgba(166,124,61,0.06) 0%, transparent 70%)" }}
       />
 
       {/* Section divider top */}
@@ -73,7 +73,7 @@ export default function FinalCTA() {
         </div>
 
         <div className="reveal space-y-4" data-delay="120">
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold leading-snug" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold leading-snug" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
             準備好了解自己，找到方向了嗎？
           </h2>
           <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.48)", letterSpacing: "0.02em" }}>
@@ -96,15 +96,15 @@ export default function FinalCTA() {
 
           <div
             className="flex items-center gap-3 px-5 py-3"
-            style={{ background: "rgba(245,240,232,0.04)", border: "1px solid rgba(225,174,20,0.15)" }}
+            style={{ background: "rgba(43,38,34,0.05)", border: "1px solid rgba(166,124,61,0.15)" }}
           >
             <div className="w-14 h-14 overflow-hidden relative shrink-0">
               <Image src="/qrcode-line.png" alt="LINE QR Code" fill className="object-cover" />
             </div>
             <div className="text-left">
-              <p className="text-xs font-semibold font-sans" style={{ color: "#F5F0E8" }}>LINE 官方帳號</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(245,240,232,0.42)" }}>@enlite731</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "#E1AE14", opacity: 0.6 }}>預約・諮詢・優惠</p>
+              <p className="text-xs font-semibold font-sans" style={{ color: "#2B2622" }}>LINE 官方帳號</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "#6E655A" }}>@enlite731</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "#A67C3D", opacity: 0.6 }}>預約・諮詢・優惠</p>
             </div>
           </div>
         </div>

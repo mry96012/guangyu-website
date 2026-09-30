@@ -1,18 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Dark Gold Color System ── */
-  --color-bg:            #121212;
-  --color-surface:       #1A1A1A;
-  --color-surface-2:     #222222;
-  --color-gold:          #E1AE14;
-  --color-gold-light:    #F0C830;
-  --color-gold-dim:      #B8901A;
-  --color-gold-subtle:   rgba(225,174,20,0.1);
-  --color-text:          #F5F0E8;
-  --color-text-muted:    rgba(245,240,232,0.52);
-  --color-border:        rgba(225,174,20,0.2);
-  --color-border-subtle: rgba(245,240,232,0.07);
+  /* ── Warm Light Color System ── */
+  --color-bg:            #FAF6EF;   /* 暖米白，主背景 */
+  --color-surface:       #F1EAE0;   /* 淺米，次層區塊 */
+  --color-card:          #FFFFFF;   /* 卡片提亮一階 */
+  --color-ink:           #2B2622;   /* 深色對比區背景 */
+  --color-on-ink:        #FAF6EF;   /* 深色區文字 */
+
+  --color-gold:          #A67C3D;   /* 金棕（裝飾用） */
+  --color-gold-light:    #C89B5A;   /* 淺金棕（hover / 裝飾） */
+  --color-gold-dim:      #7E5A2B;   /* 深金棕（小字與按鈕文字） */
+  --color-gold-subtle:   rgba(166,124,61,0.08);
+
+  --color-text:          #2B2622;   /* 暖墨色 */
+  --color-text-muted:    #6E655A;   /* 輔助文字（實色） */
+  --color-border:        #E5DCCE;   /* 極淡暖灰邊框 */
+  --color-border-subtle: rgba(43,38,34,0.07);
+
+  /* 狀態色 */
+  --color-success:  #4A7C59;
+  --color-warning:  #B07D2B;
+  --color-error:    #A64B3C;
+  --color-info:     #4E6E8E;
 
   /* Typography */
   --font-sans:    "Noto Sans TC", system-ui, sans-serif;
@@ -76,12 +86,12 @@ body {
   to   { transform: rotate(360deg); }
 }
 @keyframes float-up {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-  50%       { transform: translateY(-18px) scale(1.08); opacity: 0.9; }
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50%       { transform: translateY(-18px) scale(1.08); opacity: 0.85; }
 }
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(225,174,20,0.4); }
-  50%       { box-shadow: 0 0 16px 4px rgba(225,174,20,0.12); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(166,124,61,0.3); }
+  50%       { box-shadow: 0 0 12px 3px rgba(166,124,61,0.1); }
 }
 @keyframes link-underline {
   from { transform: scaleX(0); transform-origin: left; }
@@ -102,7 +112,7 @@ body {
 /* ── Utilities ─────────────────────────── */
 @layer utilities {
   .text-gold-shimmer {
-    background: linear-gradient(90deg, #E1AE14 0%, #F5D060 40%, #E1AE14 70%, #B8901A 100%);
+    background: linear-gradient(90deg, #A67C3D 0%, #C89B5A 40%, #A67C3D 70%, #7E5A2B 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -119,12 +129,12 @@ body {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(225,174,20,0.35), transparent);
+    background: linear-gradient(to right, transparent, rgba(166,124,61,0.3), transparent);
   }
 
   .ornament-line {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(225,174,20,0.28) 30%, rgba(225,174,20,0.28) 70%, transparent);
+    background: linear-gradient(to right, transparent, rgba(166,124,61,0.22) 30%, rgba(166,124,61,0.22) 70%, transparent);
   }
 
   .blur-locked {
@@ -134,13 +144,13 @@ body {
     pointer-events: none;
   }
 
-  /* Card with hover lift + gold border glow */
+  /* Card with hover lift + subtle shadow */
   .card-lift {
-    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
   }
   .card-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(225,174,20,0.22);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(43,38,34,0.1), 0 0 0 1px var(--color-border);
   }
 
   .pulse-gold { animation: pulse-gold 2.5s ease-in-out infinite; }
@@ -169,49 +179,52 @@ body {
 /* ── Components ────────────────────────── */
 @layer components {
   /* ── Buttons ── */
+
+  /* Primary: 墨色底 + 米白字 */
   .btn-gold {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: var(--color-gold);
-    color: #121212;
+    background: var(--color-ink);
+    color: var(--color-on-ink);
     font-weight: 700;
     font-size: 0.875rem;
     letter-spacing: 0.07em;
-    border: 1px solid var(--color-gold);
+    border: 1px solid var(--color-ink);
     border-radius: 2px;
     cursor: pointer;
     transition: all 0.25s ease;
     text-decoration: none;
   }
   .btn-gold:hover {
-    background: var(--color-gold-light);
-    border-color: var(--color-gold-light);
-    box-shadow: 0 0 20px rgba(225,174,20,0.4), 0 6px 20px rgba(0,0,0,0.3);
+    background: #3D3530;
+    border-color: #3D3530;
+    box-shadow: 0 4px 16px rgba(43,38,34,0.2);
     transform: translateY(-1px);
   }
 
+  /* Secondary: 透明底 + 墨色邊框 */
   .btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
     background: transparent;
-    color: var(--color-gold);
+    color: var(--color-text);
     font-weight: 600;
     font-size: 0.875rem;
     letter-spacing: 0.06em;
-    border: 1px solid rgba(225,174,20,0.35);
+    border: 1px solid var(--color-text);
     border-radius: 2px;
     cursor: pointer;
     transition: all 0.25s ease;
     text-decoration: none;
   }
   .btn-outline:hover {
+    background: rgba(43,38,34,0.04);
     border-color: var(--color-gold);
-    background: rgba(225,174,20,0.06);
-    box-shadow: 0 0 12px rgba(225,174,20,0.15);
+    color: var(--color-gold-dim);
   }
 
   .btn-line {
@@ -232,7 +245,7 @@ body {
   }
   .btn-line:hover {
     background: #05B04A;
-    box-shadow: 0 8px 24px rgba(6,199,85,0.3);
+    box-shadow: 0 6px 20px rgba(6,199,85,0.25);
     transform: translateY(-1px);
   }
 
@@ -246,8 +259,8 @@ body {
     color: var(--color-text);
   }
   .section-dark {
-    background-color: #0A0A0A;
-    color: var(--color-text);
+    background-color: var(--color-ink);
+    color: var(--color-on-ink);
   }
 
   /* ── Input field ── */
@@ -257,18 +270,24 @@ body {
     font-size: 0.875rem;
     font-family: var(--font-sans);
     color: var(--color-text);
-    background: var(--color-surface);
+    background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: 2px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
   .input-field:focus {
     outline: none;
     border-color: var(--color-gold);
-    box-shadow: 0 0 0 3px rgba(225,174,20,0.08);
+    box-shadow: 0 0 0 3px rgba(166,124,61,0.1);
   }
   .input-field::placeholder {
     color: var(--color-text-muted);
+  }
+
+  /* ── focus-visible ring (accessibility) ── */
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
   }
 
   /* ── Section title ── */
@@ -304,7 +323,7 @@ body {
     width: 48px;
     height: 1px;
     background: var(--color-gold);
-    opacity: 0.3;
+    opacity: 0.25;
   }
   .gold-diamond span {
     display: block;
@@ -312,10 +331,10 @@ body {
     height: 5px;
     background: var(--color-gold);
     transform: rotate(45deg);
-    opacity: 0.5;
+    opacity: 0.45;
   }
 
-  /* ── Section divider with gua symbol ── */
+  /* ── Section divider ── */
   .section-divider {
     display: flex;
     align-items: center;
@@ -327,10 +346,10 @@ body {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(225,174,20,0.25), transparent);
+    background: linear-gradient(to right, transparent, rgba(166,124,61,0.2), transparent);
   }
   .section-divider span {
-    color: rgba(225,174,20,0.4);
+    color: rgba(166,124,61,0.4);
     font-size: 0.75rem;
     letter-spacing: 6px;
     font-family: var(--font-sans);

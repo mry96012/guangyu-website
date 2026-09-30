@@ -75,18 +75,18 @@ export default function ServicesPage() {
       <main>
         {/* Page Header */}
         <section className="pt-32 pb-16 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}>
+          style={{ background: "linear-gradient(160deg, #FAF6EF 0%, #F0E8D8 50%, #FAF6EF 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,174,20,0.07) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(166,124,61,0.07) 0%, transparent 60%)" }} />
           <div className="relative max-w-2xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>
               SERVICES & PRICING
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#F5F0E8" }}>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#2B2622" }}>
               服務項目
             </h1>
             <div className="gold-diamond max-w-xs mx-auto"><span /></div>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>
               從你最在意的問題出發，找到最適合的諮詢方式
             </p>
           </div>
@@ -97,10 +97,10 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0"
-                style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.25)" }}>1</div>
-              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>我想了解的主題是…</h2>
+                style={{ background: "rgba(166,124,61,0.1)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.25)" }}>1</div>
+              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>我想了解的主題是…</h2>
             </div>
-            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "rgba(245,240,232,0.42)" }}>
+            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "#6E655A" }}>
               選擇你最想深入的議題，老師會針對此主題進行重點解析
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -111,17 +111,17 @@ export default function ServicesPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-6 space-y-3 transition-all duration-200 cursor-pointer card-lift"
-                  style={{ background: "#1A1A1A", border: "1px solid rgba(225,174,20,0.1)" }}
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(166,124,61,0.1)" }}
                 >
                   <div className="flex items-center gap-3">
-                    <p className="font-serif text-lg font-semibold" style={{ color: "#F5F0E8" }}>{t.label}分析</p>
+                    <p className="font-serif text-lg font-semibold" style={{ color: "#2B2622" }}>{t.label}分析</p>
                   </div>
                   <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)" }}>{t.desc}</p>
                   <p className="font-sans text-xs leading-relaxed p-3"
-                    style={{ background: "rgba(225,174,20,0.04)", color: "rgba(225,174,20,0.7)", border: "1px solid rgba(225,174,20,0.12)" }}>
+                    style={{ background: "rgba(166,124,61,0.04)", color: "rgba(166,124,61,0.7)", border: "1px solid rgba(166,124,61,0.12)" }}>
                     {t.hint}
                   </p>
-                  <div className="flex items-center gap-1 text-sm font-semibold font-sans" style={{ color: "#E1AE14" }}>
+                  <div className="flex items-center gap-1 text-sm font-semibold font-sans" style={{ color: "#A67C3D" }}>
                     <span>預約此主題</span>
                     <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
                   </div>
@@ -136,10 +136,10 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex items-center gap-4 mb-3">
               <div className="w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0"
-                style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.25)" }}>2</div>
-              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>選擇適合的諮詢方案</h2>
+                style={{ background: "rgba(166,124,61,0.1)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.25)" }}>2</div>
+              <h2 className="font-serif text-2xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>選擇適合的諮詢方案</h2>
             </div>
-            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "rgba(245,240,232,0.42)" }}>
+            <p className="font-sans text-sm mb-10 pl-12" style={{ color: "#6E655A" }}>
               不確定選哪個？加入 LINE 告知你的主題，老師會直接給建議
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -148,32 +148,32 @@ export default function ServicesPage() {
                   key={p.id}
                   className="card-lift p-6 space-y-4 flex flex-col relative"
                   style={{
-                    background: p.highlight ? "#1A1600" : "#1A1A1A",
-                    border: p.highlight ? "2px solid rgba(225,174,20,0.5)" : "1px solid rgba(225,174,20,0.12)",
-                    boxShadow: p.highlight ? "0 8px 32px rgba(225,174,20,0.12)" : "none",
+                    background: p.highlight ? "#FBF5E8" : "#FFFFFF",
+                    border: p.highlight ? "2px solid rgba(166,124,61,0.5)" : "1px solid rgba(166,124,61,0.12)",
+                    boxShadow: p.highlight ? "0 8px 32px rgba(166,124,61,0.12)" : "none",
                   }}
                 >
                   {p.highlight && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-bold font-sans"
-                      style={{ background: "#E1AE14", color: "#121212" }}>
+                      style={{ background: "#A67C3D", color: "#FFFFFF" }}>
                       推薦
                     </div>
                   )}
                   <p className="text-xs font-sans px-3 py-1.5 text-center"
                     style={{
-                      background: p.highlight ? "rgba(225,174,20,0.12)" : "rgba(225,174,20,0.06)",
-                      color: p.highlight ? "#E1AE14" : "rgba(225,174,20,0.6)",
-                      border: "1px solid rgba(225,174,20,0.15)",
+                      background: p.highlight ? "rgba(166,124,61,0.12)" : "rgba(166,124,61,0.06)",
+                      color: p.highlight ? "#A67C3D" : "rgba(166,124,61,0.6)",
+                      border: "1px solid rgba(166,124,61,0.15)",
                     }}>
                     {p.badge}
                   </p>
                   <p className="font-serif text-xl font-semibold text-center"
-                    style={{ color: "#F5F0E8" }}>
+                    style={{ color: "#2B2622" }}>
                     {p.title}
                   </p>
                   <div className="text-center">
-                    <p className="font-serif text-3xl font-bold" style={{ color: "#E1AE14" }}>{p.price}</p>
-                    <p className="text-xs font-sans mt-1" style={{ color: "rgba(245,240,232,0.35)" }}>
+                    <p className="font-serif text-3xl font-bold" style={{ color: "#A67C3D" }}>{p.price}</p>
+                    <p className="text-xs font-sans mt-1" style={{ color: "rgba(43,38,34,0.45)" }}>
                       {p.duration}
                     </p>
                   </div>
@@ -197,11 +197,11 @@ export default function ServicesPage() {
                 { label: "回訪優惠",     value: "回診諮詢享 9 折優惠" },
               ].map((e) => (
                 <div key={e.label} className="flex items-start gap-4 p-4"
-                  style={{ background: "#121212", border: "1px solid rgba(225,174,20,0.12)" }}>
-                  <div className="w-2 h-2 mt-1.5 shrink-0" style={{ background: "#E1AE14", opacity: 0.6 }} />
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(166,124,61,0.12)" }}>
+                  <div className="w-2 h-2 mt-1.5 shrink-0" style={{ background: "#A67C3D", opacity: 0.6 }} />
                   <div>
-                    <p className="text-sm font-semibold font-sans" style={{ color: "#F5F0E8" }}>{e.label}</p>
-                    <p className="text-xs font-sans mt-0.5" style={{ color: "rgba(245,240,232,0.45)" }}>{e.value}</p>
+                    <p className="text-sm font-semibold font-sans" style={{ color: "#2B2622" }}>{e.label}</p>
+                    <p className="text-xs font-sans mt-0.5" style={{ color: "#6E655A" }}>{e.value}</p>
                   </div>
                 </div>
               ))}
@@ -213,10 +213,10 @@ export default function ServicesPage() {
         <section id="tools" className="py-20 section-light">
           <div className="max-w-6xl mx-auto px-6">
             <div className="section-title">
-              <p className="font-sans text-xs mb-3" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>DIVINATION TOOLS</p>
-              <h2 className="font-serif text-3xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.05em" }}>命理工具說明</h2>
+              <p className="font-sans text-xs mb-3" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>DIVINATION TOOLS</p>
+              <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.05em" }}>命理工具說明</h2>
               <div className="gold-diamond mt-3"><span /></div>
-              <p className="mt-2 text-sm font-sans" style={{ color: "rgba(245,240,232,0.5)" }}>光宇整合 5 大命理系統，多角度交叉分析，讓解讀更精準立體</p>
+              <p className="mt-2 text-sm font-sans" style={{ color: "#6E655A" }}>光宇整合 5 大命理系統，多角度交叉分析，讓解讀更精準立體</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {tools.map((s) => (
@@ -224,23 +224,23 @@ export default function ServicesPage() {
                   key={s.id}
                   id={s.id}
                   className="card-lift p-6 space-y-4 flex flex-col"
-                  style={{ background: "#1A1A1A", border: "1px solid rgba(225,174,20,0.1)" }}
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(166,124,61,0.1)" }}
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 flex items-center justify-center shrink-0"
-                      style={{ background: "rgba(225,174,20,0.07)", border: "1px solid rgba(225,174,20,0.18)" }}>
-                      <span className="font-serif text-lg font-semibold" style={{ color: "#E1AE14" }}>{s.label}</span>
+                      style={{ background: "rgba(166,124,61,0.07)", border: "1px solid rgba(166,124,61,0.18)" }}>
+                      <span className="font-serif text-lg font-semibold" style={{ color: "#A67C3D" }}>{s.label}</span>
                     </div>
                     <div>
-                      <p className="font-serif text-lg font-semibold" style={{ color: "#F5F0E8" }}>{s.title}</p>
-                      <p className="font-semibold text-base mt-0.5" style={{ color: "#E1AE14" }}>{s.price}</p>
+                      <p className="font-serif text-lg font-semibold" style={{ color: "#2B2622" }}>{s.title}</p>
+                      <p className="font-semibold text-base mt-0.5" style={{ color: "#A67C3D" }}>{s.price}</p>
                     </div>
                   </div>
                   <p className="font-sans text-sm leading-relaxed flex-1" style={{ color: "rgba(245,240,232,0.55)" }}>{s.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {s.tags.map((tag) => (
                       <span key={tag} className="text-xs font-sans px-2.5 py-1"
-                        style={{ background: "rgba(225,174,20,0.06)", color: "rgba(225,174,20,0.7)", border: "1px solid rgba(225,174,20,0.15)" }}>
+                        style={{ background: "rgba(166,124,61,0.06)", color: "rgba(166,124,61,0.7)", border: "1px solid rgba(166,124,61,0.15)" }}>
                         {tag}
                       </span>
                     ))}
@@ -260,23 +260,23 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div>
-                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>諮詢流程</p>
+                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>諮詢流程</p>
                 <div className="space-y-4">
                   {["預約諮詢","填寫資料","專業諮詢","報告製作","報告交付"].map((s, i) => (
                     <div key={s} className="flex items-center gap-4">
                       <div className="w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0"
-                        style={{ background: "rgba(225,174,20,0.08)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.22)" }}>
+                        style={{ background: "rgba(166,124,61,0.08)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.22)" }}>
                         {String(i + 1).padStart(2, "0")}
                       </div>
-                      <p className="font-sans text-sm font-semibold" style={{ color: "#F5F0E8" }}>{s}</p>
-                      {i < 4 && <div className="flex-1 h-px" style={{ background: "rgba(225,174,20,0.12)" }} />}
+                      <p className="font-sans text-sm font-semibold" style={{ color: "#2B2622" }}>{s}</p>
+                      {i < 4 && <div className="flex-1 h-px" style={{ background: "rgba(166,124,61,0.12)" }} />}
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>常見問題 FAQ</p>
+                <p className="font-serif text-xl font-semibold mb-6" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>常見問題 FAQ</p>
                 <div className="space-y-4">
                   {[
                     { q: "報告多久收到？", a: "依服務內容不同，約 1–4 個工作天。" },
@@ -284,12 +284,12 @@ export default function ServicesPage() {
                     { q: "可以退款嗎？",   a: "依服務內容不同，原則上不提供退款。詳情請洽詢。" },
                   ].map((faq) => (
                     <div key={faq.q} className="space-y-1">
-                      <p className="text-sm font-semibold font-sans" style={{ color: "#F5F0E8" }}>Q：{faq.q}</p>
-                      <p className="text-sm font-sans leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>A：{faq.a}</p>
+                      <p className="text-sm font-semibold font-sans" style={{ color: "#2B2622" }}>Q：{faq.q}</p>
+                      <p className="text-sm font-sans leading-relaxed" style={{ color: "#6E655A" }}>A：{faq.a}</p>
                     </div>
                   ))}
                 </div>
-                <Link href="/faq" className="mt-4 inline-block text-sm font-semibold link-hover" style={{ color: "#E1AE14" }}>
+                <Link href="/faq" className="mt-4 inline-block text-sm font-semibold link-hover" style={{ color: "#A67C3D" }}>
                   查看更多 FAQ →
                 </Link>
               </div>

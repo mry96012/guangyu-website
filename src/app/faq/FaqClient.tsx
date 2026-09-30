@@ -57,14 +57,14 @@ export default function FaqClient() {
       <main>
         {/* Header */}
         <section className="pt-32 pb-16 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(160deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%)" }}>
+          style={{ background: "linear-gradient(160deg, #FAF6EF 0%, #F0E8D8 50%, #FAF6EF 100%)" }}>
           <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,174,20,0.07) 0%, transparent 60%)" }} />
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(166,124,61,0.07) 0%, transparent 60%)" }} />
           <div className="relative max-w-2xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#E1AE14", letterSpacing: "0.22em" }}>FAQ</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#F5F0E8" }}>常見問題</h1>
+            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>FAQ</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#2B2622" }}>常見問題</h1>
             <div className="gold-diamond max-w-xs mx-auto"><span /></div>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>
               讓你在預約前就對服務有清楚的了解
             </p>
           </div>
@@ -77,11 +77,11 @@ export default function FaqClient() {
               <div key={group.group}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-7 h-7 flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(225,174,20,0.08)", border: "1px solid rgba(225,174,20,0.22)" }}>
-                    <span className="font-serif text-xs font-semibold" style={{ color: "#E1AE14" }}>{group.char}</span>
+                    style={{ background: "rgba(166,124,61,0.08)", border: "1px solid rgba(166,124,61,0.22)" }}>
+                    <span className="font-serif text-xs font-semibold" style={{ color: "#A67C3D" }}>{group.char}</span>
                   </div>
-                  <h2 className="font-serif text-xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>{group.group}</h2>
-                  <div className="flex-1 h-px" style={{ background: "rgba(225,174,20,0.15)" }} />
+                  <h2 className="font-serif text-xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>{group.group}</h2>
+                  <div className="flex-1 h-px" style={{ background: "rgba(166,124,61,0.15)" }} />
                 </div>
 
                 <div className="space-y-3">
@@ -91,31 +91,31 @@ export default function FaqClient() {
                     return (
                       <div key={key} className="overflow-hidden"
                         style={{
-                          background: isOpen ? "#1A1A1A" : "#121212",
-                          border: isOpen ? "1px solid rgba(225,174,20,0.3)" : "1px solid rgba(225,174,20,0.1)",
+                          background: isOpen ? "#FFFFFF" : "#FFFFFF",
+                          border: isOpen ? "1px solid rgba(166,124,61,0.3)" : "1px solid rgba(166,124,61,0.1)",
                           transition: "all 0.2s ease",
                         }}>
                         <button type="button" onClick={() => toggle(key)}
                           className="w-full flex items-center justify-between px-6 py-5 text-left">
                           <div className="flex items-center gap-3">
                             <span className="text-xs font-bold font-sans w-6 h-6 flex items-center justify-center shrink-0"
-                              style={{ background: "rgba(225,174,20,0.1)", color: "#E1AE14", border: "1px solid rgba(225,174,20,0.2)" }}>Q</span>
-                            <span className="font-sans text-sm font-semibold" style={{ color: "#F5F0E8" }}>{item.q}</span>
+                              style={{ background: "rgba(166,124,61,0.1)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.2)" }}>Q</span>
+                            <span className="font-sans text-sm font-semibold" style={{ color: "#2B2622" }}>{item.q}</span>
                           </div>
                           <span className="text-lg shrink-0 transition-transform duration-200 ml-3"
-                            style={{ color: "#E1AE14", transform: isOpen ? "rotate(45deg)" : "none" }}>+</span>
+                            style={{ color: "#A67C3D", transform: isOpen ? "rotate(45deg)" : "none" }}>+</span>
                         </button>
                         <div className="px-6 flex gap-3 overflow-hidden"
                           style={{
-                            borderTop: isOpen ? "1px solid rgba(225,174,20,0.1)" : "none",
+                            borderTop: isOpen ? "1px solid rgba(166,124,61,0.1)" : "none",
                             maxHeight: isOpen ? "400px" : "0px",
                             paddingTop: isOpen ? "12px" : "0px",
                             paddingBottom: isOpen ? "20px" : "0px",
                             transition: "max-height 0.25s ease, padding 0.25s ease",
                           }}>
                           <span className="text-xs font-bold font-sans w-6 h-6 flex items-center justify-center shrink-0 mt-0.5"
-                            style={{ background: "rgba(245,240,232,0.06)", color: "rgba(245,240,232,0.5)" }}>A</span>
-                          <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.6)" }}>{item.a}</p>
+                            style={{ background: "rgba(43,38,34,0.08)", color: "#6E655A" }}>A</span>
+                          <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>{item.a}</p>
                         </div>
                       </div>
                     );
@@ -129,8 +129,8 @@ export default function FaqClient() {
         {/* Still have questions */}
         <section className="py-16 section-alt">
           <div className="max-w-2xl mx-auto px-6 text-center space-y-6">
-            <h2 className="font-serif text-2xl font-semibold" style={{ color: "#F5F0E8", letterSpacing: "0.04em" }}>還有其他問題？</h2>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.52)" }}>
+            <h2 className="font-serif text-2xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>還有其他問題？</h2>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>
               歡迎直接加入 LINE 詢問，老師會盡快為你解答。
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
