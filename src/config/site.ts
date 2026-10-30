@@ -12,6 +12,9 @@ export const SITE = {
   hours: "週一至週日 10:00–21:00",
 } as const;
 
+/** 維護模式：true 時首頁蓋上「系統更新維護作業中」遮罩，只留 LINE 按鈕。改成 false 即恢復。 */
+export const MAINTENANCE = true;
+
 export const NAV_LINKS = [
   { href: "/", label: "首頁" },
   { href: "/about", label: "關於光宇" },

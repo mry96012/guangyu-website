@@ -133,6 +133,22 @@ p { text-wrap: pretty; }
     background-size: 48px 48px;
   }
 
+  /* 折角：卡片右上角往內折，露出一角暖光 */
+  .dog-ear {
+    --ear: 36px;
+    clip-path: polygon(0 0, calc(100% - var(--ear)) 0, 100% var(--ear), 100% 100%, 0 100%);
+  }
+  .dog-ear::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--ear);
+    height: var(--ear);
+    background: linear-gradient(to bottom left, transparent 50%, var(--color-light) 50%);
+    opacity: 0.55;
+  }
+
   .pb-safe { padding-bottom: max(1.5rem, env(safe-area-inset-bottom)); }
   .right-safe { right: max(1.25rem, env(safe-area-inset-right)); }
   .bottom-safe { bottom: max(1.25rem, env(safe-area-inset-bottom)); }

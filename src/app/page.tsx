@@ -5,6 +5,8 @@ import BrandValues from "@/components/BrandValues";
 import CaseStudies from "@/components/CaseStudies";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import MaintenanceOverlay from "@/components/MaintenanceOverlay";
+import { MAINTENANCE } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "光宇方向命理研究所｜八字・紫微・塔羅・占星整合諮詢",
@@ -14,14 +16,18 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <BrandValues />
-        <CaseStudies />
-        <FinalCTA />
-      </main>
-      <Footer />
+      {/* 維護中：背後的首頁只供觀看，不能點擊或用鍵盤操作 */}
+      <div inert={MAINTENANCE}>
+        <Navbar />
+        <main>
+          <Hero />
+          <BrandValues />
+          <CaseStudies />
+          <FinalCTA />
+        </main>
+        <Footer />
+      </div>
+      {MAINTENANCE && <MaintenanceOverlay />}
     </>
   );
 }
