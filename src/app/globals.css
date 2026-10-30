@@ -86,9 +86,9 @@ p { text-wrap: pretty; }
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-@keyframes beam-draw {
-  from { stroke-dashoffset: 1; }
-  to   { stroke-dashoffset: 0; }
+@keyframes beam-in {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 /* 捲動淡入（新元件用 .is-visible，舊頁面用 .visible） */
@@ -106,7 +106,7 @@ p { text-wrap: pretty; }
 @layer utilities {
   .animate-rise { animation: rise 0.6s ease-out both; }
   .animate-cell { animation: cell-in 0.5s ease-out both; }
-  .animate-beam { stroke-dasharray: 1; animation: beam-draw 1.4s ease-out 0.9s both; }
+  .animate-beam { transform-origin: 12.5% 87.5%; transform-box: view-box; animation: beam-in 1.2s ease-out 0.8s both; }
 
   /* 晨光：右上角的暖光，代表品牌的「光」 */
   .bg-dawn {

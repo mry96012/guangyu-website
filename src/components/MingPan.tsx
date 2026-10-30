@@ -70,7 +70,6 @@ export default function MingPan({ className }: { className?: string }) {
           </defs>
           <line
             x1="12.5" y1="87.5" x2="104" y2="-4"
-            pathLength={1}
             stroke="url(#beam-fade)"
             strokeWidth="0.45"
             className="animate-beam"
