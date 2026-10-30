@@ -1,148 +1,75 @@
-"use client";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import Reveal from "@/components/ui/Reveal";
+import { CASES, SITE } from "@/config/site";
 
-const cases = [
-  {
-    id: "08-1",
-    tag: "事業轉換期",
-    tagline: "找到熱情所在，勇敢踏出下一步",
-    quote: "一直猶豫是否該離職創業，透過分析才發現自己的優勢與時機，更有信心做出決定！",
-    problem: "不知道是否該離職創業，擔心時機不對或能力不足。",
-    tools: "八字分析 + 紫微斗數",
-    focus: "事業運勢、天賦特質、流年時機、適合發展方向",
-    result: "了解自己的優勢與最佳時機，順利轉換跑道創業成功。",
-    feedback: "「報告內容非常詳細，讓我看見自己的價值與方向，感謝老師的專業與耐心！」",
-  },
-  {
-    id: "08-2",
-    tag: "感情反覆內耗",
-    tagline: "看見關係模式，學會愛與被愛",
-    quote: "總是在感情裡受傷，透過分析看見彼此互動模式，學會先愛自己，關係也慢慢改善。",
-    problem: "總是遇到類似感情模式，關係反覆受傷、難以穩定。",
-    tools: "塔羅占卜 + 生命靈數",
-    focus: "感情互動模式、內在需求、吸引力法則、成長課題",
-    result: "看見自己的相處盲點，調整溝通方式，關係更穩定和諧。",
-    feedback: "「老師的分析很準確，讓我更理解自己，也更有力量去經營一段健康的關係！」",
-  },
-];
-
-const detailLabels = ["困境", "工具", "重點", "結果"];
+const fields = [
+  { key: "problem", label: "困境" },
+  { key: "tools", label: "工具" },
+  { key: "focus", label: "重點" },
+  { key: "result", label: "結果" },
+] as const;
 
 export default function CaseStudies() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const items = el.querySelectorAll<HTMLElement>(".reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const target = entry.target as HTMLElement;
-            const delay = target.dataset.delay ?? "0";
-            setTimeout(() => target.classList.add("visible"), Number(delay));
-            observer.unobserve(target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "-40px" }
-    );
-    items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
-  }, []);
+  const cases = CASES.slice(0, 2);
 
   return (
-    <section ref={sectionRef} className="py-20 section-alt">
-      {/* Top divider */}
-      <div className="section-divider mb-16 max-w-6xl mx-auto px-6">
-        <span>☵ ☶ ☷ ☰</span>
-      </div>
+    <section className="border-y border-border bg-surface">
+      <div className="mx-auto max-w-[1200px] px-5 py-24 lg:px-8 lg:py-32">
+        <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="eyebrow">03 — Case Studies</p>
+            <h2 className="mt-5 font-serif text-[clamp(1.875rem,3.2vw,2.5rem)] font-semibold leading-tight text-ink">真實案例分享</h2>
+            <p className="mt-4 text-base text-text-muted">陪伴你走過迷惘，找到專屬的方向。</p>
+          </div>
+          {cases.length > 0 && (
+            <Link href="/cases" className="link-arrow shrink-0">
+              查看更多案例 <span aria-hidden="true">→</span>
+            </Link>
+          )}
+        </Reveal>
 
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Title — right-aligned, asymmetric from BrandValues */}
-        <div className="reveal mb-14 text-right" data-delay="0">
-          <p className="font-sans text-xs mb-3" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>CASE STUDIES</p>
-          <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.05em" }}>
-            真實案例分享
-          </h2>
-          <div className="mt-3 h-px w-16 ml-auto" style={{ background: "linear-gradient(to left, #A67C3D, transparent)" }} />
-          <p className="mt-4 text-sm font-sans" style={{ color: "#6E655A" }}>
-            陪伴你走過迷惘，找到專屬的方向
-          </p>
-        </div>
-
-        {/* Cases — full-width stacked cards, alternating indent */}
-        <div className="space-y-6">
-          {cases.map((c, i) => (
-            <div
-              key={c.id}
-              className={`reveal${i === 1 ? " lg:ml-16" : ""}`}
-              data-delay={String(120 + i * 140)}
-            >
-              <div
-                className="card-lift overflow-hidden"
-                style={{
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(166,124,61,0.12)",
-                  borderTop: "2px solid rgba(166,124,61,0.4)",
-                }}
-              >
-                {/* Header */}
-                <div className="px-8 pt-8 pb-6 lg:flex lg:gap-10 lg:items-start" style={{ borderBottom: "1px solid rgba(166,124,61,0.08)" }}>
-                  <div className="lg:flex-1">
-                    <span
-                      className="inline-block text-xs font-semibold font-sans px-3 py-1 mb-4"
-                      style={{ background: "rgba(166,124,61,0.08)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.2)" }}
-                    >
-                      {c.tag}
-                    </span>
-                    <p className="font-serif text-2xl font-semibold mb-4" style={{ color: "#2B2622", letterSpacing: "0.03em" }}>
-                      {c.tagline}
-                    </p>
-                  </div>
-                  <div className="lg:w-80 pl-4" style={{ borderLeft: "1px solid rgba(166,124,61,0.2)" }}>
-                    <p className="text-sm font-sans italic leading-relaxed" style={{ color: "#6E655A" }}>
-                      「{c.quote}」
-                    </p>
-                  </div>
-                </div>
-
-                {/* Details */}
-                <div className="px-8 py-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {[c.problem, c.tools, c.focus, c.result].map((value, j) => (
-                    <div key={detailLabels[j]} className="flex items-start gap-3">
-                      <span className="text-xs font-semibold font-sans shrink-0 mt-0.5" style={{ color: "#A67C3D", minWidth: "36px", letterSpacing: "0.04em" }}>
-                        {detailLabels[j]}
-                      </span>
-                      <p className="text-sm font-sans leading-relaxed" style={{ color: "#6E655A", letterSpacing: "0.01em" }}>
-                        {value}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Feedback quote — full-width bottom strip */}
-                <div className="px-8 py-4" style={{ background: "rgba(166,124,61,0.04)", borderTop: "1px solid rgba(166,124,61,0.08)" }}>
-                  <p className="text-sm font-sans italic" style={{ color: "#6E655A" }}>
-                    {c.feedback}
-                  </p>
-                </div>
+        {cases.length === 0 ? (
+          <Reveal className="mt-12">
+            <div className="grid grid-cols-1 border border-border-strong bg-bg md:grid-cols-12">
+              <div className="border-b border-border p-8 md:col-span-4 md:border-b-0 md:border-r">
+                <p className="font-mono text-xs text-text-muted">00 / 案例</p>
+                <p className="mt-4 font-serif text-2xl font-semibold text-ink">案例整理中</p>
+              </div>
+              <div className="flex flex-col justify-between gap-8 p-8 md:col-span-8">
+                <p className="max-w-xl text-base leading-relaxed text-text-muted">
+                  每一則案例都會在當事人同意、並去除可識別資訊後才公開。在那之前，你可以先透過 LINE 聊聊你目前的狀況。
+                </p>
+                <a href={SITE.lineUrl} target="_blank" rel="noopener noreferrer" className="btn-outline self-start">
+                  透過 LINE 詢問
+                </a>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom CTA — left-aligned */}
-        <div className="reveal mt-10 flex items-center gap-5" data-delay="440">
-          <Link href="/cases" className="btn-outline text-sm px-7 py-3 inline-flex items-center gap-2">
-            查看更多案例
-          </Link>
-          <p className="font-serif text-sm" style={{ color: "rgba(43,38,34,0.45)" }}>
-            每個故事，都是改變的開始
-          </p>
-        </div>
+          </Reveal>
+        ) : (
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {cases.map((c, i) => (
+              <Reveal key={c.id} delay={i * 80}>
+                <article className="flex h-full flex-col border border-border-strong bg-bg">
+                  <header className="border-b border-border p-8">
+                    <p className="font-mono text-xs text-gold-dim">{c.tag}</p>
+                    <h3 className="mt-3 font-serif text-2xl font-semibold leading-snug text-ink">{c.tagline}</h3>
+                  </header>
+                  <dl className="grid flex-1 grid-cols-[3rem_1fr] gap-x-4 gap-y-4 p-8">
+                    {fields.map((f) => (
+                      <div key={f.key} className="contents">
+                        <dt className="font-mono text-xs leading-6 text-text-muted">{f.label}</dt>
+                        <dd className="text-[0.9375rem] leading-6 text-ink">{c[f.key]}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  {c.feedback && (
+                    <p className="border-t border-border p-8 font-serif text-base leading-relaxed text-text-muted">{c.feedback}</p>
+                  )}
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

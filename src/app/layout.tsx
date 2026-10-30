@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Cormorant_Garamond, Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
+import { IBM_Plex_Mono, Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import FloatingCTA from "@/components/FloatingCTA";
 import "./globals.css";
 
@@ -9,7 +9,7 @@ const notoSansTC = Noto_Sans_TC({
   display: "swap",
   preload: false,
   adjustFontFallback: false,
-  variable: "--font-sans",
+  variable: "--font-noto-sans",
 });
 
 const notoSerifTC = Noto_Serif_TC({
@@ -17,15 +17,14 @@ const notoSerifTC = Noto_Serif_TC({
   display: "swap",
   preload: false,
   adjustFontFallback: false,
-  variable: "--font-serif",
+  variable: "--font-noto-serif",
 });
 
-const cormorantGaramond = Cormorant_Garamond({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["400", "500"],
   display: "swap",
-  variable: "--font-display",
+  variable: "--font-plex-mono",
 });
 
 const GTM_ID = "GTM-W3VH8D37";
@@ -35,10 +34,6 @@ export const metadata: Metadata = {
   description:
     "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己、整理目前狀態，並釐清更適合的人生方向。",
   keywords: "命理諮詢, 八字分析, 紫微斗數, 塔羅占卜, 占星, 生命靈數, 姓名學, 光宇方向命理研究所",
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
   verification: {
     google: "PyZpoDQ09Pokp9tvlzb0NeojgtIlZiDrCriabJTf4q4",
   },
@@ -58,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="zh-TW"
-      className={`h-full ${notoSansTC.variable} ${notoSerifTC.variable} ${cormorantGaramond.variable}`}
+      className={`h-full ${notoSansTC.variable} ${notoSerifTC.variable} ${plexMono.variable}`}
     >
       <body className="h-full antialiased">
         <Script id="gtm-script" strategy="afterInteractive">
