@@ -5,6 +5,7 @@ import BrandValues from "@/components/BrandValues";
 import CaseStudies from "@/components/CaseStudies";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import MaintenanceOverlay from "@/components/MaintenanceOverlay";
 
 export const metadata: Metadata = {
   title: "光宇方向命理研究所｜八字・紫微・塔羅・占星整合諮詢",
@@ -22,6 +23,7 @@ export default function HomePage() {
         <FinalCTA />
       </main>
       <Footer />
+      <MaintenanceOverlay />
     </>
   );
 }

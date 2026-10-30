@@ -552,3 +552,14 @@ export const SERVICES_PAGE = {
   themesTitle: "主題分析服務",
   themesSubtitle: "針對特定人生課題深度分析，提供具體可行的建議",
 };
+
+// ── 系統維護公告（首頁遮罩）──────────────────────────────────
+// 維護結束後把 enabled 改成 false 即可移除遮罩
+export const MAINTENANCE = {
+  enabled: true,
+  eyebrow: "SYSTEM MAINTENANCE",
+  title: "系統更新維護作業中",
+  body: "為了提供更完善的服務，網站正在進行系統更新與維護，部分功能暫時無法使用，造成不便敬請見諒。",
+  lineHint: "預約與諮詢服務照常進行，請透過官方 LINE 與我們聯繫。",
+  ctaLine: "加入官方 LINE",
+};
