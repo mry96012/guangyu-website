@@ -559,7 +559,7 @@ export const MAINTENANCE = {
   enabled: true,
   eyebrow: "SYSTEM MAINTENANCE",
   title: "系統更新維護作業中",
-  body: "為了提供更完善的服務，網站正在進行系統更新與維護，部分功能暫時無法使用，造成不便敬請見諒。",
-  lineHint: "預約與諮詢服務照常進行，請透過官方 LINE 與我們聯繫。",
+  body: "網頁目前所有功能皆在更新中，若有急事或有需求，請加入官方 LINE 並說明您的需求，將有專人為您協助。",
+  lineHint: "感謝您的諒解，謝謝。",
   ctaLine: "加入官方 LINE",
 };
