@@ -18,7 +18,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 gap-14 px-5 pb-20 pt-32 lg:grid-cols-12 lg:gap-12 lg:px-8 lg:pb-28 lg:pt-40">
         <div className="lg:col-span-7 lg:pt-2">
-          <p className="eyebrow animate-rise normal-case">{SITE.name} — {SITE.tagline}</p>
+          <p className="eyebrow animate-rise normal-case">東西方命理整合 · 專業顧問式陪伴</p>
 
           <h1
             className="animate-rise mt-6 font-serif text-[clamp(2.875rem,6.4vw,4.75rem)] font-semibold leading-[1.16] text-ink"
@@ -30,7 +30,7 @@ export default function Hero() {
           </h1>
 
           <p className="animate-rise mt-8 max-w-[35rem] text-lg leading-relaxed text-text-muted" style={{ animationDelay: "160ms" }}>
-            命理不是替你決定未來，而是幫你看清自己。透過八字、紫微斗數、塔羅、生命靈數與占星整合分析，把散亂的現況整理成一條你看得見的路。
+            光宇方向命理研究所結合東西方命理智慧，透過八字、紫微斗數、姓名學、塔羅、生命靈數與占星，協助你更理解自己、看懂處境，找到更適合自己的方向。
           </p>
 
           <div className="animate-rise mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6" style={{ animationDelay: "240ms" }}>

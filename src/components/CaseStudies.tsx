@@ -17,7 +17,7 @@ export default function CaseStudies() {
       <div className="mx-auto max-w-[1200px] px-5 py-24 lg:px-8 lg:py-32">
         <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="eyebrow">03 — Case Studies</p>
+            <p className="eyebrow">05 — Case Studies</p>
             <h2 className="mt-5 font-serif text-[clamp(1.875rem,3.2vw,2.5rem)] font-semibold leading-tight text-ink">真實案例分享</h2>
             <p className="mt-4 text-base text-text-muted">陪伴你走過迷惘，找到專屬的方向。</p>
           </div>

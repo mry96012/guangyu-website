@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label={`${SITE.name} 首頁`}>
-          <BrandMark className="size-9 text-ink" />
+          <BrandMark className="size-11" />
           <span className="flex flex-col leading-none">
             <span className="font-serif text-lg font-semibold text-ink">光宇方向</span>
             <span className="mt-1 font-mono text-[0.625rem] text-text-muted">命理研究所 · GUANGYU</span>

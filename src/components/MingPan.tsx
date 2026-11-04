@@ -56,8 +56,8 @@ export default function MingPan({ className }: { className?: string }) {
           style={{ gridRow: "2 / span 2", gridColumn: "2 / span 2", animationDelay: "100ms" }}
           className="animate-cell flex flex-col items-center justify-center gap-3 border border-border bg-bg"
         >
-          <BrandMark className="size-12 text-ink sm:size-16" />
-          <span className="font-mono text-[0.6875rem] text-text-muted sm:text-xs">從命宮出發</span>
+          <BrandMark className="size-20 sm:size-28" />
+          <span className="font-mono text-[0.6875rem] text-text-muted sm:text-xs">五行 · 從命宮出發</span>
         </div>
 
         {/* 光束：由命宮中心射向右上方 */}

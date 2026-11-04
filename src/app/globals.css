@@ -23,7 +23,7 @@
   --color-gold-subtle:   rgba(166, 124, 61, 0.08);
 
   /* 光：品牌唯一的「發光」色，只用在光字、命宮、光束、晨光 */
-  --color-light:         #E1AE14;
+  --color-light:         #E0A019;   /* = logo 金 */
 
   --color-text:          #2B2622;
   --color-text-muted:    #6E655A;   /* 輔助文字（對比 ≥ 5.5:1） */

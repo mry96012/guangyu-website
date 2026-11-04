@@ -19,14 +19,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
-              <BrandMark className="size-11 text-light" hole="var(--color-ink)" />
+              <BrandMark className="size-14" />
               <div>
                 <p className="font-serif text-lg font-semibold">光宇方向</p>
                 <p className="mt-1 font-mono text-[0.625rem] text-on-ink-muted">命理研究所 · GUANGYU</p>
               </div>
             </div>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-on-ink-muted">
-              找到方向，是人生的光。結合東西方命理，透過專業分析與溫暖陪伴，協助你理解自己、做出更適合自己的選擇。
+              結合東西方命理智慧與現代清楚表達的專業顧問品牌。透過八字、紫微斗數、姓名學、塔羅、生命靈數與占星，協助你更理解自己、整理當下狀態，找到更適合自己的方向。
             </p>
           </div>
 
