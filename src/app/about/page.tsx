@@ -111,7 +111,7 @@ export default function AboutPage() {
               {[
                 { num: "8+",     unit: "年",  label: "命理鑽研年資" },
                 { num: "1,000+", unit: "",    label: "累積服務個案" },
-                { num: "5.0",    unit: "★",   label: "Google 評分" },
+                { num: "7",      unit: "天",  label: "報告後提問回覆" },
                 { num: "5",      unit: "大",  label: "整合命理系統" },
               ].map((s) => (
                 <div key={s.label} className="text-center space-y-2 p-6"

@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/",         label: "首頁" },
   { href: "/about",    label: "關於光宇" },
   { href: "/services", label: "服務項目" },
-  { href: "/cases",    label: "客戶案例" },
+  { href: "/cases",    label: "服務流程" },
   { href: "/faq",      label: "FAQ" },
 ];
 
