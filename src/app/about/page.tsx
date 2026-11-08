@@ -3,11 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "關於光宇 | 光宇方向命理研究所",
-  description: "光宇方向命理研究所的品牌理念、服務價值與我們的不同之處。",
-};
+export const metadata: Metadata = pageMeta("/about", "關於光宇 | 光宇方向命理研究所", "光宇方向命理研究所的品牌理念、服務價值與我們的不同之處。");
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 

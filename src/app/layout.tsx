@@ -3,6 +3,8 @@ import Script from "next/script";
 import { Cormorant_Garamond, Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import FloatingCTA from "@/components/FloatingCTA";
 import "./globals.css";
+import { BASE_URL } from "@/lib/seo";
+import { SITE } from "@/config/content";
 
 const notoSansTC = Noto_Sans_TC({
   weight: ["300", "400", "500", "700"],
@@ -31,6 +33,7 @@ const cormorantGaramond = Cormorant_Garamond({
 const GTM_ID = "GTM-W3VH8D37";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: "光宇方向命理研究所｜東西方命理整合分析",
   description:
     "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己、整理目前狀態，並釐清更適合的人生方向。",
@@ -45,9 +48,31 @@ export const metadata: Metadata = {
   openGraph: {
     title: "光宇方向命理研究所｜東西方命理整合分析",
     description: "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己，整理目前狀態，釐清更適合的人生方向。",
+    url: "/",
+    siteName: SITE.nameChinese,
     locale: "zh_TW",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
+
+// 結構化資料：讓 Google 認得這是一個命理諮詢品牌（名稱、網址、Logo、聯絡方式、社群帳號）
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: SITE.nameChinese,
+  alternateName: SITE.nameEnglish,
+  url: BASE_URL,
+  logo: `${BASE_URL}/logo.png`,
+  image: `${BASE_URL}/opengraph-image.jpg`,
+  description:
+    "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己、整理目前狀態，並釐清更適合的人生方向。",
+  telephone: SITE.phone,
+  email: SITE.email,
+  areaServed: "TW",
+  sameAs: [SITE.igUrl, SITE.lineUrl],
 };
 
 export default function RootLayout({
@@ -61,6 +86,12 @@ export default function RootLayout({
       className={`h-full ${notoSansTC.variable} ${notoSerifTC.variable} ${cormorantGaramond.variable}`}
     >
       <body className="h-full antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

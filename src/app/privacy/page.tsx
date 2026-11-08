@@ -2,11 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "隱私權政策 | 光宇方向命理研究所",
-  description: "光宇方向命理研究所個人資料保護政策，說明個資蒐集、處理與利用方式，依據中華民國個人資料保護法。",
-};
+export const metadata: Metadata = pageMeta("/privacy", "隱私權政策 | 光宇方向命理研究所", "光宇方向命理研究所個人資料保護政策，說明個資蒐集、處理與利用方式，依據中華民國個人資料保護法。");
 
 const CONTACT_EMAIL = "guangyu.pro@gmail.com";
 const CONTACT_PHONE = "0978-586-343";

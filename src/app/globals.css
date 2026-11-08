@@ -99,10 +99,13 @@ body {
 }
 
 /* ── Scroll Reveal ─────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+/* 只在瀏覽器有執行 JS 時才先隱藏；JS 失敗或爬蟲未執行時，內容照樣看得到 */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
 }
 .reveal.visible {
   opacity: 1;

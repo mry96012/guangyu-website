@@ -3,11 +3,9 @@ import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "服務項目與定價 | 光宇方向命理研究所",
-  description: "東方命理、西方命理、主題式分析、整合型報告。完整服務項目與定價一覽。",
-};
+export const metadata: Metadata = pageMeta("/services", "服務項目與定價 | 光宇方向命理研究所", "東方命理、西方命理、主題式分析、整合型報告。完整服務項目與定價一覽。");
 
 const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
 

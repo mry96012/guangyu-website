@@ -3,11 +3,9 @@ import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import { REPORT_SAMPLE, SERVICE_PROCESS } from "@/config/content";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "服務流程 | 光宇方向命理研究所",
-  description: "從預約、填寫資料、一對一諮詢到書面報告交付的流程，以及報告段落的結構示意。",
-};
+export const metadata: Metadata = pageMeta("/cases", "服務流程 | 光宇方向命理研究所", "從預約、填寫資料、一對一諮詢到書面報告交付的流程，以及報告段落的結構示意。");
 
 export default function CasesPage() {
   return (
