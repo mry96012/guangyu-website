@@ -12,8 +12,8 @@ export const SITE = {
   taglineFooter: "理解自己・找到方向",
   phone: "0978-586-343",
   email: "guangyu.pro@gmail.com",
-  lineId: "@enlite731",
-  lineUrl: "https://line.me/R/ti/p/%40enlite731",
+  lineId: "@805rnmnn",
+  lineUrl: "https://lin.ee/QRKXhFn",
   igUrl: "https://instagram.com/enlite731",
   fbUrl: "https://facebook.com",          // 尚未設立，暫時保留
   serviceHours: "週一至週日 10:00–21:00",
@@ -290,7 +290,7 @@ export const FINAL_CTA = {
   subtitle: "加入 LINE 官方帳號，立即預約諮詢",
   ctaLine: "加入 LINE 好友",
   qrLabel: "LINE 官方帳號",
-  qrId: "@enlite731",
+  qrId: "@805rnmnn",
   qrSub: "預約・諮詢・優惠\n一站式服務",
   quickLinks: [
     { icon: "⚡", label: "快速回覆" },
@@ -466,7 +466,7 @@ export const SERVICES_PAGE = {
 // ── 系統維護公告（首頁遮罩）──────────────────────────────────
 // 維護結束後把 enabled 改成 false 即可移除遮罩
 export const MAINTENANCE = {
-  enabled: true,
+  enabled: false,
   eyebrow: "SYSTEM MAINTENANCE",
   title: "系統更新維護作業中",
   body: "網頁目前所有功能皆在更新中，若有急事或有需求，請加入官方 LINE 並說明您的需求，將有專人為您協助。",

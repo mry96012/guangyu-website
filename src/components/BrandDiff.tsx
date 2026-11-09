@@ -132,7 +132,7 @@ export default function BrandDiff() {
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://line.me/R/ti/p/%40enlite731"
+              href="https://lin.ee/QRKXhFn"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold inline-flex items-center gap-2 px-8 py-3.5 text-sm"

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const serviceOptions = [
   "八字分析（NT$600起）",
@@ -44,7 +44,7 @@ export default function BookingClient() {
     const lineMsg = encodeURIComponent(
       `【預約諮詢】\n姓名：${form.name}\n出生：${form.birth} ${form.birthTime}\n性別：${form.gender === "female" ? "女" : "男"}\n服務：${form.service}\n主題：${form.theme}\n聯絡：${form.contact}\n備註：${form.message}`
     );
-    window.open(`https://line.me/R/ti/p/%40enlite731?text=${lineMsg}`, "_blank");
+    window.open(`https://line.me/R/oaMessage/%40805rnmnn/?${lineMsg}`, "_blank");
     setSent(true);
   };
 
@@ -187,7 +187,7 @@ export default function BookingClient() {
                   也可以直接加入我們的 LINE 官方帳號進行預約，老師會盡快回覆。
                 </p>
                 <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-line text-sm w-full justify-center">
-                  加入 LINE @enlite731
+                  加入 LINE @805rnmnn
                 </a>
               </div>
               <div className="p-6 space-y-3"

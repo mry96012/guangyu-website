@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "東方命理、西方命理、主題式分析、整合型報告。完整服務項目與定價一覽。",
 };
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const themes = [
   { label: "感情", desc: "感情模式、關係困擾、吸引力法則與未來發展。", hint: "適合：感情停滯、重複同樣模式、想釐清緣分走向" },

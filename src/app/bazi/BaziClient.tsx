@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import { calculateBazi, HOUR_NAMES, HOUR_RANGES } from "@/lib/bazi";
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const ELEMENT_COLORS: Record<string, { bg: string; color: string; border: string }> = {
   木: { bg: "rgba(45,107,64,0.08)",   color: "#2D6B40", border: "rgba(45,107,64,0.2)"   },

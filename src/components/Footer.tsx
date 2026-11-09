@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 const EMAIL    = "guangyu.pro@gmail.com";
 const PHONE    = "0978-586-343";
 const IG_URL   = "https://instagram.com/enlite731";
@@ -107,7 +107,7 @@ export default function Footer() {
             <h4 className="text-xs tracking-[0.25em] font-sans uppercase font-semibold" style={{ color: "rgba(245,240,232,0.7)" }}>聯絡我們</h4>
             <ul className="space-y-3">
               {[
-                { label: "LINE",   value: "@enlite731",            href: LINE_URL },
+                { label: "LINE",   value: "@805rnmnn",            href: LINE_URL },
                 { label: "Email",  value: EMAIL,                   href: `mailto:${EMAIL}` },
                 { label: "電話",   value: PHONE,                   href: `tel:${PHONE.replace(/-/g, "")}` },
                 { label: "時間",   value: "週一至週日 10:00–21:00" },

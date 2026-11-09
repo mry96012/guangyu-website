@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const services = [
   {

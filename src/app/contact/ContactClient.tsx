@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 export default function ContactClient() {
   const [form, setForm] = useState({ name: "", contact: "", subject: "", message: "" });
@@ -14,7 +14,7 @@ export default function ContactClient() {
     const msg = encodeURIComponent(
       `【諮詢留言】\n姓名：${form.name}\n聯絡：${form.contact}\n主題：${form.subject}\n內容：${form.message}`
     );
-    window.open(`https://line.me/R/ti/p/%40enlite731?text=${msg}`, "_blank");
+    window.open(`https://line.me/R/oaMessage/%40805rnmnn/?${msg}`, "_blank");
     setSent(true);
   };
 
@@ -50,7 +50,7 @@ export default function ContactClient() {
 
               <div className="space-y-4">
                 {[
-                  { icon: "LINE", label: "LINE 官方帳號", value: "@enlite731", href: LINE_URL },
+                  { icon: "LINE", label: "LINE 官方帳號", value: "@805rnmnn", href: LINE_URL },
                   { icon: "◆", label: "服務時間", value: "週一至週日 10:00–20:00" },
                   { icon: "◆", label: "回覆時間", value: "通常在 24 小時內回覆" },
                   { icon: "◆", label: "隱私保護", value: "所有個人資料嚴格保密" },
@@ -74,7 +74,7 @@ export default function ContactClient() {
               </div>
 
               <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-gold w-full justify-center">
-                直接加入 LINE @enlite731
+                直接加入 LINE @805rnmnn
               </a>
             </div>
 

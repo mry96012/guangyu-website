@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const CONTACT_EMAIL = "guangyu.pro@gmail.com";
 const CONTACT_PHONE = "0978-586-343";
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 const EFFECTIVE_DATE = "2025年1月1日";
 const LAST_UPDATED = "2026年6月15日";
 
@@ -281,7 +281,7 @@ export default function PrivacyPage() {
                 {[
                   { label: "Email", value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
                   { label: "電話", value: CONTACT_PHONE, href: `tel:${CONTACT_PHONE.replace(/-/g, "")}` },
-                  { label: "LINE", value: "@enlite731", href: LINE_URL },
+                  { label: "LINE", value: "@805rnmnn", href: LINE_URL },
                 ].map((c) => (
                   <li key={c.label} className="font-sans flex gap-3 items-center">
                     <span className="text-xs font-semibold font-sans" style={{ color: "#A67C3D", minWidth: "40px" }}>{c.label}</span>

@@ -81,7 +81,7 @@ export default function BrandFeatures() {
             <span className="text-3xl" style={{ color: "#B8902A" }}>"</span>
           </div>
           <a
-            href="https://line.me/R/ti/p/%40enlite731"
+            href="https://lin.ee/QRKXhFn"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold inline-flex items-center gap-2 px-8 py-3.5 text-sm"

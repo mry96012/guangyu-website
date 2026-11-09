@@ -1,4 +1,4 @@
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 export default function CTABanner() {
   return (
@@ -55,7 +55,7 @@ export default function CTABanner() {
         </div>
 
         <p className="text-cream/30 text-xs font-sans">
-          LINE ID：@enlite731 ・ 週一至週日 10:00–20:00
+          LINE ID：@805rnmnn ・ 週一至週日 10:00–20:00
         </p>
       </div>
     </section>

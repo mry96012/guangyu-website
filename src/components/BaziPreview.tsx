@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { calculateBazi, HOUR_RANGES, HOUR_NAMES } from "@/lib/bazi";
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const ELEMENT_COLORS: Record<string, string> = {
   木: "#4CAF50", 火: "#FF5722", 土: "#FFA726", 金: "#90A4AE", 水: "#42A5F5",

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 /* Five-element star SVG */
 function FiveElementsStar() {
@@ -103,7 +103,7 @@ export default function FinalCTA() {
             </div>
             <div className="text-left">
               <p className="text-xs font-semibold font-sans" style={{ color: "#2B2622" }}>LINE 官方帳號</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "#6E655A" }}>@enlite731</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "#6E655A" }}>@805rnmnn</p>
               <p className="text-xs font-sans mt-0.5" style={{ color: "#A67C3D", opacity: 0.6 }}>預約・諮詢・優惠</p>
             </div>
           </div>

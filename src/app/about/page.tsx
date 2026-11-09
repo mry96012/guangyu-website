@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "光宇方向命理研究所的品牌理念、服務價值與我們的不同之處。",
 };
 
-const LINE_URL = "https://line.me/R/ti/p/%40enlite731";
+const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const values = [
   { char: "整", title: "東西方整合", desc: "結合東方命理與西方占卜、占星與數字能量等工具，從不同角度交叉分析，提供更全面的理解與建議。" },
