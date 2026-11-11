@@ -13,3 +13,6 @@ out/
 
 # vercel
 .vercel
+
+# TypeScript build cache
+*.tsbuildinfo
