@@ -14,5 +14,8 @@ out/
 # vercel
 .vercel
 
-# typescript
+# TypeScript build cache
 *.tsbuildinfo
+
+# Next.js 自動產生，dev/build 會互相覆寫
+next-env.d.ts
