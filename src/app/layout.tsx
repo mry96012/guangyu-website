@@ -31,6 +31,7 @@ const cormorantGaramond = Cormorant_Garamond({
 const GTM_ID = "GTM-W3VH8D37";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.guangyu888.tw"),
   title: "光宇方向命理研究所｜東西方命理整合分析",
   description:
     "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己、整理目前狀態，並釐清更適合的人生方向。",
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
     description: "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己，整理目前狀態，釐清更適合的人生方向。",
     locale: "zh_TW",
     type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 
