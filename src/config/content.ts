@@ -231,7 +231,7 @@ export const SERVICE_PROCESS = {
   promises: [
     { icon: "", label: "不恐嚇", sub: "不用宿命式斷言，不製造焦慮" },
     { icon: "", label: "不保證", sub: "不承諾結果，也不替你做決定" },
-    { icon: "", label: "資料保密", sub: "出生資料只用於本次服務" },
+    { icon: "", label: "資料保密", sub: "個人資料依隱私權政策處理" },
     { icon: "", label: "可以行動", sub: "整理成看得懂、做得到的建議" },
   ],
   promisesTitle: "服務界線",
