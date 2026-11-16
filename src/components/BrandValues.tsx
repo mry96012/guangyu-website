@@ -112,7 +112,7 @@ export default function BrandValues() {
               <p className="font-serif font-semibold text-lg mb-3" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
                 {v.title}
               </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)", letterSpacing: "0.01em" }}>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A", letterSpacing: "0.01em" }}>
                 {v.desc}
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function BrandValues() {
               <p className="font-serif font-semibold text-lg mb-3" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
                 {v.title}
               </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)", letterSpacing: "0.01em" }}>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A", letterSpacing: "0.01em" }}>
                 {v.desc}
               </p>
             </div>
@@ -152,7 +152,7 @@ export default function BrandValues() {
             borderBottom: "1px solid rgba(166,124,61,0.15)",
           }}
         >
-          <p className="font-serif text-base text-right" style={{ color: "rgba(245,240,232,0.55)" }}>
+          <p className="font-serif text-base text-right" style={{ color: "#6E655A" }}>
             了解自己，是改變的開始；理解課題，是成長的力量；
             <br />
             <span style={{ color: "#A67C3D" }}>找到方向，是人生的光。</span>

@@ -118,7 +118,11 @@ export default function ServicesPage() {
                       <span className="font-serif text-lg font-semibold" style={{ color: "#A67C3D" }}>{s.label}</span>
                     </div>
                     <div>
-                      <p className="font-serif text-lg font-semibold" style={{ color: "#2B2622" }}>{s.title}</p>
+                      <p className="font-serif text-lg font-semibold" style={{ color: "#2B2622" }}>
+                        {s.title.split("｜").map((part) => (
+                          <span key={part} className="block whitespace-nowrap">{part}</span>
+                        ))}
+                      </p>
                       <p className="font-semibold text-base mt-0.5 whitespace-nowrap" style={{ color: "#8A5D0A" }}>{s.price}</p>
                     </div>
                   </div>

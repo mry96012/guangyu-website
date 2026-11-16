@@ -124,7 +124,7 @@ export default function AboutPage() {
                     <span className="font-serif text-xl font-semibold" style={{ color: "#A67C3D" }}>{v.char}</span>
                   </div>
                   <p className="font-serif text-lg font-semibold" style={{ color: "#2B2622" }}>{v.title}</p>
-                  <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)" }}>{v.desc}</p>
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>{v.desc}</p>
                 </div>
               ))}
             </div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
             <p className="font-sans text-xs mb-3" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>OUR DIFFERENCE</p>
             <h2 className="font-serif text-3xl font-semibold mb-4" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>光宇方向的不同</h2>
             <div className="gold-diamond mb-8"><span /></div>
-            <p className="font-sans text-base leading-relaxed mb-12" style={{ color: "rgba(245,240,232,0.48)" }}>
+            <p className="font-sans text-base leading-relaxed mb-12" style={{ color: "#6E655A" }}>
               命理的價值在於理解與選擇，而不是預言與判決。
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -149,7 +149,7 @@ export default function AboutPage() {
                 </p>
                 {["告訴你結果","著重吉凶好壞","給出單一答案","讓你被動接受"].map((t) => (
                   <div key={t} className="flex items-center gap-2">
-                    <span style={{ color: "rgba(245,240,232,0.22)" }}>✗</span>
+                    <span style={{ color: "rgba(43,38,34,0.35)" }}>✗</span>
                     <span className="font-sans text-sm" style={{ color: "rgba(43,38,34,0.48)" }}>{t}</span>
                   </div>
                 ))}
