@@ -6,16 +6,16 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "關於光宇 | 光宇方向命理研究所",
-  description: "光宇方向命理研究所的品牌理念、服務價值與我們的不同之處。",
+  description: "光宇方向命理研究所的品牌理念、做法，以及由 Axel 本人負責的服務方式。",
 };
 
 const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const values = [
-  { char: "整", title: "東西方整合", desc: "結合東方命理與西方占卜、占星與數字能量等工具，從不同角度交叉分析，提供更全面的理解與建議。" },
-  { char: "專", title: "專業與經驗", desc: "多年命理實務經驗，累積上千位個案分析，用專業態度與嚴謹分析，提供值得信賴的服務內容。" },
-  { char: "觀", title: "客觀中立",   desc: "不預設立場、不批判對錯，客觀呈現命盤訊息與可能性，協助你看見真實的自己，並做出更清晰的決定。" },
-  { char: "陪", title: "顧問式陪伴", desc: "不只給答案，更在過程中陪伴你整理情緒、釐清課題，讓命理成為你人生路上的光與方向。" },
+  { char: "整", title: "東西方整合", desc: "以八字、紫微斗數為主，搭配姓名、塔羅與生命靈數，從不同角度對照整理。" },
+  { char: "審", title: "本人審核", desc: "每一份成果的命理判讀，都由 Axel 本人審核後才交付。" },
+  { char: "觀", title: "客觀中立",   desc: "不預設立場、不批判對錯，分開說明事實、計算與詮釋。" },
+  { char: "行", title: "可以行動", desc: "把分析整理成看得懂、做得到的建議，交付後 7 日內可提出一次文字釐清。" },
 ];
 
 export default function AboutPage() {
@@ -43,16 +43,16 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <div className="space-y-6">
-                <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>我們的理念</h2>
+                <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>品牌理念</h2>
                 <div className="h-px w-12" style={{ background: "linear-gradient(to right, #A67C3D, transparent)" }} />
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
-                  光宇方向命理研究所成立的初衷，是希望讓更多人透過命理工具，真正看見自己、理解自己的人生課題，並在重要時刻做出更清晰的選擇。
+                  光宇方向命理研究所整合東西方命理，協助你理解自己、整理處境，形成實際可行的行動。
                 </p>
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
-                  我們相信，命理的價值不在於預測未來、製造焦慮，而是透過對命盤的理解，讓你在面對人生岔路時，有更多的智慧與力量。
+                  命理的價值不在預測未來或製造焦慮。看懂命盤呈現的結構，面對選擇時會多一點依據。
                 </p>
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
-                  每一次諮詢，都是一段深度對話。我們不只是提供報告，更是陪伴你整理現況、釐清課題，找到屬於你自己的方向。
+                  每一份報告都分開說明事實、計算與詮釋，並附上提醒與建議，決定權在你手上。
                 </p>
               </div>
               <div className="flex items-center justify-center">
@@ -68,27 +68,27 @@ export default function AboutPage() {
         <section className="py-20 section-alt">
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>關於老師</h2>
+              <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>關於 Axel</h2>
               <div className="gold-diamond mt-3 mb-2"><span /></div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex justify-center">
                 <div className="relative w-full max-w-sm overflow-hidden" style={{ aspectRatio: "1402/820", border: "1px solid rgba(166,124,61,0.15)" }}>
-                  <Image src="/about-photo.png" alt="光宇老師形象照" fill className="object-cover" />
+                  <Image src="/about-photo.png" alt="光宇方向形象圖" fill className="object-cover" />
                 </div>
               </div>
               <div className="space-y-5">
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
-                  光宇老師長期鑽研八字、紫微斗數、塔羅、生命靈數與西洋占星等多套命理體系，並持續以實務個案累積分析經驗。比起套用單一工具給出結論，老師更習慣將不同系統交叉比對，找出彼此呼應的訊息，再用容易理解的語言，把命盤背後的脈絡說清楚。
+                  光宇方向由 Axel 一人經營，沒有老師團隊或客服團隊。官方 LINE 先由 AI 小幫手接待並整理資料，之後交給 Axel 本人處理。
                 </p>
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
-                  服務對象涵蓋正在面對工作轉換、感情困擾、人際壓力或人生方向不明確的客戶。諮詢採全台線上服務（Google Meet 視訊或電話），也接受台北市區現場預約，讓無論身處哪個城市的客戶，都能在熟悉、放心的環境中完成諮詢。
+                  每一份成果都依你提供的資料與提問撰寫，命理判讀由 Axel 本人審核後才交付。服務以 PDF 或文字進行，不提供語音、視訊與現場諮詢。
                 </p>
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
-                  每一份報告都是依照客戶的出生資料與提問獨立分析撰寫，不使用罐頭式制式內容。
+                  命理分析用來幫助理解與整理，不取代醫療、法律或投資的專業判斷。
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {["八字命理","紫微斗數","塔羅占卜","生命靈數","西洋占星"].map((tag) => (
+                  {["八字","紫微斗數","姓名解析","塔羅","生命靈數"].map((tag) => (
                     <span key={tag} className="text-xs font-sans px-3 py-1"
                       style={{ background: "rgba(166,124,61,0.08)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.2)" }}>
                       {tag}
@@ -97,60 +97,8 @@ export default function AboutPage() {
                 </div>
                 <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
                   className="btn-gold inline-flex items-center gap-2 px-6 py-3 text-sm">
-                  預約與老師諮詢
+                  透過 LINE 預約
                 </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Credentials stats */}
-        <section className="py-16 section-light">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { num: "8+",     unit: "年",  label: "命理鑽研年資" },
-                { num: "1,000+", unit: "",    label: "累積服務個案" },
-                { num: "7",      unit: "天",  label: "報告後提問回覆" },
-                { num: "5",      unit: "大",  label: "整合命理系統" },
-              ].map((s) => (
-                <div key={s.label} className="text-center space-y-2 p-6"
-                  style={{ background: "#F1EAE0", border: "1px solid rgba(166,124,61,0.12)" }}>
-                  <p className="font-serif font-bold leading-none" style={{ fontSize: "2.4rem", color: "#A67C3D" }}>
-                    {s.num}<span className="text-xl">{s.unit}</span>
-                  </p>
-                  <p className="font-sans text-sm" style={{ color: "#6E655A" }}>{s.label}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Milestones */}
-            <div className="mt-14">
-              <h3 className="font-serif text-xl font-semibold text-center mb-10" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>專業歷程</h3>
-              <div className="relative">
-                <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block"
-                  style={{ background: "linear-gradient(to bottom, transparent, rgba(166,124,61,0.4) 15%, rgba(166,124,61,0.4) 85%, transparent)" }} />
-                <div className="space-y-8">
-                  {[
-                    { year: "2016", title: "開始系統鑽研命理", desc: "投入八字與紫微斗數的深度學習，建立東方命理基礎。" },
-                    { year: "2018", title: "整合西方命理體系", desc: "加入塔羅、西洋占星與生命靈數，形成東西方整合分析模式。" },
-                    { year: "2020", title: "正式開始個案服務", desc: "展開線上命理諮詢，以客製化報告取代罐頭式解讀。" },
-                    { year: "2023", title: "累積千位個案・成立光宇方向", desc: "品牌正式成立，以「顧問式陪伴」為核心定位，服務全台客戶。" },
-                  ].map((m, i) => (
-                    <div key={m.year} className={`flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                      <div className={`md:w-[calc(50%-2rem)] space-y-1 ${i % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"}`}>
-                        <p className="font-sans text-xs font-semibold tracking-widest" style={{ color: "#A67C3D" }}>{m.year}</p>
-                        <p className="font-serif text-base font-semibold" style={{ color: "#2B2622" }}>{m.title}</p>
-                        <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>{m.desc}</p>
-                      </div>
-                      <div className="relative flex-shrink-0 z-10 md:mx-auto">
-                        <div className="w-4 h-4 rounded-full border-2 mt-1"
-                          style={{ background: "#A67C3D", borderColor: "#FFFFFF" }} />
-                      </div>
-                      <div className="md:w-[calc(50%-2rem)]" />
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
@@ -161,10 +109,10 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="section-title">
               <p className="font-sans text-xs mb-3" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>BRAND VALUES</p>
-              <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.05em" }}>品牌特色與優勢</h2>
+              <h2 className="font-serif text-3xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.05em" }}>光宇方向的做法</h2>
               <div className="gold-diamond mt-3"><span /></div>
               <p className="mt-2 text-sm font-sans max-w-lg mx-auto" style={{ color: "#6E655A" }}>
-                我們用專業、真誠與整合的力量，陪伴你在人生的每個階段做出更好的選擇
+                做法與界線都寫清楚，讓你知道會拿到什麼
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -190,14 +138,14 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl font-semibold mb-4" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>光宇方向的不同</h2>
             <div className="gold-diamond mb-8"><span /></div>
             <p className="font-sans text-base leading-relaxed mb-12" style={{ color: "rgba(245,240,232,0.48)" }}>
-              我們相信，命理的價值在於理解與選擇，而不是預言與判決。
+              命理的價值在於理解與選擇，而不是預言與判決。
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-7 text-left space-y-3"
                 style={{ background: "rgba(43,38,34,0.04)", border: "1px solid rgba(245,240,232,0.08)" }}>
                 <p className="text-sm font-semibold font-sans text-center py-2 px-4"
                   style={{ background: "rgba(43,38,34,0.08)", color: "rgba(43,38,34,0.5)" }}>
-                  一般命理服務
+                  只給結論的做法
                 </p>
                 {["告訴你結果","著重吉凶好壞","給出單一答案","讓你被動接受"].map((t) => (
                   <div key={t} className="flex items-center gap-2">
@@ -228,11 +176,11 @@ export default function AboutPage() {
           <div className="max-w-2xl mx-auto px-6 text-center space-y-6">
             <span className="font-display text-5xl leading-none" style={{ color: "rgba(166,124,61,0.4)" }}>"</span>
             <p className="font-serif text-2xl leading-relaxed" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
-              光宇方向，陪你在混亂中看見方向，在迷惘中找回自己。
+              理解自己，整理處境，形成行動。
             </p>
             <span className="font-display text-5xl leading-none" style={{ color: "rgba(166,124,61,0.4)" }}>"</span>
             <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-4 inline-flex">
-              加入 LINE 開始諮詢
+              透過 LINE 預約
             </a>
           </div>
         </section>

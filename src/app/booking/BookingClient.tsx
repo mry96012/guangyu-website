@@ -7,16 +7,13 @@ import FinalCTA from "@/components/FinalCTA";
 const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const serviceOptions = [
-  "八字分析（NT$600起）",
-  "紫微斗數（NT$1,600起）",
-  "雙系統整合（NT$2,000起）",
-  "塔羅占卜（NT$350起）",
-  "生命靈數（NT$800起）",
-  "西洋占星（NT$1,600起）",
-  "基礎命理解讀套餐（NT$2,800）",
-  "流年運勢分析套餐（NT$3,800）",
-  "關係合盤諮詢套餐（NT$4,800）",
-  "命理+晶石能量套餐（NT$5,800）",
+  "八字命盤解析（NT$1,280）",
+  "紫微斗數命盤解析（NT$1,480）",
+  "雙系統整合解析｜八字 × 紫微（NT$2,380）",
+  "姓名解析（NT$450）",
+  "塔羅主題占卜（NT$300／題）",
+  "生命靈數・自我探索（NT$680）",
+  "五行晶石搭配建議（訂製價）",
   "其他（請說明）",
 ];
 
@@ -101,8 +98,8 @@ export default function BookingClient() {
                   style={{ background: "#FFFFFF", border: "1px solid rgba(166,124,61,0.2)" }}>
                   <span className="font-display text-4xl" style={{ color: "#A67C3D" }}>✦</span>
                   <h2 className="font-serif text-2xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>表單已送出！</h2>
-                  <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)" }}>
-                    LINE 已開啟，請直接傳送訊息給老師確認預約細節。
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>
+                    LINE 已開啟，請直接傳送訊息，由 Axel 本人確認細節。
                   </p>
                   <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-line inline-flex mt-2">
                     開啟 LINE 繼續溝通
@@ -184,7 +181,7 @@ export default function BookingClient() {
                 style={{ background: "#FFFFFF", border: "1px solid rgba(166,124,61,0.2)" }}>
                 <h3 className="font-serif text-base font-semibold" style={{ color: "#2B2622" }}>直接加入 LINE</h3>
                 <p className="text-sm font-sans leading-relaxed" style={{ color: "#6E655A" }}>
-                  也可以直接加入我們的 LINE 官方帳號進行預約，老師會盡快回覆。
+                  也可以直接加入官方 LINE 預約，由 Axel 本人回覆。
                 </p>
                 <a href={LINE_URL} target="_blank" rel="noopener noreferrer" className="btn-line text-sm w-full justify-center">
                   加入 LINE @805rnmnn

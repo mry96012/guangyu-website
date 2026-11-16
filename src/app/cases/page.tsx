@@ -5,8 +5,8 @@ import { REPORT_SAMPLE, SERVICE_PROCESS } from "@/config/content";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "服務流程 | 光宇方向命理研究所",
-  description: "從預約、填寫資料、一對一諮詢到書面報告交付的流程，以及報告段落的結構示意。",
+  title: "預約流程 | 光宇方向命理研究所",
+  description: "從 LINE 詢問、確認範圍、付款前確認、製作審核到交付的流程，以及報告段落的結構示意。",
 };
 
 export default function CasesPage() {
@@ -42,7 +42,7 @@ export default function CasesPage() {
               className="px-5 py-4 text-xs font-sans leading-relaxed"
               style={{ background: "rgba(166,124,61,0.04)", border: "1px solid rgba(166,124,61,0.15)", color: "#6E655A" }}
             >
-              本頁說明一次諮詢如何進行，以及書面報告有哪些段落。這裡不刊登客戶姓名、引言或評價。
+              本頁說明一次服務如何進行，以及書面報告有哪些段落。這裡不刊登客戶姓名、引言或評價。
             </div>
           </div>
         </section>

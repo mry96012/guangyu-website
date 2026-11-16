@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 import MaintenanceOverlay from "@/components/MaintenanceOverlay";
 
 export const metadata: Metadata = {
-  title: "光宇方向命理研究所｜八字・紫微・塔羅・占星整合諮詢",
-  description: "透過八字、紫微斗數、塔羅、生命靈數與占星整合分析，協助你整理現況、理解課題，找到更適合自己的方向。台灣命理諮詢，提供完整書面報告。",
+  title: "光宇方向命理研究所｜八字・紫微斗數・塔羅・生命靈數",
+  description: "東西方命理整合，協助你理解自己、整理處境，形成實際可行的行動。以 PDF 或文字交付，透過官方 LINE 預約。",
 };
 
 export default function HomePage() {

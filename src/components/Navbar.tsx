@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const LINE_URL = "https://lin.ee/QRKXhFn";
 
@@ -9,8 +8,8 @@ const navLinks = [
   { href: "/",         label: "首頁" },
   { href: "/about",    label: "關於光宇" },
   { href: "/services", label: "服務項目" },
-  { href: "/cases",    label: "服務流程" },
-  { href: "/faq",      label: "FAQ" },
+  { href: "/cases",    label: "預約流程" },
+  { href: "/faq",      label: "常見問題" },
 ];
 
 const LINE_ICON = (
@@ -45,34 +44,13 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0" style={{ textDecoration: "none" }}>
-          <div
-            className="relative shrink-0"
-            style={{
-              width: scrolled ? "40px" : "48px",
-              height: scrolled ? "40px" : "48px",
-              transition: "width 0.3s ease, height 0.3s ease",
-            }}
-          >
-            <Image src="/logo.png" alt="光宇方向命理研究所" fill className="object-contain" priority />
-          </div>
-          <div className="hidden sm:flex flex-col justify-center" style={{ lineHeight: 1 }}>
-            <p
-              className="font-serif font-bold tracking-widest whitespace-nowrap"
-              style={{
-                color: "#2B2622",
-                fontSize: scrolled ? "1.05rem" : "1.2rem",
-                transition: "font-size 0.3s ease",
-              }}
-            >
-              光宇方向命理研究所
-            </p>
-            <p className="font-sans mt-1" style={{ color: "#A67C3D", fontSize: "0.55rem", letterSpacing: "0.12em" }}>
-              理解自己・找到方向・創造更好的選擇
-            </p>
-            <p className="font-sans mt-0.5 tracking-widest whitespace-nowrap" style={{ color: "rgba(43,38,34,0.28)", fontSize: "0.5rem" }}>
-              GUANGYU METAPHYSICS INSTITUTE
-            </p>
-          </div>
+          {/* v2 橫式組合標誌：桌機 56px、手機與捲動後 44px */}
+          <img
+            src="/guangyu-lockup-horizontal-fullcolor.svg"
+            alt="光宇方向命理研究所 GUANGYU DIRECTION"
+            className="block w-auto h-11 md:h-[var(--lockup-h)]"
+            style={{ "--lockup-h": scrolled ? "44px" : "56px", transition: "height 0.3s ease" } as React.CSSProperties}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -95,11 +73,11 @@ export default function Navbar() {
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-4 py-2 rounded-sm transition-all duration-200"
+            className="inline-flex items-center gap-2 text-sm font-bold text-white px-3 md:px-4 py-2 rounded-sm transition-all duration-200 whitespace-nowrap"
             style={{ background: "#06C755", letterSpacing: "0.04em", boxShadow: "0 2px 8px rgba(6,199,85,0.22)" }}
           >
             {LINE_ICON}
-            加入 LINE
+            LINE 預約
           </a>
 
           <button
@@ -157,7 +135,7 @@ export default function Navbar() {
             style={{ background: "#06C755" }}
           >
             {LINE_ICON}
-            加入 LINE 預約諮詢
+            透過 LINE 預約
           </a>
         </nav>
       </div>

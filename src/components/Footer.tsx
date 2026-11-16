@@ -1,25 +1,23 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const LINE_URL = "https://lin.ee/QRKXhFn";
-const EMAIL    = "guangyu.pro@gmail.com";
-const PHONE    = "0978-586-343";
 const IG_URL   = "https://instagram.com/enlite731";
-const FB_URL   = "https://facebook.com";
 
 const quickLinks = [
   { href: "/about",      label: "關於光宇" },
   { href: "/services",   label: "服務項目" },
-  { href: "/cases",      label: "服務流程" },
-  { href: "/faq",        label: "FAQ" },
+  { href: "/cases",      label: "預約流程" },
+  { href: "/faq",        label: "常見問題" },
 ];
 
 const serviceLinks = [
-  { href: "/services#s1",         label: "八字分析" },
-  { href: "/services#s2",         label: "紫微斗數分析" },
-  { href: "/services#s4",         label: "塔羅占卜" },
-  { href: "/services#theme",      label: "主題分析" },
-  { href: "/services#integrated", label: "整合報告" },
+  { href: "/services#s1", label: "八字命盤解析" },
+  { href: "/services#s2", label: "紫微斗數命盤解析" },
+  { href: "/services#s3", label: "雙系統整合解析" },
+  { href: "/services#s4", label: "姓名解析" },
+  { href: "/services#s5", label: "塔羅主題占卜" },
+  { href: "/services#s6", label: "生命靈數・自我探索" },
+  { href: "/services#s7", label: "五行晶石搭配建議" },
 ];
 
 export default function Footer() {
@@ -30,19 +28,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1 space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 shrink-0">
-                <Image src="/logo.png" alt="光宇方向" fill className="object-contain" />
-              </div>
-              <div>
-                <p className="font-serif text-base font-semibold tracking-widest" style={{ color: "#FAF6EF" }}>光宇方向命理研究所</p>
-                <p className="text-xs tracking-widest mt-0.5 font-sans" style={{ color: "rgba(166,124,61,0.5)" }}>理解自己・找到方向</p>
-                <p className="font-sans text-[9px] tracking-widest mt-0.5" style={{ color: "rgba(245,240,232,0.2)" }}>GUANGYU METAPHYSICS INSTITUTE</p>
-              </div>
-            </div>
+            <img
+              src="/guangyu-lockup-horizontal-gold.svg"
+              alt="光宇方向命理研究所 GUANGYU DIRECTION"
+              className="block h-12 w-auto"
+            />
             <p className="text-xs font-sans leading-relaxed" style={{ color: "rgba(245,240,232,0.42)" }}>
-              結合東西方命理智慧，透過專業分析與溫暖陪伴，
-              協助你理解自己、找到方向，做出更適合自己的選擇。
+              東西方命理整合，協助你理解自己、整理處境，形成實際可行的行動。
             </p>
             <div className="flex items-center gap-3">
               <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
@@ -61,14 +53,6 @@ export default function Footer() {
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <circle cx="12" cy="12" r="4"/>
                   <circle cx="17.5" cy="6.5" r="0.5" fill="#C89B5A" stroke="none"/>
-                </svg>
-              </a>
-              <a href={FB_URL} target="_blank" rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center transition-all duration-200"
-                style={{ background: "rgba(166,124,61,0.08)", border: "1px solid rgba(166,124,61,0.22)" }}
-                aria-label="Facebook">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C89B5A" strokeWidth="2" strokeOpacity="0.7" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                 </svg>
               </a>
             </div>
@@ -104,16 +88,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="text-xs tracking-[0.25em] font-sans uppercase font-semibold" style={{ color: "rgba(245,240,232,0.7)" }}>聯絡我們</h4>
+            <h4 className="text-xs tracking-[0.25em] font-sans uppercase font-semibold" style={{ color: "rgba(245,240,232,0.7)" }}>預約與聯絡</h4>
             <ul className="space-y-3">
               {[
-                { label: "LINE",   value: "@805rnmnn",            href: LINE_URL },
-                { label: "Email",  value: EMAIL,                   href: `mailto:${EMAIL}` },
-                { label: "電話",   value: PHONE,                   href: `tel:${PHONE.replace(/-/g, "")}` },
-                { label: "時間",   value: "週一至週日 10:00–21:00" },
+                { label: "LINE",   value: "官方 LINE 預約",  href: LINE_URL },
+                { label: "LINE ID", value: "@805rnmnn" },
               ].map((c) => (
                 <li key={c.label} className="flex items-start gap-2">
-                  <span className="text-xs font-sans font-semibold mt-0.5 shrink-0" style={{ color: "#C89B5A", minWidth: "36px", opacity: 0.8 }}>{c.label}</span>
+                  <span className="text-xs font-sans font-semibold mt-0.5 shrink-0" style={{ color: "#C89B5A", minWidth: "52px", opacity: 0.8 }}>{c.label}</span>
                   {c.href ? (
                     <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
                       className="link-hover text-xs font-sans transition-colors duration-200 break-all" style={{ color: "rgba(245,240,232,0.48)" }}>
@@ -132,7 +114,7 @@ export default function Footer() {
         <div className="mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3"
           style={{ borderTop: "1px solid rgba(166,124,61,0.08)" }}>
           <p className="text-xs font-sans" style={{ color: "rgba(245,240,232,0.22)" }}>
-            © 2025 光宇方向命理研究所 All Rights Reserved.
+            © 2026 光宇方向命理研究所 GUANGYU DIRECTION
           </p>
           <Link href="/privacy" className="link-hover text-xs font-sans transition-colors duration-200" style={{ color: "rgba(245,240,232,0.28)" }}>
             隱私權與個資政策

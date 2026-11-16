@@ -1,11 +1,6 @@
-import type { Metadata } from "next";
-import ExperienceClient from "./ExperienceClient";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "免費命盤體驗 | 光宇方向命理研究所",
-  description: "輸入出生資料，即刻查看你的八字命盤基礎解讀。了解年柱、日主與五行屬性，完全免費，無需帳號。",
-};
-
+// 不提供免費體驗（2026-11-16 決定）。原 ExperienceClient.tsx 保留未刪，此頁改為導向服務項目。
 export default function ExperiencePage() {
-  return <ExperienceClient />;
+  redirect("/services");
 }
