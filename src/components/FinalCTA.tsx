@@ -76,7 +76,7 @@ export default function FinalCTA() {
           <h2 className="font-serif text-3xl md:text-4xl font-semibold leading-snug" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
             想了解哪一項服務？
           </h2>
-          <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.48)", letterSpacing: "0.02em" }}>
+          <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A", letterSpacing: "0.02em" }}>
             加入官方 LINE，說明想了解的方向
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function FinalCTA() {
             <div className="text-left">
               <p className="text-xs font-semibold font-sans" style={{ color: "#2B2622" }}>LINE 官方帳號</p>
               <p className="text-xs font-sans mt-0.5" style={{ color: "#6E655A" }}>@805rnmnn</p>
-              <p className="text-xs font-sans mt-0.5" style={{ color: "#A67C3D", opacity: 0.6 }}>@805rnmnn</p>
+              <p className="text-xs font-sans mt-0.5" style={{ color: "#8A5D0A" }}>以文字訊息預約</p>
             </div>
           </div>
         </div>
