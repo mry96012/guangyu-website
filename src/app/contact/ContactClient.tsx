@@ -29,7 +29,7 @@ export default function ContactClient() {
             style={{ background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(166,124,61,0.07) 0%, transparent 60%)" }} />
           <div className="relative max-w-xl mx-auto px-6 space-y-4">
             <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>GET IN TOUCH</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#2B2622" }}>聯絡我們</h1>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#2B2622" }}>聯絡光宇方向</h1>
             <div className="gold-divider max-w-xs mx-auto">
               <span className="text-xs font-sans tracking-widest" style={{ color: "rgba(166,124,61,0.5)", padding: "0 14px" }}>任何問題都歡迎詢問</span>
             </div>
@@ -41,10 +41,10 @@ export default function ContactClient() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div className="space-y-3">
-                <h2 className="font-serif text-2xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>與我們聯繫</h2>
+                <h2 className="font-serif text-2xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>與光宇方向聯繫</h2>
                 <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>
                   無論是服務諮詢、預約問題或任何想了解的事，
-                  都歡迎透過 LINE 或填寫聯絡表單與我們聯繫。
+                  都歡迎透過 LINE 或填寫聯絡表單與光宇方向聯繫。
                 </p>
               </div>
 
@@ -86,7 +86,7 @@ export default function ContactClient() {
                   <span className="font-display text-4xl" style={{ color: "#A67C3D" }}>✦</span>
                   <h2 className="font-serif text-xl font-semibold" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>訊息已送出！</h2>
                   <p className="font-sans text-sm" style={{ color: "#6E655A" }}>
-                    LINE 已開啟，請直接傳送訊息，老師將盡快回覆您。
+                    LINE 已開啟，請直接傳送訊息，由 Axel 本人回覆。
                   </p>
                   <button onClick={() => setSent(false)} className="btn-outline text-xs inline-flex">
                     再次留言
@@ -122,7 +122,7 @@ export default function ContactClient() {
                     送出留言 → 跳轉 LINE
                   </button>
                   <p className="text-xs font-sans text-center" style={{ color: "rgba(43,38,34,0.35)" }}>
-                    點擊送出後將開啟 LINE，把預填訊息傳送給老師即可。
+                    點擊送出後將開啟 LINE，把預填訊息傳送出去即可。
                   </p>
                 </form>
               )}

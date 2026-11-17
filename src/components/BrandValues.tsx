@@ -5,22 +5,22 @@ const values = [
   {
     num: "一",
     title: "專業整合",
-    desc: "結合東方命理與西方占卜、占星與數字能量等工具，多角度綜合分析，提供更全面的理解與建議。",
+    desc: "以八字、紫微斗數為主，搭配姓名、塔羅與生命靈數，從不同角度對照整理。",
   },
   {
     num: "二",
     title: "個人化解讀",
-    desc: "根據你的生命資訊與提問，獨立撰寫的專屬解讀，不套版、不制式，讓你真正看見自己。",
+    desc: "依你提供的資料與提問撰寫，命理判讀由 Axel 本人審核。",
   },
   {
     num: "三",
-    title: "理解與陪伴",
-    desc: "不預測未來、也不製造恐懼，協助你整理現況、釐清課題，陪你一起找到方向。",
+    title: "理解與整理",
+    desc: "不用宿命式斷言，也不製造恐懼。協助你整理現況、釐清課題。",
   },
   {
     num: "四",
     title: "書面報告",
-    desc: "提供清楚完整的書面報告，重點整理、易於理解，方便你隨時保存與回顧。",
+    desc: "以 PDF 或文字交付，重點整理清楚，方便保存與回看。",
   },
 ];
 
@@ -84,11 +84,11 @@ export default function BrandValues() {
           </p>
           <h2 className="font-serif text-3xl font-semibold flex items-center" style={{ color: "#2B2622", letterSpacing: "0.05em" }}>
             <BaguaAccent />
-            我們的核心價值
+            光宇方向的做法
           </h2>
           <div className="mt-3 h-px w-16" style={{ background: "linear-gradient(to right, #A67C3D, transparent)" }} />
           <p className="mt-4 text-sm font-sans max-w-md" style={{ color: "#6E655A", letterSpacing: "0.01em" }}>
-            不只是命理分析，更是陪伴你理解自己、找到方向的專業顧問
+            用命理幫助理解與整理，把結果變成可以行動的建議
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function BrandValues() {
               <p className="font-serif font-semibold text-lg mb-3" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
                 {v.title}
               </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)", letterSpacing: "0.01em" }}>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A", letterSpacing: "0.01em" }}>
                 {v.desc}
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function BrandValues() {
               <p className="font-serif font-semibold text-lg mb-3" style={{ color: "#2B2622", letterSpacing: "0.04em" }}>
                 {v.title}
               </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.55)", letterSpacing: "0.01em" }}>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A", letterSpacing: "0.01em" }}>
                 {v.desc}
               </p>
             </div>
@@ -152,7 +152,7 @@ export default function BrandValues() {
             borderBottom: "1px solid rgba(166,124,61,0.15)",
           }}
         >
-          <p className="font-serif text-base text-right" style={{ color: "rgba(245,240,232,0.55)" }}>
+          <p className="font-serif text-base text-right" style={{ color: "#6E655A" }}>
             了解自己，是改變的開始；理解課題，是成長的力量；
             <br />
             <span style={{ color: "#A67C3D" }}>找到方向，是人生的光。</span>

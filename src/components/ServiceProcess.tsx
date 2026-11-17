@@ -124,7 +124,7 @@ export default function ServiceProcess() {
 
         <div className="reveal mt-10" data-delay="560">
           <Link href="/cases" className="btn-outline text-sm px-7 py-3 inline-flex items-center gap-2">
-            看完整服務流程
+            看完整預約流程
           </Link>
         </div>
       </div>

@@ -8,11 +8,9 @@ export const metadata: Metadata = {
   description: "光宇方向命理研究所個人資料保護政策，說明個資蒐集、處理與利用方式，依據中華民國個人資料保護法。",
 };
 
-const CONTACT_EMAIL = "guangyu.pro@gmail.com";
-const CONTACT_PHONE = "0978-586-343";
 const LINE_URL = "https://lin.ee/QRKXhFn";
 const EFFECTIVE_DATE = "2025年1月1日";
-const LAST_UPDATED = "2026年6月15日";
+const LAST_UPDATED = "2026年11月16日（預覽稿，待 Axel 確認）";
 
 const sectionStyle = {
   background: "#FFFFFF",
@@ -153,7 +151,7 @@ export default function PrivacyPage() {
                 ))}
               </ul>
               <p className="font-sans" style={pStyle}>
-                如需行使上述權利，請以 Email 或 LINE 聯繫本研究所，我們將於15個工作日內回覆並處理。本研究所得依個資法第10條但書規定，於符合法定條件時拒絕或限制前述請求。
+                如需行使上述權利，請透過官方 LINE 聯繫本研究所，本研究所將於15個工作日內回覆並處理。本研究所得依個資法第10條但書規定，於符合法定條件時拒絕或限制前述請求。
               </p>
 
               <p className="font-sans font-semibold" style={{ ...pStyle, color: "#2B2622" }}>（六）不提供個人資料之影響</p>
@@ -168,9 +166,8 @@ export default function PrivacyPage() {
               <p className="font-sans" style={pStyle}>本研究所透過以下方式蒐集您的個人資料：</p>
               <ul className="list-none space-y-1 pl-4">
                 {[
-                  "您主動填寫預約表單或體驗申請表",
+                  "您主動填寫預約表單",
                   "您透過 LINE 官方帳號傳送之訊息",
-                  "您透過電話或 Email 與本研究所聯繫",
                   "您使用本網站八字計算工具時輸入之出生資料（僅於您的裝置本地計算，不上傳儲存）",
                 ].map((item) => (
                   <li key={item} className="font-sans flex gap-2" style={liStyle}>
@@ -209,7 +206,7 @@ export default function PrivacyPage() {
             <div style={sectionStyle}>
               <h2 className="font-serif" style={h2Style}>五、個人資料事故通知機制</h2>
               <p className="font-sans" style={pStyle}>
-                依個資法第12條規定，若本研究所違反個資法規定，致您的個人資料遭不法蒐集、處理、利用或其他侵害情事，本研究所將於知悉後，以適當方式（如 Email、LINE 或網站公告）通知您下列事項：
+                依個資法第12條規定，若本研究所違反個資法規定，致您的個人資料遭不法蒐集、處理、利用或其他侵害情事，本研究所將於知悉後，以適當方式（如 LINE 或網站公告）通知您下列事項：
               </p>
               <ul className="list-none space-y-1 mb-3 pl-4">
                 {[
@@ -275,12 +272,10 @@ export default function PrivacyPage() {
                 九、聯絡本研究所
               </h2>
               <p className="font-sans" style={{ ...pStyle, color: "#6E655A" }}>
-                如對本隱私政策有任何疑問，或欲行使個人資料相關權利，請透過以下方式聯絡我們：
+                如對本隱私政策有任何疑問，或欲行使個人資料相關權利，請透過官方 LINE 聯絡：
               </p>
               <ul className="list-none space-y-3 pl-4">
                 {[
-                  { label: "Email", value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
-                  { label: "電話", value: CONTACT_PHONE, href: `tel:${CONTACT_PHONE.replace(/-/g, "")}` },
                   { label: "LINE", value: "@805rnmnn", href: LINE_URL },
                 ].map((c) => (
                   <li key={c.label} className="font-sans flex gap-3 items-center">

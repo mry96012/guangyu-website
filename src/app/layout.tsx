@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.guangyu888.tw"),
   title: "光宇方向命理研究所｜東西方命理整合分析",
   description:
-    "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己、整理目前狀態，並釐清更適合的人生方向。",
-  keywords: "命理諮詢, 八字分析, 紫微斗數, 塔羅占卜, 占星, 生命靈數, 姓名學, 光宇方向命理研究所",
+    "東西方命理整合：八字、紫微斗數、姓名解析、塔羅與生命靈數，協助你理解自己、整理處境，形成實際可行的行動。",
+  keywords: "命理諮詢, 八字分析, 紫微斗數, 塔羅占卜, 生命靈數, 姓名解析, 光宇方向命理研究所",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "光宇方向命理研究所｜東西方命理整合分析",
-    description: "結合八字、紫微斗數、姓名學、塔羅、生命靈數與占星觀點，協助你理解自己，整理目前狀態，釐清更適合的人生方向。",
+    description: "東西方命理整合：八字、紫微斗數、姓名解析、塔羅與生命靈數，協助你理解自己、整理處境，形成實際可行的行動。",
     locale: "zh_TW",
     type: "website",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
