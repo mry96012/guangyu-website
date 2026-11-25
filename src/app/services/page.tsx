@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "服務項目與定價 | 光宇方向命理研究所",
-  description: "八字、紫微斗數、雙系統整合、姓名解析、塔羅、生命靈數與五行晶石搭配建議的價格、範圍與交付方式。",
+  description: "八字、紫微斗數、雙系統整合、姓名解析、手機號碼解析、塔羅與五行能量晶石設計的價格、範圍與交付方式。",
 };
 
 const LINE_URL = "https://lin.ee/QRKXhFn";
@@ -21,13 +21,13 @@ const themes = [
 ];
 
 const services = [
-  { id: "s1", label: "八", title: "八字命盤解析", price: "NT$1,280", scope: "單人・指定一年度重點・最多 2 個主題", desc: "從四柱與五行結構，整理性格特質、目前課題與指定年度的重點。", delivery: "PDF 報告", needs: "稱呼、性別、出生年月日時（註明國曆或農曆）、出生地" },
-  { id: "s2", label: "紫", title: "紫微斗數命盤解析", price: "NT$1,480", scope: "單人・指定一年度重點・最多 2 個主題", desc: "從命宮與十二宮位，整理天賦、關係模式與指定年度的重點。", delivery: "PDF 報告", needs: "稱呼、性別、出生年月日時（註明國曆或農曆）、出生地" },
-  { id: "s3", label: "合", title: "雙系統整合解析｜八字 × 紫微", price: "NT$2,380", scope: "單人・指定一年度重點・最多 2 個主題", desc: "同一份資料用兩套系統對照，整理彼此呼應與需要留意的地方。", delivery: "PDF 報告", needs: "稱呼、性別、出生年月日時（註明國曆或農曆）、出生地" },
-  { id: "s4", label: "名", title: "姓名解析", price: "NT$450", scope: "單一姓名", desc: "解析現有姓名的結構與特質。不含取名、改名或多個名字比較。", delivery: "文字或 PDF", needs: "要解析的姓名" },
-  { id: "s5", label: "塔", title: "塔羅主題占卜", price: "NT$300／題", scope: "一個問題一次占卜", desc: "針對當下一個具體問題，整理現況、阻礙與可以採取的行動。", delivery: "牌面圖與文字說明，不另製 PDF", needs: "稱呼與想問的問題" },
-  { id: "s6", label: "數", title: "生命靈數・自我探索", price: "NT$680", scope: "單人", desc: "從出生日期的數字組合，整理性格特質、天賦與成長課題。", delivery: "文字或 PDF", needs: "稱呼與國曆出生年月日" },
-  { id: "s7", label: "石", title: "五行晶石搭配建議", price: "訂製價", scope: "獨立服務或八字分析後加購", desc: "依五行需求提出晶石搭配建議。內容與價格個別確認後報價。", delivery: "個別確認", needs: "先在 LINE 說明需求" },
+  { id: "s1", label: "八", title: "八字命盤解析", price: "NT$1,880", scope: "單人・指定一年度・最多 2 個主題", desc: "從四柱與五行結構，整理性格特質、目前課題與指定年度的重點。", delivery: "PDF 報告書＋LINE 摘要", needs: "稱呼、性別、出生年月日與出生時間（註明國曆或農曆）、出生地" },
+  { id: "s2", label: "紫", title: "紫微斗數命盤解析", price: "NT$2,480", scope: "單人・指定一年度・最多 2 個主題", desc: "從命宮與十二宮位，整理天賦、關係模式與指定年度的重點。", delivery: "PDF 報告書＋LINE 摘要", needs: "稱呼、性別、出生年月日與出生時間（註明國曆或農曆）、出生地" },
+  { id: "s3", label: "合", title: "雙系統整合解析｜八字 × 紫微", price: "NT$2,980", scope: "單人・指定一年度・完整綜合分析", desc: "同一份資料用兩套系統對照，整合成一份完整的綜合分析。", delivery: "PDF 報告書＋LINE 摘要", needs: "稱呼、性別、出生年月日與出生時間（註明國曆或農曆）、出生地" },
+  { id: "s4", label: "名", title: "姓名解析", price: "NT$680", scope: "單一現有姓名", desc: "分析並說明現有姓名的結構與特質。需要命名服務另加 NT$300。", delivery: "PDF 報告", needs: "稱呼、性別、出生年月日與出生時間（註明國曆或農曆）、要解析的姓名" },
+  { id: "s5", label: "號", title: "手機號碼解析", price: "NT$680", scope: "單一現有號碼", desc: "分析並說明現有手機號碼與本人命格的合適度。需要選號服務另加 NT$300。", delivery: "PDF 報告", needs: "稱呼、性別、出生年月日與出生時間（註明國曆或農曆）、要分析的手機號碼" },
+  { id: "s6", label: "塔", title: "塔羅占卜", price: "NT$200／題", scope: "一個問題一次占卜", desc: "針對當下一個具體問題，整理現況、阻礙與可以採取的行動。", delivery: "牌面圖與文字說明，不另製 PDF", needs: "稱呼、性別、出生年月日與出生時間（註明國曆或農曆）、想問的問題" },
+  { id: "s7", label: "石", title: "五行能量晶石設計", price: "依個案報價", scope: "訂製服務", desc: "依五行需求設計晶石搭配。內容與價格個別確認後，由 Axel 報價。", delivery: "個別確認", needs: "先在 LINE 說明需求" },
 ];
 
 export default function ServicesPage() {
@@ -184,7 +184,7 @@ export default function ServicesPage() {
                 <div className="space-y-4">
                   {[
                     { q: "多久收到？", a: "交付日期依個案內容，在付款前約定。" },
-                    { q: "需要哪些資料？", a: "依服務項目不同，每張服務卡都列出需要的資料。出生時間不確定時，先提供已知資訊，可分析的範圍由 Axel 本人確認後說明。" },
+                    { q: "需要哪些資料？", a: "依服務項目不同，每張服務卡都列出需要的資料。所有服務都需要出生時間；真的無法提供，請在 LINE 說明，由 Axel 本人確認可以怎麼處理。" },
                     { q: "可以退費嗎？",   a: "退費申請逐案由 Axel 本人確認。" },
                   ].map((faq) => (
                     <div key={faq.q} className="space-y-1">

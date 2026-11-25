@@ -266,7 +266,7 @@ export default function Hero() {
                 letterSpacing: "0.01em",
               }}
             >
-              <span className="block">以八字、紫微斗數、姓名、塔羅與生命靈數，</span>
+              <span className="block">以八字、紫微斗數、姓名、手機號碼與塔羅，</span>
               <span className="block">協助你理解自己、整理處境，</span>
               <span className="block">形成實際可行的行動。</span>
             </p>

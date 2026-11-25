@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import MaintenanceOverlay from "@/components/MaintenanceOverlay";
 
 export const metadata: Metadata = {
-  title: "光宇方向命理研究所｜八字・紫微斗數・塔羅・生命靈數",
+  title: "光宇方向命理研究所｜八字・紫微斗數・姓名・手機號碼・塔羅",
   description: "東西方命理整合，協助你理解自己、整理處境，形成實際可行的行動。以 PDF 或文字交付，透過官方 LINE 預約。",
 };
 

@@ -15,9 +15,9 @@ const serviceLinks = [
   { href: "/services#s2", label: "紫微斗數命盤解析" },
   { href: "/services#s3", label: "雙系統整合解析" },
   { href: "/services#s4", label: "姓名解析" },
-  { href: "/services#s5", label: "塔羅主題占卜" },
-  { href: "/services#s6", label: "生命靈數・自我探索" },
-  { href: "/services#s7", label: "五行晶石搭配建議" },
+  { href: "/services#s5", label: "手機號碼解析" },
+  { href: "/services#s6", label: "塔羅占卜" },
+  { href: "/services#s7", label: "五行能量晶石設計" },
 ];
 
 export default function Footer() {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const LINE_URL = "https://lin.ee/QRKXhFn";
 
 const values = [
-  { char: "整", title: "東西方整合", desc: "以八字、紫微斗數為主，搭配姓名、塔羅與生命靈數，從不同角度對照整理。" },
+  { char: "整", title: "東西方整合", desc: "以八字、紫微斗數為主，搭配姓名、手機號碼與塔羅，從不同角度對照整理。" },
   { char: "審", title: "本人審核", desc: "每一份成果的命理判讀，都由 Axel 本人審核後才交付。" },
   { char: "觀", title: "客觀中立",   desc: "不預設立場、不批判對錯，分開說明事實、計算與詮釋。" },
   { char: "行", title: "可以行動", desc: "把分析整理成看得懂、做得到的建議，交付後 7 日內可提出一次文字釐清。" },
@@ -88,7 +88,7 @@ export default function AboutPage() {
                   命理分析用來幫助理解與整理，不取代醫療、法律或投資的專業判斷。
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {["八字","紫微斗數","姓名解析","塔羅","生命靈數"].map((tag) => (
+                  {["八字","紫微斗數","姓名解析","手機號碼解析","塔羅"].map((tag) => (
                     <span key={tag} className="text-xs font-sans px-3 py-1"
                       style={{ background: "rgba(166,124,61,0.08)", color: "#A67C3D", border: "1px solid rgba(166,124,61,0.2)" }}>
                       {tag}
