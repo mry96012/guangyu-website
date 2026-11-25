@@ -1,11 +1,6 @@
-import type { Metadata } from "next";
-import BaziClient from "./BaziClient";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "免費八字速測 | 光宇方向命理研究所",
-  description: "輸入出生資料，即刻查看你的八字基礎命盤預覽。完全免費，無需帳號。",
-};
-
+// 免費八字速測下架（2026-11-25 決定，依共用知識庫「不提供免費體驗」）。原 BaziClient.tsx 保留未刪，此頁改為導向服務項目。
 export default function BaziPage() {
-  return <BaziClient />;
+  redirect("/services");
 }

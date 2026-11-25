@@ -79,7 +79,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-5">
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
-                  光宇方向由 Axel 一人經營，沒有老師團隊或客服團隊。官方 LINE 先由 AI 小幫手接待並整理資料，之後交給 Axel 本人處理。
+                  光宇方向由 Axel 一人經營，沒有老師團隊或客服團隊。官方 LINE 先由系統自動回覆協助整理資料，之後交給 Axel 本人處理。
                 </p>
                 <p className="font-sans text-base leading-relaxed" style={{ color: "#6E655A" }}>
                   每一份成果都依你提供的資料與提問撰寫，命理判讀由 Axel 本人審核後才交付。服務以 PDF 或文字進行，不提供語音、視訊與現場諮詢。

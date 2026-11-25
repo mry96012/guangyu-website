@@ -222,7 +222,7 @@ export const SERVICE_PROCESS = {
   subtitle: "先確認內容，再付款",
   description: "從詢問到交付共五步。範圍、價格與交付日期都在付款前確認清楚。",
   steps: [
-    { n: "01", icon: "", title: "LINE 詢問",        desc: "加入官方 LINE，說明想了解的方向。先由 AI 小幫手接待並整理資料。" },
+    { n: "01", icon: "", title: "LINE 詢問",        desc: "加入官方 LINE，說明想了解的方向。先由系統自動回覆協助整理資料。" },
     { n: "02", icon: "", title: "確認範圍與資料",   desc: "確認服務項目、想看的年度與主題，以及需要提供的資料。" },
     { n: "03", icon: "", title: "付款前確認",       desc: "確認價格、交付內容與交付日期後才付款。可用銀行轉帳、街口支付或 LINE Pay Money。" },
     { n: "04", icon: "", title: "製作與審核",       desc: "依你提供的資料製作，命理判讀由 Axel 本人審核。" },
