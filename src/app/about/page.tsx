@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import type { Metadata } from "next";
@@ -24,19 +25,7 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Header */}
-        <section className="pt-32 pb-16 text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(160deg, #FAF6EF 0%, #F0E8D8 50%, #FAF6EF 100%)" }}>
-          <div className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(166,124,61,0.07) 0%, transparent 60%)" }} />
-          <div className="relative max-w-2xl mx-auto px-6 space-y-4">
-            <p className="text-xs tracking-widest font-sans font-semibold" style={{ color: "#A67C3D", letterSpacing: "0.22em" }}>ABOUT US</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-wide" style={{ color: "#2B2622" }}>關於光宇</h1>
-            <div className="gold-diamond max-w-xs mx-auto"><span /></div>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "#6E655A" }}>
-              理解自己・找到方向・創造更好的選擇
-            </p>
-          </div>
-        </section>
+        <PageHero label="ABOUT US" title="關於光宇" description="理解自己・找到方向・創造更好的選擇" image="/images/heroes/about.webp" />
 
         {/* Brand story */}
         <section className="py-20 section-light">
